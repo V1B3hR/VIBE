@@ -1,0 +1,6 @@
+﻿    RemoveTrackFromVca(Uuid, Uuid), // vca_id, track_id
+
+    SetMonitoringMode(usize, super::graph::MonitoringMode),
+
+}
+

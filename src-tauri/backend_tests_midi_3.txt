@@ -1,0 +1,29 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:30
++ ... CK=8388608; cargo test 
+engine::midi_mapping::tests --lib -- 
+--nocaptu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (   Compiling vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+    Finished `test` profile [unoptimized + 
+debuginfo] target(s) in 5.75s
+     Running unittests src\lib.rs (target\de
+bug\deps\vibe_lib-535b23413f1cd2f5.exe)
+
+running 5 tests
+test engine::midi_mapping::tests::test_relative_mapping ... ok
+test engine::midi_mapping::tests::test_midi_learning ... ok
+test engine::midi_mapping::tests::test_absolute_soft_takeover ... ok
+test engine::midi_mapping::tests::test_fourteen_bit_cc ... ok
+test engine::midi_mapping::tests::test_nrpn_resolution ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 69 filtered out; finished in 0.00s
+

@@ -1,0 +1,565 @@
+:root {
+    --kropelka-creative: #00F0FF;
+    --kropelka-flow: #BD00FF;
+    --kropelka-technical: #FF003C;
+    --kropelka-vibe: #00E676;
+    --glow-color: var(--kropelka-creative);
+}
+
+.kropelka-container {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    /* Changed to auto to allow clicks */
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* State Colors & Breathing Animations */
+@keyframes breatheCreative {
+    0%, 100% { box-shadow: 0 0 15px var(--glow-color), inset 0 0 10px rgba(0, 240, 255, 0.2); transform: scale(1); }
+    50% { box-shadow: 0 0 35px var(--glow-color), inset 0 0 20px rgba(0, 240, 255, 0.4); transform: scale(1.05); }
+}
+
+@keyframes pulseFlow {
+    0% { box-shadow: 0 0 20px var(--glow-color), inset 0 0 15px rgba(189, 0, 255, 0.4); filter: hue-rotate(0deg); transform: scale(1.02); }
+    50% { box-shadow: 0 0 50px var(--glow-color), inset 0 0 30px rgba(0, 240, 255, 0.5); filter: hue-rotate(45deg); transform: scale(1.1); }
+    100% { box-shadow: 0 0 20px var(--glow-color), inset 0 0 15px rgba(189, 0, 255, 0.4); filter: hue-rotate(0deg); transform: scale(1.02); }
+}
+
+@keyframes jitterTechnical {
+    0% { transform: translate(0, 0) scale(1); box-shadow: 0 0 10px var(--glow-color); }
+    25% { transform: translate(1px, -1px) scale(0.98); box-shadow: -2px 0 15px var(--glow-color), 2px 0 15px #0ff; }
+    50% { transform: translate(-1px, 1px) scale(1.02); box-shadow: 2px 0 15px var(--glow-color), -2px 0 15px #0ff; }
+    75% { transform: translate(1px, 1px) scale(0.99); box-shadow: 0 0 10px var(--glow-color); }
+    100% { transform: translate(0, 0) scale(1); box-shadow: 0 0 10px var(--glow-color); }
+}
+
+.mode-creative {
+    --glow-color: var(--kropelka-creative);
+}
+.mode-creative .kropelka-core {
+    animation: breatheCreative 4s ease-in-out infinite;
+}
+
+.mode-flow {
+    --glow-color: var(--kropelka-flow);
+}
+.mode-flow .kropelka-core {
+    animation: pulseFlow 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    background: linear-gradient(135deg, rgba(189, 0, 255, 0.1) 0%, rgba(0, 240, 255, 0.15) 100%);
+}
+
+.mode-technical {
+    --glow-color: var(--kropelka-technical);
+}
+.mode-technical .kropelka-core {
+    animation: jitterTechnical 0.3s steps(2) infinite;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Glitchy shape */
+}
+
+.mode-vibe_check {
+    --glow-color: var(--kropelka-vibe);
+}
+.mode-vibe_check .kropelka-core {
+    animation: breatheCreative 2s ease-in-out infinite;
+}
+
+.mode-idle {
+    --glow-color: #2a2e38;
+}
+.mode-idle .kropelka-core {
+    opacity: 0.6;
+    filter: saturate(0);
+}
+
+/* The Core Orb / Liquid Glass Element */
+.kropelka-core {
+    width: 64px;
+    height: 64px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.02) 60%, rgba(0, 0, 0, 0.4) 100%);
+    backdrop-filter: blur(12px) contrast(1.2);
+    -webkit-backdrop-filter: blur(12px) contrast(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px var(--glow-color), inset 0 0 15px rgba(255, 255, 255, 0.05), inset -5px -5px 15px rgba(0,0,0,0.5);
+    transition:
+        transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.45s ease-out,
+        border-radius 0.45s ease-in-out,
+        filter 0.45s ease-out,
+        opacity 0.25s ease-out;
+    overflow: hidden;
+}
+
+/* Smooth mood transition — brief morph flash */
+.is-transitioning .kropelka-core {
+    opacity: 0.65;
+    filter: blur(2px) brightness(1.4) saturate(0.5);
+    transform: scale(0.88);
+    animation-play-state: paused !important;
+}
+
+/* Container transition for position/scale effects */
+.kropelka-container.is-transitioning {
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassy Highlight */
+.kropelka-core::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 40%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.kropelka-container:hover .kropelka-core {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--glow-color);
+}
+
+/* Face Features */
+.kropelka-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px white;
+    top: 35%;
+    transition: all 0.2s ease;
+}
+
+.eye.left {
+    left: 30%;
+}
+
+.eye.right {
+    right: 30%;
+}
+
+.mouth {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    top: 65%;
+    transition: all 0.2s ease;
+}
+
+/* Facial Expressions */
+.mode-creative .eye {
+    height: 10px;
+    border-radius: 10px 10px 4px 4px;
+}
+
+.mode-creative .mouth {
+    width: 14px;
+    border-radius: 0 0 10px 10px;
+    height: 4px;
+    background: var(--glow-color);
+    box-shadow: 0 0 8px var(--glow-color);
+}
+
+.mode-flow .eye {
+    height: 4px;
+    width: 12px;
+    border-radius: 2px;
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.mode-flow .mouth {
+    width: 16px;
+    border-radius: 0 0 20px 20px;
+    height: 8px;
+    background: transparent;
+    border-bottom: 3px solid #fff;
+    box-shadow: 0 5px 10px var(--glow-color);
+}
+
+.mode-technical .eye {
+    height: 3px;
+    width: 10px;
+    border-radius: 1px;
+    transform: rotate(20deg);
+    background: #fff;
+}
+
+.mode-technical .eye.right {
+    transform: rotate(-20deg);
+}
+
+.mode-technical .mouth {
+    width: 12px;
+    height: 2px;
+    background: var(--glow-color);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.mode-vibe_check .eye {
+    width: 12px;
+    height: 3px;
+    background: var(--kropelka-vibe);
+    box-shadow: 0 0 8px var(--kropelka-vibe);
+}
+
+.mode-vibe_check .mouth {
+    width: 20px;
+    background: transparent;
+    border: 2px solid var(--kropelka-vibe);
+    border-radius: 10px;
+    height: 6px;
+    box-shadow: 0 0 10px var(--kropelka-vibe), inset 0 0 5px var(--kropelka-vibe);
+}
+
+
+/* Emotion Overrides (Driven by Backend Persona) */
+.eye.strict {
+    height: 2px !important;
+    width: 10px !important;
+    transform: rotate(20deg) !important;
+    background: #ff4444 !important;
+    border-radius: 2px !important;
+}
+
+.eye.strict.right {
+    transform: rotate(-20deg) !important;
+}
+
+.mouth.strict {
+    width: 12px !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+    background: #ff4444 !important;
+}
+
+.eye.concerned {
+    height: 8px !important;
+    width: 6px !important;
+    transform: rotate(-10deg) !important;
+}
+
+.eye.concerned.right {
+    transform: rotate(10deg) !important;
+}
+
+.mouth.concerned {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    border: 2px solid white !important;
+    top: 62% !important;
+}
+
+.eye.serious {
+    height: 4px !important;
+    width: 8px !important;
+    border-radius: 2px !important;
+    transform: none !important;
+}
+
+.mouth.serious {
+    width: 14px !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+}
+
+.eye.confident {
+    height: 4px !important;
+    border-radius: 0 0 10px 10px !important;
+    background: white !important;
+}
+
+.mouth.confident {
+    width: 16px !important;
+    height: 3px !important;
+    transform: rotate(-5deg) !important;
+    border-radius: 0 !important;
+    background: white !important;
+}
+
+.eye.happy {
+    height: 6px !important;
+    border-radius: 10px 10px 0 0 !important;
+    background: transparent !important;
+    border-top: 3px solid white !important;
+    box-shadow: none !important;
+}
+
+.mouth.happy {
+    width: 14px !important;
+    height: 6px !important;
+    border-radius: 0 0 10px 10px !important;
+    background: white !important;
+}
+
+.eye.friendly {
+    height: 8px !important;
+    width: 8px !important;
+    border-radius: 50% !important;
+    background: white !important;
+}
+
+.mouth.friendly {
+    width: 12px !important;
+    height: 4px !important;
+    border-radius: 0 0 10px 10px !important;
+    background: white !important;
+}
+
+/* Vibe Check Scanner Ring */
+.vibe-scanner-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border: 2px dashed var(--kropelka-vibe);
+    border-radius: 50%;
+    animation: spinScan 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    pointer-events: none;
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.2), inset 0 0 20px rgba(0, 230, 118, 0.2);
+}
+
+@keyframes spinScan {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Particles */
+.particles-creative {
+    position: absolute;
+    top: -20px;
+    animation: floatUp 2s ease-in-out infinite;
+    font-size: 12px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.alert-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0055;
+    color: white;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #ff0055;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+/* Insight Card */
+.insight-card {
+    position: absolute;
+    bottom: 80px;
+    /* Above the orb */
+    right: 0;
+    width: 220px;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--glow-color);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: cardSlideIn 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: auto;
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.cat-theory {
+    border-left-color: #0088ff;
+}
+
+.cat-mixing {
+    border-left-color: #ffaa00;
+}
+
+.cat-safety {
+    border-left-color: #ff0044;
+}
+
+.cat-vibe {
+    border-left-color: #00ff88;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-body {
+    font-size: 12px;
+    color: #f0f0f4;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fix-btn {
+    background: linear-gradient(90deg, var(--glow-color) 0%, rgba(255,255,255,0.2) 100%);
+    background-color: var(--glow-color);
+    background-blend-mode: overlay;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 10px var(--glow-color);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.fix-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    filter: brightness(1.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6), 0 0 15px var(--glow-color);
+}
+
+.fix-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* Holographic Stats */
+.kropelka-stats-holo {
+    position: absolute;
+    right: 80px;
+    bottom: -10px; /* Aligned better relative to the orb */
+    width: 140px;
+    background: linear-gradient(135deg, rgba(7, 9, 15, 0.85) 0%, rgba(15, 20, 30, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    border-right: 3px solid var(--kropelka-vibe);
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 230, 118, 0.15);
+    border-radius: 6px 0 6px 6px;
+    animation: holoReveal 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: right bottom;
+}
+
+@keyframes holoReveal {
+    0% { transform: scale(0.8) skewX(20deg); opacity: 0; }
+    100% { transform: scale(1) skewX(0deg); opacity: 1; }
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--kropelka-vibe);
+}
+
+.bar {
+    width: 60px;
+    height: 4px;
+    background: rgba(0, 255, 136, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar>div {
+    height: 100%;
+    background: var(--kropelka-vibe);
+    box-shadow: 0 0 5px var(--kropelka-vibe);
+    transition: width 0.3s ease;
+}

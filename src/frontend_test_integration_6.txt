@@ -1,0 +1,75 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/tests/Integration.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+[90mstdout[2m | src/tests/Integration.test.tsx[2m > [22m[2mPlayback Integration[2m > [22m[2msyncs playback state between Transport and Timeline
+[22m[39mÔÅ©´©Å Paused
+
+ [31mÔØ»[39m src/tests/Integration.test.tsx [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 276[2mms[22m[39m
+     [32mÔ£ô[39m syncs playback state between Transport and Timeline[32m 239[2mms[22m[39m
+     [32mÔ£ô[39m handles track muting across components[32m 17[2mms[22m[39m
+[31m     [31m├ù[31m simulates a full persistence roundtrip[39m[32m 19[2mms[22m[39m
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (:String) [], RemoteExce  
+  ption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[
+41m Failed Tests 1 [49m[22m[31mÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/tests/Integration.test.tsx[2m > 
+[22mPlayback Integration[2m > 
+[22msimulates a full persistence 
+roundtrip
+[31m[1mAssertionError[22m: 
+expected false to be true // 
+Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2mÔØ»[22m src/tests/Integrat
+ion.test.tsx:[2m203:52[22m[39m
+    [90m201| [39m            fireEv
+ent[33m.[39m[34mclick[39m(muteBtn
+)[33m;[39m
+    [90m202| [39m        
+})[33m;[39m
+    [90m203| [39m        [34mexpec
+t[39m(simulator[33m.[39mstate[33m
+.[39mtracks[[34m0[39m][33m.[39mi
+s_muted)[33m.[39m[34mtoBe[39m([3
+5mtrue[39m)[33m;[39m
+    [90m   | [39m                  
+                                 
+[31m^[39m
+    [90m204| [39m
+    [90m205| [39m        [90m// 
+2. Save Project[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[1/1]ÔÄ»[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 11:53:40
+[2m   Duration [22m 1.27s[2m (transform 148ms, setup 86ms, import 249ms, tests 276ms, environment 537ms)[22m
+

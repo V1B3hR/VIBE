@@ -1,0 +1,168 @@
+{
+  "scales": [
+    {
+      "name": "Major",
+      "intervals": [
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "vibe": "Happy, bright, uplifting"
+    },
+    {
+      "name": "Minor",
+      "intervals": [
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "vibe": "Sad, emotional, serious"
+    },
+    {
+      "name": "Dorian",
+      "intervals": [
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "vibe": "Jazzy, cool, sophisticated"
+    },
+    {
+      "name": "Phrygian",
+      "intervals": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "vibe": "Exotic, Spanish, tense"
+    },
+    {
+      "name": "Lydian",
+      "intervals": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "vibe": "Dreamy, floaty, sci-fi"
+    },
+    {
+      "name": "Mixolydian",
+      "intervals": [
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "vibe": "Bluesy, funky, rock"
+    },
+    {
+      "name": "Locrian",
+      "intervals": [
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "vibe": "Dark, unstable, dissonant"
+    }
+  ],
+  "chord_progressions": [
+    {
+      "name": "Pop Anthem",
+      "degrees": [
+        "I",
+        "V",
+        "vi",
+        "IV"
+      ],
+      "vibe": "Catchy, energetic"
+    },
+    {
+      "name": "Sad Ballad",
+      "degrees": [
+        "vi",
+        "IV",
+        "I",
+        "V"
+      ],
+      "vibe": "Emotional, longing"
+    },
+    {
+      "name": "Jazz Standard",
+      "degrees": [
+        "ii",
+        "V",
+        "I",
+        "vi"
+      ],
+      "vibe": "Smooth, classic"
+    },
+    {
+      "name": "Epic Hero",
+      "degrees": [
+        "vi",
+        "VII",
+        "i"
+      ],
+      "vibe": "Tense, cinematic"
+    },
+    {
+      "name": "Neo-Soul Lo-Fi",
+      "degrees": [
+        "ii7",
+        "V7",
+        "Imaj7",
+        "VI"
+      ],
+      "vibe": "Chill, jazzy, nostalgic"
+    },
+    {
+      "name": "R&B Slow Jam",
+      "degrees": [
+        "IVmaj7",
+        "iii7",
+        "ii7",
+        "V7"
+      ],
+      "vibe": "Romantic, smooth"
+    }
+  ],
+  "modulation_tips": [
+    {
+      "from": "Major",
+      "to": "Relative Minor",
+      "tip": "Smooth transition. Keep the same notes, just change the focus to the 6th degree."
+    },
+    {
+      "from": "Major",
+      "to": "Parallel Minor",
+      "tip": "Dramatic shift! Keep the root note but flatten the 3rd, 6th, and 7th."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+    Checking vibe v0.1.0 (C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri)
+error: cannot find attribute `serde` in this scope
+   --> src\engine\dropel.rs:134:7
+    |
+134 |     #[serde(skip)]
+    |       ^^^^^
+    |
+    = note: `serde` is an attribute that can be used by the derive macros `Deserialize`, `Deserialize_repr` and `Serialize`, you might be missing a `derive` attribute
+    = note: `serde` is in scope, but it is a crate, not an attribute
+
+error: cannot find attribute `serde` in this scope
+   --> src\engine\dropel_brain.rs:135:7
+    |
+135 |     #[serde(skip)]
+    |       ^^^^^
+    |
+    = note: `serde` is an attribute that can be used by the derive macros `Deserialize`, `Deserialize_repr` and `Serialize`, you might be missing a `derive` attribute
+    = note: `serde` is in scope, but it is a crate, not an attribute
+
+warning: unused import: `error`
+ --> src\engine\neural_forest.rs:1:11
+  |
+1 | use log::{error, info};
+  |           ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src\engine\neural_forest.rs:5:5
+  |
+5 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `tokio::sync::Mutex`
+ --> src\engine\neural_forest.rs:8:5
+  |
+8 | use tokio::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^^^
+
+error[E0505]: cannot move out of `audio_engine` because it is borrowed
+   --> src\commands\dropel.rs:66:14
+    |
+  9 |     let audio_engine = state.audio_engine.lock().map_err(|e| e.to_string())?;
+    |         ------------ binding `audio_engine` declared here
+...
+ 12 |     let tracks_guard = audio_engine.tracks.lock().map_err(|e| e.to_string())?;
+    |                        ------------ borrow of `audio_engine` occurs here
+...
+ 66 |         drop(audio_engine);
+    |              ^^^^^^^^^^^^ move out of `audio_engine` occurs here
+...
+103 | }
+    | - borrow might be used here, when `tracks_guard` is dropped and runs the `Drop` code for type `std::sync::MutexGuard`
+
+warning: variable does not need to be mutable
+  --> src\engine\neural_forest.rs:38:13
+   |
+38 |         let mut child = Command::new(&self.python_path)
+   |             ----^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `tracks_guard`
+  --> src\commands\dropel.rs:12:9
+   |
+12 |     let tracks_guard = audio_engine.tracks.lock().map_err(|e| e.to_string())?;
+   |         ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_tracks_guard`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `playhead`
+  --> src\commands\dropel.rs:14:9
+   |
+14 |     let playhead = audio_engine
+   |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_playhead`
+
+warning: unused variable: `sample_rate`
+  --> src\commands\dropel.rs:18:9
+   |
+18 |     let sample_rate = if let Ok(config_guard) = audio_engine.current_config.lock() {
+   |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_sample_rate`
+
+warning: variable `dummy_analysis` is assigned to, but never used
+  --> src\commands\dropel.rs:29:9
+   |
+29 |     let mut dummy_analysis = crate::engine::dropel::MixAnalysis {
+   |         ^^^^^^^^^^^^^^^^^^
+   |
+   = note: consider using `_dummy_analysis` instead
+
+warning: value assigned to `dummy_analysis` is never read
+  --> src\commands\dropel.rs:39:9
+   |
+39 |         dummy_analysis.rms_level = 0.6;
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: value assigned to `dummy_analysis` is never read
+  --> src\commands\dropel.rs:40:9
+   |
+40 |         dummy_analysis.spectral_balance = 0.7;
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut internal_tracks, mut internal_busses, mut preview_voice_opt, mut fx_opt, mut limiter_opt, mut local_master_buffer) = {
+     |                                 ----^^^^^^^^^^^^^^^
+     |                                 |
+     |                                 help: remove this `mut`
+
+warning: unused variable: `bridge_arc`
+   --> src\engine\dropel_brain.rs:271:21
+    |
+271 |         if let Some(bridge_arc) = bridge {
+    |                     ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_bridge_arc`
+
+For more information about this error, try `rustc --explain E0505`.
+warning: `vibe` (lib) generated 12 warnings
+error: could not compile `vibe` (lib) due to 3 previous errors; 12 warnings emitted

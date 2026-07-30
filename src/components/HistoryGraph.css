@@ -1,0 +1,155 @@
+.history-graph {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 320px;
+    max-height: 600px;
+    background: rgb(20, 20, 30, 0.95);
+    border: 1px solid rgb(100, 100, 255, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgb(0, 0, 0, 0.4);
+}
+
+.history-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.btn-history {
+    flex: 1;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-history:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(102, 126, 234, 0.4);
+}
+
+.history-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 2px solid rgb(100, 100, 255, 0.3);
+}
+
+.history-node {
+    position: relative;
+    padding: 12px;
+    background: rgb(40, 40, 60, 0.6);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.history-node:hover {
+    background: rgb(60, 60, 90, 0.8);
+    border-color: rgb(100, 100, 255, 0.5);
+}
+
+.history-node.current {
+    background: linear-gradient(135deg, rgb(102, 126, 234, 0.3), rgb(118, 75, 162, 0.3));
+    border-color: #667eea;
+    box-shadow: 0 0 20px rgb(102, 126, 234, 0.3);
+}
+
+.history-node.branch-head {
+    border-left: 3px solid #f59e0b;
+}
+
+.node-indicator {
+    position: absolute;
+    left: -31px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #667eea;
+    border-radius: 50%;
+    border: 2px solid rgb(20, 20, 30, 0.95);
+}
+
+.history-node.current .node-indicator {
+    background: #10b981;
+    box-shadow: 0 0 12px #10b981;
+}
+
+.node-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.node-action {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.node-id-sub {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #718096;
+}
+
+.node-badge {
+    padding: 2px 8px;
+    background: #10b981;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.node-badge.branch {
+    background: #f59e0b;
+}
+
+.branch-list {
+    padding-top: 16px;
+    border-top: 1px solid rgb(100, 100, 255, 0.2);
+}
+
+.branch-list h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a0aec0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.branch-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: rgb(40, 40, 60, 0.4);
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+
+.branch-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f59e0b;
+}
+
+.branch-commit {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #718096;
+}

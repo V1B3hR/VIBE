@@ -1,0 +1,133 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:30
++ ... CK=8388608; cargo test --lib 
+engine_tests::tests -- --nocapture --tes ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (   Compiling vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+warning: unused import: `std::time::Instant`
+  --> src\engine\audio.rs:26:5
+   |
+26 | use std::time::Instant;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part 
+of `#[warn(unused)]`) on by default
+
+warning: unused import: `StreamTrait`
+  --> src\engine\audio.rs:16:44
+   |
+16 | use cpal::traits::{DeviceTrait, 
+HostTrait, StreamTrait};
+   |                                        
+    ^^^^^^^^^^^
+
+warning: fields `master_buffer`, 
+`master_l`, `master_r`, and `pdc_dirty` are 
+never read
+  --> src\engine\audio_types.rs:19:9
+   |
+14 | pub struct DspState {
+   |            -------- fields in this 
+struct
+...
+19 |     pub master_buffer: AudioBuffer,
+   |         ^^^^^^^^^^^^^
+20 |     pub master_l: Vec<f64>,
+   |         ^^^^^^^^
+21 |     pub master_r: Vec<f64>,
+   |         ^^^^^^^^
+...
+24 |     pub pdc_dirty: bool,
+   |         ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: `vibe` (lib test) generated 3 
+warnings (run `cargo fix --lib -p vibe 
+--tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + 
+debuginfo] target(s) in 5.19s
+     Running unittests src\lib.rs (target\de
+bug\deps\vibe_lib-535b23413f1cd2f5.exe)
+
+running 16 tests
+test engine::engine_tests::tests::test_analyzer_data_retrieval ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_automation_recording_flow ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Recording ON
+VIBE: AudioEngine::stop() called
+ok
+test engine::engine_tests::tests::test_bpm_changes ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_cpu_load_reporting ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_engine_initialization_defaults ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_engine_transport_commands ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AudioEngine::stop() called
+ok
+test engine::engine_tests::tests::test_history_traversal_smoke ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_input_alias_creation ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_library_interaction ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_metronome_toggle ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_midi_binding_synapse ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_midi_note_crud_smoke ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_playhead_seek ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AudioEngine::set_playhead(96000) called
+ok
+test engine::engine_tests::tests::test_track_management ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_track_mute_solo_mutual ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_track_parameter_batch_set ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 53 filtered out; finished in 6.23s
+

@@ -1,0 +1,102 @@
+.preset-browser {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: rgb(15, 15, 15, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    height: 100%;
+}
+
+.preset-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.5rem;
+}
+
+.browser-title {
+    font-family: Outfit, sans-serif;
+    color: var(--accent);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.save-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.preset-input {
+    flex-grow: 1;
+    background: #000;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.preset-input:focus {
+    border-color: var(--accent);
+}
+
+.save-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.save-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.preset-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.preset-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    background: rgb(255, 255, 255, 0.02);
+}
+
+.preset-item:hover {
+    background: rgb(0, 255, 237, 0.1);
+}
+
+.preset-name {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.preset-ext {
+    color: #555;
+    font-size: 0.7rem;
+}
+
+.no-presets {
+    color: #444;
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 0.8rem;
+}

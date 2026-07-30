@@ -1,0 +1,119 @@
+    Checking vibe v0.1.0 (C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri)
+error: cannot find attribute `serde` in this scope
+   --> src\engine\dropel.rs:134:7
+    |
+134 |     #[serde(skip)]
+    |       ^^^^^
+    |
+    = note: `serde` is an attribute that can be used by the derive macros `Deserialize`, `Deserialize_repr` and `Serialize`, you might be missing a `derive` attribute
+    = note: `serde` is in scope, but it is a crate, not an attribute
+
+warning: unused import: `error`
+ --> src\engine\neural_forest.rs:1:11
+  |
+1 | use log::{error, info};
+  |           ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src\engine\neural_forest.rs:5:5
+  |
+5 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `tokio::sync::Mutex`
+ --> src\engine\neural_forest.rs:8:5
+  |
+8 | use tokio::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^^^
+
+error[E0609]: no field `dropel` on type `std::sync::MutexGuard<'_, AudioEngine>`
+  --> src\commands\dropel.rs:44:55
+   |
+44 |     let bridge = if let Ok(mut dropel) = audio_engine.dropel.lock() {
+   |                                                       ^^^^^^ unknown field
+   |
+   = note: available fields are: `tracks`, `playhead`, `io_manager`, `audio_graph`, `buffer_pool` ... and 17 others
+
+error[E0282]: type annotations needed
+  --> src\commands\dropel.rs:68:26
+   |
+68 |         let mut bridge = bridge_arc.lock().await;
+   |                          ^^^^^^^^^^ cannot infer type
+
+error[E0282]: type annotations needed
+  --> src\commands\dropel.rs:68:13
+   |
+68 |         let mut bridge = bridge_arc.lock().await;
+   |             ^^^^^^^^^^
+69 |         match bridge
+   |               ------ type must be known at this point
+   |
+help: consider giving `bridge` an explicit type
+   |
+68 |         let mut bridge: /* Type */ = bridge_arc.lock().await;
+   |                       ++++++++++++
+
+error[E0599]: no method named `detect_scale` found for struct `std::sync::MutexGuard<'_, DropelBrain>` in the current scope
+   --> src\commands\dropel.rs:132:21
+    |
+132 |     let key = brain.detect_scale(&all_notes);
+    |                     ^^^^^^^^^^^^ method not found in `std::sync::MutexGuard<'_, DropelBrain>`
+
+error[E0599]: no method named `learn_interaction` found for struct `std::sync::MutexGuard<'_, DropelBrain>` in the current scope
+   --> src\commands\dropel.rs:179:15
+    |
+179 |         brain.learn_interaction(&action_type, true);
+    |               ^^^^^^^^^^^^^^^^^ method not found in `std::sync::MutexGuard<'_, DropelBrain>`
+
+error[E0599]: no method named `learn_interaction` found for struct `std::sync::MutexGuard<'_, DropelBrain>` in the current scope
+   --> src\commands\dropel.rs:262:15
+    |
+262 |         brain.learn_interaction(&action_type, false);
+    |               ^^^^^^^^^^^^^^^^^ method not found in `std::sync::MutexGuard<'_, DropelBrain>`
+
+warning: variable does not need to be mutable
+  --> src\engine\neural_forest.rs:38:13
+   |
+38 |         let mut child = Command::new(&self.python_path)
+   |             ----^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+error[E0599]: no method named `load_knowledge_base` found for struct `std::sync::MutexGuard<'_, DropelBrain>` in the current scope
+   --> src\engine\audio.rs:225:36
+    |
+225 |              if let Err(e) = brain.load_knowledge_base() {
+    |                                    ^^^^^^^^^^^^^^^^^^^ method not found in `std::sync::MutexGuard<'_, DropelBrain>`
+
+error[E0609]: no field `dropel` on type `AudioEngine`
+  --> src\lib.rs:38:26
+   |
+38 |             audio_engine.dropel.lock().unwrap().attach_brain(bridge);
+   |                          ^^^^^^ unknown field
+   |
+   = note: available fields are: `tracks`, `playhead`, `io_manager`, `audio_graph`, `buffer_pool` ... and 17 others
+
+warning: variable does not need to be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut internal_tracks, mut internal_busses, mut preview_voice_opt, mut fx_opt, mut limiter_opt, mut local_master_buffer) = {
+     |                                 ----^^^^^^^^^^^^^^^
+     |                                 |
+     |                                 help: remove this `mut`
+
+warning: unused variable: `bridge_arc`
+   --> src\engine\dropel_brain.rs:188:21
+    |
+188 |         if let Some(bridge_arc) = bridge {
+    |                     ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_bridge_arc`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0282, E0599, E0609.
+For more information about an error, try `rustc --explain E0282`.
+warning: `vibe` (lib) generated 6 warnings
+error: could not compile `vibe` (lib) due to 9 previous errors; 6 warnings emitted

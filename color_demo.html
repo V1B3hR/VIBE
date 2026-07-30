@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBE - Nowa Paleta Kolorów</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2a2a2e;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(245, 169, 98, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(77, 208, 225, 0.08) 0%, transparent 50%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            background: linear-gradient(135deg, #F5A962 0%, #D4E157 50%, #4DD0E1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(77, 208, 225, 0.3));
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #B8C5D0;
+            font-size: 1.2rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .color-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(77, 208, 225, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(77, 208, 225, 0.2);
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            color: #B8C5D0;
+            font-size: 0.9rem;
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(77, 208, 225, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-section h2 {
+            font-family: 'Outfit', sans-serif;
+            color: #4DD0E1;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .button-demo {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4DD0E1 0%, #26A69A 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(77, 208, 225, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(77, 208, 225, 0.7);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #F5A962 0%, #D4E157 100%);
+            color: #1a1a1d;
+            box-shadow: 0 4px 20px rgba(245, 169, 98, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(245, 169, 98, 0.6);
+        }
+
+        .audio-clip-demo {
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(180deg, #4DD0E1 0%, #26A69A 100%);
+            border-radius: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(77, 208, 225, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .info-text {
+            color: #B8C5D0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: #4DD0E1;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VIBE</h1>
+        <p class="subtitle">Nowa Paleta Kolorów</p>
+
+        <div class="color-palette">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #2a2a2e;"></div>
+                <div class="color-name">Tło Główne</div>
+                <div class="color-hex">#2A2A2E</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #F5A962; box-shadow: 0 0 20px rgba(245, 169, 98, 0.5);"></div>
+                <div class="color-name">Pomarańczowy</div>
+                <div class="color-hex">#F5A962</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #D4E157; box-shadow: 0 0 20px rgba(212, 225, 87, 0.5);"></div>
+                <div class="color-name">Żółto-Zielony</div>
+                <div class="color-hex">#D4E157</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #4DD0E1; box-shadow: 0 0 20px rgba(77, 208, 225, 0.5);"></div>
+                <div class="color-name">Cyjan (Główny)</div>
+                <div class="color-hex">#4DD0E1</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #26A69A; box-shadow: 0 0 20px rgba(38, 166, 154, 0.5);"></div>
+                <div class="color-name">Teal</div>
+                <div class="color-hex">#26A69A</div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Przyciski i Elementy Interaktywne</h2>
+            <p class="info-text">
+                Nowe kolory VIBE zostały zaimplementowane w całym interfejsie. 
+                <span class="highlight">Gradient od pomarańczowego przez żółto-zielony do cyjanu</span> 
+                tworzy charakterystyczny wygląd aplikacji.
+            </p>
+            <div class="button-demo">
+                <button class="btn btn-primary">Play ▶</button>
+                <button class="btn btn-secondary">Import Audio</button>
+                <button class="btn btn-primary">Record ●</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Audio Clip - Nowy Wygląd</h2>
+            <p class="info-text">
+                Klipy audio w Timeline używają teraz gradientu <span class="highlight">cyjan → teal</span> 
+                z subtelnym świeceniem dla lepszej widoczności.
+            </p>
+            <div class="audio-clip-demo">
+                🎵 Audio Clip Example
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Zaimplementowane Zmiany</h2>
+            <p class="info-text">✅ Ciemno-szare tło (#2A2A2E) dla maksymalnej czytelności</p>
+            <p class="info-text">✅ Gradient VIBE (pomarańczowy → żółto-zielony → cyjan) w logo i tytule</p>
+            <p class="info-text">✅ Cyjan (#4DD0E1) jako główny kolor akcentu</p>
+            <p class="info-text">✅ Pomarańczowy (#F5A962) jako kolor drugorzędny</p>
+            <p class="info-text">✅ Wysokokontrast biały tekst (#FFFFFF) dla czytelności</p>
+            <p class="info-text">✅ Subtelne gradienty tła z pomarańczowym i cyjanem</p>
+            <p class="info-text">✅ Zaktualizowane wszystkie komponenty (Timeline, Mixer, Transport, etc.)</p>
+        </div>
+    </div>
+</body>
+</html>

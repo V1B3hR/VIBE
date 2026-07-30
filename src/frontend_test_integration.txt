@@ -1,0 +1,193 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/tests/Integration.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+node.exe : [90mstderr[2m | 
+src/tests/Integration.test.tsx[2m > 
+[22m[2mPlayback Integration[2m > 
+[22m[2msyncs playback state 
+between Transport and Timeline
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: ([90mstderr[2m...rt an  
+  d Timeline:String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+[22m[39mAn error occurred in the 
+<Transport> component.
+
+Consider adding an error boundary to 
+your tree to customize error 
+handling behavior.
+Visit https://react.dev/link/error-bo
+undaries to learn more about error 
+boundaries.
+
+
+ [31mÔØ»[39m src/tests/Integration.test.tsx [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1063[2mms[22m[39m
+[31m     [31m├ù[31m syncs playback state between Transport and Timeline[39m[33m 1039[2mms[22m[39m
+     [32mÔ£ô[39m handles track muting and reflects in engine state[32m 24[2mms[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[
+41m Failed Tests 1 [49m[22m[31mÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/tests/Integration.test.tsx[2m > 
+[22mPlayback Integration[2m > 
+[22msyncs playback state between 
+Transport and Timeline
+[31m[1mTestingLibraryElementError[
+22m: Unable to find an element by: 
+[data-testid="transport-play-btn"]
+
+Ignored nodes: comments, script, 
+style
+[36m<body>[31m
+  [36m<div />[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, 
+style
+[36m<body>[31m
+  [36m<div />[31m
+[36m</body>[31m[39m
+[90m [2mÔØ»[22m waitForWrapper nod
+e_modules/@testing-library/dom/dist/w
+ait-for.js:[2m163:27[22m[39m
+[90m [2mÔØ»[22m node_modules/@test
+ing-library/dom/dist/query-helpers.js
+:[2m86:33[22m[39m
+[36m [2mÔØ»[22m src/tests/Integrat
+ion.test.tsx:[2m121:38[22m[39m
+    [90m119| [39m
+    [90m120| [39m        [90m// 
+1. Initial State Check[39m
+    [90m121| [39m        const 
+playBtn = await screen.findByTestId('
+transport-play-btn'ÔÇª
+    [90m   | [39m                  
+                   [31m^[39m
+    [90m122| [39m        [34mexpec
+t[39m(playBtn)[33m.[39mnot[33m.[
+39m[34mtoHaveClass[39m([32m'active
+'[39m)[33m;[39m
+    [90m123| [39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[1/1]ÔÄ»[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m
+ Unhandled Errors [49m[22m[31mÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1m
+Vitest caught 1 unhandled error 
+during the test run.
+This might cause false positive 
+tests. Resolve unhandled errors to 
+make sure your tests are not 
+affected.[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Uncaught Exception 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1mTypeError[22m: Cannot read 
+properties of null (reading 
+'toFixed')[39m
+[36m [2mÔØ»[22m Transport src/comp
+onents/Transport.tsx:[2m194:92[22m
+[39m
+    [90m192| [39m                  
+      [33m/[39m[33m>[39m
+    [90m193| [39m                  
+  [33m<[39m[33m/[39m[33mdiv[39m
+[33m>[39m
+    [90m194| [39m                  
+  <span 
+className="display-value-small" 
+data-testid=ÔÇª
+    [90m   | [39m                  
+                                     
+                                    
+[31m^[39m
+    [90m195| [39m                [
+33m<[39m[33m/[39m[33mdiv[39m[33
+m>[39m
+    [90m196| [39m            [33m<
+[39m[33m/[39m[33mdiv[39m[33m>[
+39m
+[90m [2mÔØ»[22m 
+Object.react_stack_bottom_frame node_
+modules/react-dom/cjs/react-dom-clien
+t.development.js:[2m25904:20[22m[3
+9m
+[90m [2mÔØ»[22m renderWithHooks no
+de_modules/react-dom/cjs/react-dom-cl
+ient.development.js:[2m7662:22[22m
+[39m
+[90m [2mÔØ»[22m 
+updateFunctionComponent node_modules/
+react-dom/cjs/react-dom-client.develo
+pment.js:[2m10166:19[22m[39m
+[90m [2mÔØ»[22m beginWork node_mod
+ules/react-dom/cjs/react-dom-client.d
+evelopment.js:[2m11778:18[22m[39m
+[90m [2mÔØ»[22m runWithFiberInDEV 
+node_modules/react-dom/cjs/react-dom-
+client.development.js:[2m874:13[22m
+[39m
+[90m [2mÔØ»[22m performUnitOfWork 
+node_modules/react-dom/cjs/react-dom-
+client.development.js:[2m17641:22[2
+2m[39m
+[90m [2mÔØ»[22m workLoopSync node_
+modules/react-dom/cjs/react-dom-clien
+t.development.js:[2m17469:41[22m[3
+9m
+[90m [2mÔØ»[22m renderRootSync nod
+e_modules/react-dom/cjs/react-dom-cli
+ent.development.js:[2m17450:11[22m
+[39m
+[90m [2mÔØ»[22m performWorkOnRoot 
+node_modules/react-dom/cjs/react-dom-
+client.development.js:[2m16583:35[2
+2m[39m
+
+[31mThis error originated in "[1msr
+c/tests/Integration.test.tsx[22m" 
+test file. It doesn't mean the error 
+was thrown inside the file itself, 
+but while it was running.[39m
+[31mThe latest test that might've 
+caused the error is "[1msyncs 
+playback state between Transport and 
+Timeline[22m". It might mean one of 
+the following:
+- The error was thrown, while Vitest 
+was running this test.
+- If the error occurred after the 
+test had been completed, this was 
+the last documented test before it 
+was thrown.[39m
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 11:51:02
+[2m   Duration [22m 2.06s[2m (transform 138ms, setup 86ms, import 242ms, tests 1.06s, environment 534ms)[22m
+

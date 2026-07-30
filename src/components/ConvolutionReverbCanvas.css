@@ -1,0 +1,105 @@
+.reverb-editor-vibe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    height: 100%;
+}
+
+.reverb-viz-container {
+    height: 200px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.reverb-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.reverb-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.knob-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.knob-unit label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.knob-unit input[type="range"] {
+    appearance: none;
+    width: 100px;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+}
+
+.knob-unit input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--reverb-accent, #00ffcc);
+    box-shadow: 0 0 10px var(--reverb-accent, #00ffcc);
+    cursor: pointer;
+}
+
+.knob-unit .val-display {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--reverb-accent, #00ffcc);
+    text-shadow: 0 0 5px var(--reverb-accent, #00ffcc);
+}
+
+.preset-strip {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.btn-ir-preset {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #eee;
+    font-size: 0.7rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.btn-ir-preset:hover {
+    background: rgba(0, 255, 204, 0.1);
+    border-color: #0fc;
+}
+
+.btn-ir-preset.active {
+    background: rgba(0, 255, 204, 0.2);
+    border-color: #0fc;
+    color: #0fc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}

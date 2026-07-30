@@ -1,0 +1,628 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Us
+ers\brigh\.gemini\antigravity\scratch\V
+IBE\src-tauri)
+At line:1 char:1
++ cargo check --bin vibe 2>&1 | 
+Out-File -Encoding utf8 
+check_output_fi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpeci 
+   fied: (    Checking vi...VIBE\src-  
+  tauri):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCo 
+   mmandError
+ 
+warning: unused import: 
+`MAX_BUFFER_SIZE`
+ --> src\engine\audio.rs:6:81
+  |
+6 |     MidiCCEvent, MidiClip, 
+MidiNote, QuantizeDivision, Scale, 
+Track, TrackInfo, MAX_BUFFER_SIZE,
+  |                                    
+                                       
+      ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused import: 
+`petgraph::Incoming`
+  --> src\engine\audio.rs:19:5
+   |
+19 | use petgraph::Incoming;
+   |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: 
+`petgraph::prelude`
+  --> src\engine\audio.rs:18:5
+   |
+18 | use petgraph::prelude::*;
+   |     ^^^^^^^^^^^^^^^^^
+
+warning: variable does not need to be 
+mutable
+   --> src\engine\audio.rs:603:13
+    |
+603 |         let mut 
+initial_internal_fx = engine_fx_managem
+ent.lock().unwrap().clone_box();
+    |             
+----^^^^^^^^^^^^^^^^^^^
+    |             |
+    |             help: remove this 
+`mut`
+    |
+    = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: variable does not need to be 
+mutable
+   --> src\engine\audio.rs:604:13
+    |
+604 |         let mut 
+initial_master_limiter = master_limiter
+_management.lock().unwrap().clone_box()
+;
+    |             
+----^^^^^^^^^^^^^^^^^^^^^^
+    |             |
+    |             help: remove this 
+`mut`
+
+warning: variable does not need to be 
+mutable
+   --> src\engine\audio.rs:626:14
+    |
+626 |         let (mut rec_prod, mut 
+rec_cons) = 
+rtrb::RingBuffer::<f32>::new(882000);
+    |              ----^^^^^^^^
+    |              |
+    |              help: remove this 
+`mut`
+
+warning: unused variable: `cmd`
+   --> src\engine\audio.rs:685:35
+    |
+685 |                      while let 
+Ok(cmd) = rx.recv() { 
+    |                                  
+ ^^^ help: if this is intentional, 
+prefix it with an underscore: `_cmd`
+    |
+    = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: 
+`output_channels`
+   --> src\engine\audio.rs:702:17
+    |
+702 |             let output_channels 
+= config.channels as usize;
+    |                 ^^^^^^^^^^^^^^^ 
+help: if this is intentional, prefix 
+it with an underscore: 
+`_output_channels`
+
+warning: variable `active_stream` is 
+assigned to, but never used
+   --> src\engine\audio.rs:705:17
+    |
+705 |             let mut 
+active_stream: Option<cpal::Stream> = 
+None;
+    |                 ^^^^^^^^^^^^^^^^^
+    |
+    = note: consider using 
+`_active_stream` instead
+
+warning: variable 
+`active_input_stream` is assigned to, 
+but never used
+   --> src\engine\audio.rs:706:17
+    |
+706 |             let mut 
+active_input_stream: 
+Option<cpal::Stream> = None;
+    |                 
+^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: consider using 
+`_active_input_stream` instead
+
+warning: value assigned to 
+`active_stream` is never read
+   --> src\engine\audio.rs:719:21
+    |
+719 |                     
+active_stream = Some(s);
+    |                     ^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+    = note: 
+`#[warn(unused_assignments)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: value assigned to 
+`active_stream` is never read
+   --> src\engine\audio.rs:748:37
+    |
+748 | ...                   
+active_stream = Some(s);
+    |                       
+^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`active_stream` is never read
+   --> src\engine\audio.rs:733:22
+    |
+733 |                      
+active_stream = None;
+    |                      
+^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`active_input_stream` is never read
+   --> src\engine\audio.rs:720:21
+    |
+720 |                     
+active_input_stream = is;
+    |                     
+^^^^^^^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`active_input_stream` is never read
+   --> src\engine\audio.rs:749:37
+    |
+749 | ...                   
+active_input_stream = is;
+    |                       
+^^^^^^^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`active_input_stream` is never read
+   --> src\engine\audio.rs:734:22
+    |
+734 |                      
+active_input_stream = None;
+    |                      
+^^^^^^^^^^^^^^^^^^^
+    |
+    = help: maybe it is overwritten 
+before being read?
+
+warning: unused variable: `stream_t`
+   --> src\engine\audio.rs:652:13
+    |
+652 |         let stream_t = 
+stream_arc.clone();
+    |             ^^^^^^^^ help: if 
+this is intentional, prefix it with an 
+underscore: `_stream_t`
+
+warning: unused variable: 
+`input_stream_t`
+   --> src\engine\audio.rs:653:13
+    |
+653 |         let input_stream_t = 
+input_stream_arc.clone();
+    |             ^^^^^^^^^^^^^^ help: 
+if this is intentional, prefix it with 
+an underscore: `_input_stream_t`
+
+warning: unused variable: `ag_t`
+   --> src\engine\audio.rs:669:13
+    |
+669 |         let ag_t = 
+audio_graph_thread.clone();
+    |             ^^^^ help: if this 
+is intentional, prefix it with an 
+underscore: `_ag_t`
+
+warning: unused variable: `bp_t`
+   --> src\engine\audio.rs:670:13
+    |
+670 |         let bp_t = 
+buffer_pool_thread.clone();
+    |             ^^^^ help: if this 
+is intentional, prefix it with an 
+underscore: `_bp_t`
+
+warning: unused variable: `go_t`
+   --> src\engine\audio.rs:671:13
+    |
+671 |         let go_t = 
+graph_order_thread.clone();
+    |             ^^^^ help: if this 
+is intentional, prefix it with an 
+underscore: `_go_t`
+
+warning: unused variable: `gd_t`
+   --> src\engine\audio.rs:672:13
+    |
+672 |         let gd_t = 
+graph_dirty_thread.clone();
+    |             ^^^^ help: if this 
+is intentional, prefix it with an 
+underscore: `_gd_t`
+
+warning: unused variable: 
+`head_limit_samples_source`
+    --> src\engine\audio.rs:4525:9
+     |
+4525 |     let 
+head_limit_samples_source = 
+(source_sample_rate * 0.75) as usize;
+     |         
+^^^^^^^^^^^^^^^^^^^^^^^^^ help: if 
+this is intentional, prefix it with an 
+underscore: 
+`_head_limit_samples_source`
+
+warning: value assigned to 
+`total_source_samples` is never read
+    --> src\engine\audio.rs:4526:36
+     |
+4526 |     let mut 
+total_source_samples = 0u64;
+     |                                 
+   ^^^^
+     |
+     = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`total_source_samples` is never read
+    --> src\engine\audio.rs:4532:9
+     |
+4532 |         total_source_samples += 
+packet.dur();
+     |         
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: maybe it is overwritten 
+before being read?
+
+warning: value assigned to 
+`is_streaming` is never read
+    --> src\engine\audio.rs:4527:28
+     |
+4527 |     let mut is_streaming = 
+false;
+     |                            ^^^^^
+     |
+     = help: maybe it is overwritten 
+before being read?
+
+error[E0597]: `guard` does not live 
+long enough
+    --> src\engine\audio.rs:5138:45
+     |
+5135 |                      let mut 
+guard = 
+rec_prod_shared.lock().unwrap();
+     |                          
+--------- binding `guard` declared here
+...
+5138 |                      if let 
+Ok(mut chunk) = 
+guard.write_chunk(to_write) {
+     |                                 
+            ^^^^^----------------------
+     |                                 
+            |
+     |                                 
+            borrowed value does not 
+live long enough
+     |                                 
+            a temporary with access to 
+the borrow is created here ...
+...
+5144 |                 }
+     |                 -
+     |                 |
+     |                 `guard` dropped 
+here while still borrowed
+     |                 ... and the 
+borrow might be used here, when that 
+temporary is dropped and runs the 
+destructor for type 
+`std::result::Result<WriteChunk<'_, 
+f32>, ChunkError>`
+     |
+help: consider adding semicolon after 
+the expression so its temporaries are 
+dropped sooner, before the local 
+variables declared by the block are 
+dropped
+     |
+5143 |                      };
+     |                       +
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5178:41
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+5178 |              let 
+internal_busses = &mut 
+dsp.internal_busses;
+     |                                 
+        ^^^ second mutable borrow 
+occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5179:44
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+5178 |              let 
+internal_busses = &mut 
+dsp.internal_busses;
+5179 |              let 
+internal_pdc_dirty = &mut 
+dsp.pdc_dirty;
+     |                                 
+           ^^^ second mutable borrow 
+occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5180:44
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5180 |              let 
+internal_engine_fx = &mut 
+dsp.internal_engine_fx;
+     |                                 
+           ^^^ second mutable borrow 
+occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5181:49
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5181 |              let 
+internal_master_limiter = &mut 
+dsp.internal_master_limiter;
+     |                                 
+                ^^^ second mutable 
+borrow occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5182:39
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5182 |              let master_buffer 
+= &mut dsp.master_buffer;
+     |                                 
+      ^^^ second mutable borrow occurs 
+here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5183:34
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5183 |              let master_l = 
+&mut dsp.master_l;
+     |                                 
+ ^^^ second mutable borrow occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5184:34
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5184 |              let master_r = 
+&mut dsp.master_r;
+     |                                 
+ ^^^ second mutable borrow occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+error[E0499]: cannot borrow `dsp` as 
+mutable more than once at a time
+    --> src\engine\audio.rs:5185:43
+     |
+5177 |              let 
+internal_tracks = &mut 
+dsp.internal_tracks;
+     |                                 
+        --- first mutable borrow 
+occurs here
+...
+5185 |              let 
+preview_voice_opt = &mut 
+dsp.preview_voice;
+     |                                 
+          ^^^ second mutable borrow 
+occurs here
+...
+5193 |                      
+GraphCommand::AddTrack(t) => { 
+internal_tracks.push(t); 
+*internal_pdc_dirty = true; }
+     |                                 
+                    --------------- 
+first borrow later used here
+
+warning: variable does not need to be 
+mutable
+    --> src\engine\audio.rs:5113:28
+     |
+5113 |     let (mut monitor_prod, mut 
+monitor_cons) = 
+rtrb::RingBuffer::<f32>::new(16384);
+     |                            
+----^^^^^^^^^^^^
+     |                            |
+     |                            
+help: remove this `mut`
+
+warning: unused variable: 
+`preview_voice_opt`
+    --> src\engine\audio.rs:5185:18
+     |
+5185 |              let 
+preview_voice_opt = &mut 
+dsp.preview_voice;
+     |                  
+^^^^^^^^^^^^^^^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_preview_voice_opt`
+
+warning: unused variable: 
+`monitor_cons`
+    --> src\engine\audio.rs:5113:28
+     |
+5113 |     let (mut monitor_prod, mut 
+monitor_cons) = 
+rtrb::RingBuffer::<f32>::new(16384);
+     |                            
+^^^^^^^^^^^^^^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_monitor_cons`
+
+warning: unused variable: `cat_ptr`
+   --> src\engine\vst3_bridge.rs:241:25
+    |
+241 |                     let cat_ptr 
+= info.category.as_ptr() as *const u8;
+    |                         ^^^^^^^ 
+help: if this is intentional, prefix 
+it with an underscore: `_cat_ptr`
+
+warning: unnecessary `unsafe` block
+   --> src\engine\vst3_bridge.rs:480:9
+    |
+480 |         unsafe {
+    |         ^^^^^^ unnecessary 
+`unsafe` block
+    |
+    = note: `#[warn(unused_unsafe)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+Some errors have detailed 
+explanations: E0499, E0597.
+For more information about an error, 
+try `rustc --explain E0499`.
+warning: `vibe` (lib) generated 31 
+warnings
+error: could not compile `vibe` (lib) 
+due to 9 previous errors; 31 warnings 
+emitted

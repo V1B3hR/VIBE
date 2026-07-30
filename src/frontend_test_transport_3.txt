@@ -1,0 +1,177 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/components/Transport.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+ [31mÔØ»[39m src/components/Transport.test.tsx [2m([22m[2m5 tests[22m[2m | [22m[31m5 failed[39m[2m)[22m[33m 25082[2mms[22m[39m
+[31m     [31m├ù[31m renders and fetches initial state[39m[33m 5025[2mms[22m[39m
+[31m     [31m├ù[31m toggles play/pause when Play button clicked[39m[33m 5016[2mms[22m[39m
+[31m     [31m├ù[31m sends stop and reset commands[39m[33m 5013[2mms[22m[39m
+[31m     [31m├ù[31m updates BPM on double click and input[39m[33m 5015[2mms[22m[39m
+[31m     [31m├ù[31m displays CPU load correctly[39m[33m 5012[2mms[22m[39m
+node.exe : 
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Failed Tests 5 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22mrenders 
+and fetches initial state
+[31m[1mError[22m: Test timed out in 
+5000ms.
+If this is a long-running test, pass a 
+timeout value as the last argument or 
+configure it globally with 
+"testTimeout".[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m33:5[22m[39m
+    [90m 31| [39m    })[33m;[39m
+    [90m 32| [39m
+    [90m 33| [39m    
+[34mit[39m([32m'renders and fetches 
+initial state'[39m[33m,[39m 
+[35masync[39m () [33m=>[39m {
+    [90m   | [39m    [31m^[39m
+    [90m 34| [39m        [34mrender[39m(
+[33m<[39m[33mTransport[39m 
+[33m/[39m[33m>[39m)[33m;[39m
+    [90m 35| [39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/5]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22mtoggles 
+play/pause when Play button clicked
+[31m[1mError[22m: Test timed out in 
+5000ms.
+If this is a long-running test, pass a 
+timeout value as the last argument or 
+configure it globally with 
+"testTimeout".[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m45:5[22m[39m
+    [90m 43| [39m    })[33m;[39m
+    [90m 44| [39m
+    [90m 45| [39m    
+[34mit[39m([32m'toggles play/pause when 
+Play button clicked'[39m[33m,[39m 
+[35masync[39m () [33m=>[39m {
+    [90m   | [39m    [31m^[39m
+    [90m 46| [39m        [34mrender[39m(
+[33m<[39m[33mTransport[39m 
+[33m/[39m[33m>[39m)[33m;[39m
+    [90m 47| [39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/5]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22msends 
+stop and reset commands
+[31m[1mError[22m: Test timed out in 
+5000ms.
+If this is a long-running test, pass a 
+timeout value as the last argument or 
+configure it globally with 
+"testTimeout".[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m71:5[22m[39m
+    [90m 69| [39m    })[33m;[39m
+    [90m 70| [39m
+    [90m 71| [39m    
+[34mit[39m([32m'sends stop and reset 
+commands'[39m[33m,[39m [35masync[39m 
+() [33m=>[39m {
+    [90m   | [39m    [31m^[39m
+    [90m 72| [39m        [90m// Mock 
+Date.now to control double click[39m
+    [90m 73| [39m        [35mlet[39m 
+now [33m=[39m [34m1000[39m[33m;[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[3/5]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22mupdates 
+BPM on double click and input
+[31m[1mError[22m: Test timed out in 
+5000ms.
+If this is a long-running test, pass a 
+timeout value as the last argument or 
+configure it globally with 
+"testTimeout".[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m96:5[22m[39m
+    [90m 94| [39m    })[33m;[39m
+    [90m 95| [39m
+    [90m 96| [39m    
+[34mit[39m([32m'updates BPM on double 
+click and input'[39m[33m,[39m 
+[35masync[39m () [33m=>[39m {
+    [90m   | [39m    [31m^[39m
+    [90m 97| [39m        [34mrender[39m(
+[33m<[39m[33mTransport[39m 
+[33m/[39m[33m>[39m)[33m;[39m
+    [90m 98| [39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[4/5]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > 
+[22mdisplays CPU load correctly
+[31m[1mError[22m: Test timed out in 
+5000ms.
+If this is a long-running test, pass a 
+timeout value as the last argument or 
+configure it globally with 
+"testTimeout".[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m108:5[22m[39m
+    [90m106| [39m    })[33m;[39m
+    [90m107| [39m
+    [90m108| [39m    
+[34mit[39m([32m'displays CPU load 
+correctly'[39m[33m,[39m [35masync[39m 
+() [33m=>[39m {
+    [90m   | [39m    [31m^[39m
+    [90m109| [39m        mockInvoke[33m.
+[39m[34mmockImplementation[39m([35masync
+[39m (cmd) [33m=>[39m {
+    [90m110| [39m            [35mif[39m 
+(cmd [33m===[39m 
+[32m'get_cpu_load'[39m) [35mreturn[39m 
+[34m85.5[39m[33m;[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[5/5]ÔÄ
+»[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[90m (5)[39m
+[2m   Start at [22m 21:31:25
+[2m   Duration [22m 25.94s[2m (transform 56ms, setup 86ms, import 143ms, tests 25.08s, environment 513ms)[22m
+

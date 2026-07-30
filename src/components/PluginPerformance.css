@@ -1,0 +1,61 @@
+.plugin-performance {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.perf-section h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+}
+
+.perf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.perf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+}
+
+.perf-name {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.perf-value {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.perf-value.cpu {
+    color: #4ade80;
+}
+
+.perf-value.latency {
+    color: #f87171;
+}
+
+.perf-empty {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 5px;
+}

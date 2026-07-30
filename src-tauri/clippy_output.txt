@@ -1,0 +1,105 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:1
++ cargo clippy -- -D warnings 2>&1 | 
+Out-File -FilePath clippy_output.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (    Checking vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+error: returning the result of a `let` 
+binding from a block
+    --> src\engine\audio.rs:2687:9
+     |
+2644 | /         let engine = Self {
+2645 | |             command_tx: tx,
+2646 | |             tracks,
+2647 | |             busses,
+...    |
+2685 | |             initialization_error,
+2686 | |         };
+     | |__________- unnecessary `let` 
+binding
+2687 |           engine
+     |           ^^^^^^
+     |
+     = help: for further information visit h
+ttps://rust-lang.github.io/rust-clippy/rust-
+1.92.0/index.html#let_and_return
+     = note: `-D clippy::let-and-return` 
+implied by `-D warnings`
+     = help: to override `-D warnings` add 
+`#[allow(clippy::let_and_return)]`
+help: return the expression directly
+     |
+2644 ~         
+2645 ~         Self {
+2646 +             command_tx: tx,
+2647 +             tracks,
+2648 +             busses,
+2649 +             library,
+2650 +             plugins,
+2651 +             playhead,
+2652 +             is_playing,
+2653 +             is_recording,
+2654 +             metronome_enabled,
+2655 +             bpm,
+2656 +             _midi_conn: midi_conn,
+2657 +             midi_map,
+2658 +             midi_cc_lsb_cache,
+2659 +             cpu_load_micros,
+2660 +             history,
+2661 +             fades,
+2662 +             velocity_engine,
+2663 +             engine_fx,
+2664 +             master_limiter,
+2665 +             summing_engine,
+2666 +             neural_mapper,
+2667 +             spectrum_analyzer,
+2668 +             gpu_meter,
+2669 +             recorded_samples,
+2670 +             midi_prod,
+2671 +             param_prod,
+2672 +             graph_prod,
+2673 +             autosave_path,
+2674 +             plugin_path,
+2675 +             io_manager,
+2676 +             bpm_atomic,
+2677 +             audio_graph,
+2678 +             buffer_pool,
+2679 +             cached_execution_order,
+2680 +             graph_dirty,
+2681 +             visualizer_prod: 
+viz_prod_shared,
+2682 + 
+2683 +             // Phase 4
+2684 +             hyper_streamer,
+2685 +             hyper_pool,
+2686 +             initialization_error,
+2687 +         }
+     |
+
+error: use of `or_insert_with` to construct 
+default value
+   --> src\engine\midi_mapping.rs:159:14
+    |
+159 |             
+.or_insert_with(HiResState::default);
+    |              
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: 
+try: `or_default()`
+    |
+    = help: for further information visit ht
+tps://rust-lang.github.io/rust-clippy/rust-1
+.92.0/index.html#unwrap_or_default
+    = note: `-D clippy::unwrap-or-default` 
+implied by `-D warnings`
+    = help: to override `-D warnings` add 
+`#[allow(clippy::unwrap_or_default)]`
+
+error: could not compile `vibe` (lib) due 
+to 2 previous errors

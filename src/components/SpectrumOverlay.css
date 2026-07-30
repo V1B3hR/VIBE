@@ -1,0 +1,60 @@
+.spectrum-overlay-container {
+  width: 100%;
+  height: 220px;
+  background: rgba(10, 12, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.spectrum-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+}
+
+.spectrum-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legend-color.track-a {
+  background: #00f3ff;
+  box-shadow: 0 0 6px #00f3ff;
+}
+
+.legend-color.track-b {
+  background: #ff0055;
+  box-shadow: 0 0 6px #ff0055;
+}
+
+.legend-color.collision {
+  background: #ffaa00;
+  box-shadow: 0 0 6px #ffaa00;
+}
+
+.spectrum-canvas {
+  width: 100%;
+  height: 160px;
+  display: block;
+}

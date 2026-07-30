@@ -1,0 +1,57 @@
+
+// PHASE 1.6: Plugin Management Commands
+
+#[tauri::command]
+fn plugin_scan_directory(
+    state: tauri::State<'_, AppState>,
+    path: String,
+) -> Result<(), String> {
+    let mut plugin_manager = state.inner().plugin_manager.lock().unwrap();
+    plugin_manager.add_watch_directory(std::path::PathBuf::from(path))
+}
+
+#[tauri::command]
+fn plugin_get_all(
+    state: tauri::State<'_, AppState>,
+) -> Result<Vec<engine::plugin_manager::PluginInfo>, String> {
+    let plugin_manager = state.inner().plugin_manager.lock().unwrap();
+    Ok(plugin_manager.get_all_plugins())
+}
+
+#[tauri::command]
+fn plugin_search(
+    state: tauri::State<'_, AppState>,
+    query: String,
+) -> Result<Vec<engine::plugin_manager::PluginInfo>, String> {
+    let plugin_manager = state.inner().plugin_manager.lock().unwrap();
+    Ok(plugin_manager.search(&query))
+}
+
+#[tauri::command]
+fn plugin_blacklist(
+    state: tauri::State<'_, AppState>,
+    path: String,
+    reason: String,
+) -> Result<(), String> {
+    let plugin_manager = state.inner().plugin_manager.lock().unwrap();
+    plugin_manager.blacklist_plugin(&path, reason)
+}
+
+#[tauri::command]
+fn plugin_get_by_type(
+    state: tauri::State<'_, AppState>,
+    plugin_type: String,
+) -> Result<Vec<engine::plugin_manager::PluginInfo>, String> {
+    use engine::plugin_manager::PluginType;
+    
+    let plugin_manager = state.inner().plugin_manager.lock().unwrap();
+    let ptype = match plugin_type.to_lowercase().as_str() {
+        "vst2" => PluginType::VST2,
+        "vst3" => PluginType::VST3,
+        "clap" => PluginType::CLAP,
+        "native" => PluginType::Native,
+        _ => return Err(format!("Unknown plugin type: {}", plugin_type)),
+    };
+    
+    Ok(plugin_manager.get_by_type(ptype))
+}

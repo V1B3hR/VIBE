@@ -1,0 +1,33 @@
+﻿
+#[tauri::command]
+fn library_add_directory(
+    state: tauri::State<'_, AppState>,
+    path: String,
+) -> Result<(), String> {
+    let mut library = state.inner().library_service.lock().unwrap();
+    library.add_watch_directory(std::path::PathBuf::from(path))
+}
+
+#[tauri::command]
+fn library_get_by_category(
+    state: tauri::State<'_, AppState>,
+    category: String,
+) -> Result<Vec<engine::library_service::AudioFileMetadata>, String> {
+    use engine::library_service::AudioCategory;
+    
+    let library = state.inner().library_service.lock().unwrap();
+    let cat = match category.to_lowercase().as_str() {
+        "kick" => AudioCategory::Kick,
+        "snare" => AudioCategory::Snare,
+        "hat" => AudioCategory::Hat,
+        "percussion" => AudioCategory::Percussion,
+        "bass" => AudioCategory::Bass,
+        "synth" => AudioCategory::Synth,
+        "vocal" => AudioCategory::Vocal,
+        "loop" => AudioCategory::Loop,
+        "fx" => AudioCategory::FX,
+        _ => AudioCategory::Unknown,
+    };
+    
+    Ok(library.get_by_category(cat))
+}

@@ -1,0 +1,1675 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/tests/Integration.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+ [31mÔØ»[39m src/tests/Integration.test.tsx [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1064[2mms[22m[39m
+[31m     [31m├ù[31m syncs playback state between Transport and Timeline[39m[33m 1048[2mms[22m[39m
+     [32mÔ£ô[39m handles track muting across components[32m 15[2mms[22m[39m
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (:String) [], RemoteExce  
+  ption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[
+41m Failed Tests 1 [49m[22m[31mÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/tests/Integration.test.tsx[2m > 
+[22mPlayback Integration[2m > 
+[22msyncs playback state between 
+Transport and Timeline
+[31m[1mTestingLibraryElementError[
+22m[39m: Unable to find an element 
+by: 
+[data-testid="transport-play-btn"]
+
+Ignored nodes: comments, script, 
+style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"transpo
+rt-bar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-global-actions"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-icon-transport"[39m
+            
+[33mtitle[39m=[32m"Undo 
+(Ctrl+Z)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-rotate-ccw"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 
+12a9 9 0 1 0 9-9 9.75 9.75 0 0 
+0-6.74 2.74L3 8"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 
+3v5h5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-icon-transport"[39m
+            
+[33mtitle[39m=[32m"Redo 
+(Ctrl+Y)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-rotate-cw"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M21 12a9 9 0 1 
+1-9-9c2.52 0 4.93 1 6.74 2.74L21 
+8"[39m
+              [36m/>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M21 3v5h-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-buttons"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-transport"[39m
+            [33mdata-testid[39m=[3
+2m"transport-stop"[39m
+            
+[33mtitle[39m=[32m"Stop (twice to 
+reset)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-square"[39m
+              [33mfill[39m=[32m"cu
+rrentColor"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                
+[33mheight[39m=[32m"18"[39m
+                
+[33mrx[39m=[32m"2"[39m
+                
+[33mwidth[39m=[32m"18"[39m
+                
+[33mx[39m=[32m"3"[39m
+                
+[33my[39m=[32m"3"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-play"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-play"[39m
+              [33mfill[39m=[32m"va
+r(--text-primary)"[39m
+              
+[33mheight[39m=[32m"20"[39m
+              
+[33mstroke[39m=[32m"none"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"20"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 
+5a2 2 0 0 1 3.008-1.728l11.997 
+6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 
+0 0 1 5 19z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-record"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-circle"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                
+[33mcx[39m=[32m"12"[39m
+                
+[33mcy[39m=[32m"12"[39m
+                
+[33mr[39m=[32m"10"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-metronome"[39m
+            
+[33mtitle[39m=[32m"Metronome"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-activity"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M22 12h-2.48a2 2 0 
+0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 
+1-.48 0L9.24 2.18a.25.25 0 0 0-.48 
+0l-2.35 8.36A2 2 0 0 1 4.49 
+12H2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-display"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"dis
+play-item"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mPosition[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+            [36m>[39m
+              [0m1.1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"dis
+play-item"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mTime[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+            [36m>[39m
+              [0m00:00.00[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"display-item 
+bpm-counter"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mBPM[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+              [33mdata-testid[39m=
+[32m"bpm-value"[39m
+            [36m>[39m
+              [0m120.0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"display-item 
+cpu-meter"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mCPU[0m
+            [36m</span>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"c
+pu-bar-container"[39m
+            [36m>[39m
+              [36m<div[39m
+                
+[33mclass[39m=[32m"cpu-bar-fill 
+"[39m
+                [33mdata-testid[39m
+=[32m"cpu-fill"[39m
+                
+[33mstyle[39m=[32m"width: 
+15.4%;"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value-small"[39m
+              [33mdata-testid[39m=
+[32m"cpu-value"[39m
+            [36m>[39m
+              [0m15.4[0m
+              [0m%[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"timelin
+e-wrapper"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-toolbar"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mSNAP:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-snap-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"0"[39m
+              [36m>[39m
+                [0mOff[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"1"[39m
+              [36m>[39m
+                [0m1/4[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"2"[39m
+              [36m>[39m
+                [0m1/8[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"4"[39m
+              [36m>[39m
+                [0m1/16[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"8"[39m
+              [36m>[39m
+                [0m1/32[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"16"[39m
+              [36m>[39m
+                [0m1/64[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"32"[39m
+              [36m>[39m
+                [0m1/128[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mTOOL:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-tool-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"read"[39m
+              [36m>[39m
+                [0mPointer/Read[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"draw"[39m
+              [36m>[39m
+                [0mDraw (Pencil)[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"erase"[39m
+              [36m>[39m
+                [0mErase[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-split-btn"[39m
+              
+[33mtitle[39m=[32m"Split at 
+Playhead (S)"[39m
+            [36m>[39m
+              [0mÔ£é´©Å Split[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-undo-btn"[39m
+              
+[33mtitle[39m=[32m"Undo 
+(Ctrl+Z)"[39m
+            [36m>[39m
+              [0mÔåÂ Undo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-redo-btn"[39m
+              
+[33mtitle[39m=[32m"Redo 
+(Ctrl+Shift+Z)"[39m
+            [36m>[39m
+              [0mÔåÀ Redo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-in-btn"[39m
+            [36m>[39m
+              [0mZoom In (+)[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-out-btn"[39m
+            [36m>[39m
+              [0mZoom Out (-)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-spacer"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-deselect-all-btn"[39m
+            [36m>[39m
+              [0mDeselect All[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-container glass"[39m
+          [33mdata-testid[39m=[32m
+"timeline-container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tim
+eline-ruler"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"p
+layhead-line"[39m
+              
+[33mstyle[39m=[32m"transform: 
+translateX(150px); will-change: 
+transform;"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tra
+cks-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"t
+rack-container-outer"[39m
+              [33mdata-testid[39m=
+[32m"track-0"[39m
+            [36m>[39m
+              [36m<div[39m
+                
+[33mclass[39m=[32m"track-row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-controls"[39m
+                  
+[33mstyle[39m=[32m"border-left: 
+4px solid rgb(255, 0, 0);"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=
+[32m"track-label"[39m
+                    [33mdata-testid
+[39m=[32m"track-name-0"[39m
+                  [36m>[39m
+                    [0mMain 
+Synth[0m
+                  [36m</span>[39m
+                  [36m<div[39m
+                    [33mclass[39m=
+[32m"track-buttons"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+mute "[39m
+                      [33mdata-testi
+d[39m=[32m"track-mute-0"[39m
+                      
+[33mtitle[39m=[32m"Mute 
+Track"[39m
+                    [36m>[39m
+                      [0mM[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+solo "[39m
+                      [33mdata-testi
+d[39m=[32m"track-solo-0"[39m
+                      
+[33mtitle[39m=[32m"Solo 
+Track"[39m
+                    [36m>[39m
+                      [0mS[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+automation "[39m
+                      
+[33mtitle[39m=[32m"Show 
+Automation"[39m
+                    [36m>[39m
+                      [0mA[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+midi-add"[39m
+                      [33mdata-testi
+d[39m=[32m"track-add-midi-0"[39m
+                      
+[33mtitle[39m=[32m"Add MIDI 
+Clip"[39m
+                    [36m>[39m
+                      [0mM+[0m
+                    
+[36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-lane"[39m
+                  [33mdata-testid[3
+9m=[32m"track-lane-0"[39m
+                  [33mstyle[39m=[3
+2m"background-size: 12px 100%; 
+background-image: 
+linear-gradient(90deg, 
+var(--border-subtle) 1px, 
+transparent 1px);"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    
+[33mclass[39m=[32m"audio-clip 
+"[39m
+                    [33mdata-testid
+[39m=[32m"clip-clip-1"[39m
+                    
+[33mdraggable[39m=[32m"true"[39m
+                    
+[33mstyle[39m=[32m"left: 0px; 
+width: 24px; background: 
+linear-gradient(180deg, rgba(255, 0, 
+0, 0.667) 0%, rgb(255, 0, 0) 
+100%);"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m
+=[32m"clip-label"[39m
+                    [36m>[39m
+                      [0mLead[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-in"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-out"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-in"[39m
+                      
+[33mstyle[39m=[32m"width: 
+0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-out"[39m
+                      
+[33mstyle[39m=[32m"width: 0px; 
+right: 0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mstyle[39m=[32m"width: 100%; 
+height: 100%; position: absolute; 
+top: 0px; left: 0px; z-index: 
+1;"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mdata-tes
+tid[39m=[32m"waveform-gl"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-left"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-right"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-bottom-panel"[39m
+          
+[33mstyle[39m=[32m"height: 300px; 
+border-top: 1px solid rgb(51, 51, 
+51); background: rgb(17, 17, 17); 
+flex-shrink: 0;"[39m
+        [36m>[39m
+          [36m<div[39m
+            
+[33mstyle[39m=[32m"display: flex; 
+justify-content: center; 
+align-items: center; height: 100%; 
+color: rgb(68, 68, 68); 
+flex-direction: column; gap: 
+10px;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"48"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              
+[33mstroke-width[39m=[32m"1"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"48"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 
+19.5v-15A2.5 2.5 0 0 1 6.5 
+2H20v20H6.5a2.5 2.5 0 0 1 
+0-5H20"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mSelect an Audio 
+Clip to Edit[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, 
+style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"transpo
+rt-bar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-global-actions"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-icon-transport"[39m
+            
+[33mtitle[39m=[32m"Undo 
+(Ctrl+Z)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-rotate-ccw"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 
+12a9 9 0 1 0 9-9 9.75 9.75 0 0 
+0-6.74 2.74L3 8"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 
+3v5h5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-icon-transport"[39m
+            
+[33mtitle[39m=[32m"Redo 
+(Ctrl+Y)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-rotate-cw"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M21 12a9 9 0 1 
+1-9-9c2.52 0 4.93 1 6.74 2.74L21 
+8"[39m
+              [36m/>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M21 3v5h-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-buttons"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn
+-transport"[39m
+            [33mdata-testid[39m=[3
+2m"transport-stop"[39m
+            
+[33mtitle[39m=[32m"Stop (twice to 
+reset)"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-square"[39m
+              [33mfill[39m=[32m"cu
+rrentColor"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<rect[39m
+                
+[33mheight[39m=[32m"18"[39m
+                
+[33mrx[39m=[32m"2"[39m
+                
+[33mwidth[39m=[32m"18"[39m
+                
+[33mx[39m=[32m"3"[39m
+                
+[33my[39m=[32m"3"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-play"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-play"[39m
+              [33mfill[39m=[32m"va
+r(--text-primary)"[39m
+              
+[33mheight[39m=[32m"20"[39m
+              
+[33mstroke[39m=[32m"none"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"20"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 
+5a2 2 0 0 1 3.008-1.728l11.997 
+6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 
+0 0 1 5 19z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-record"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-circle"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                
+[33mcx[39m=[32m"12"[39m
+                
+[33mcy[39m=[32m"12"[39m
+                
+[33mr[39m=[32m"10"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            
+[33mclass[39m=[32m"btn-transport 
+"[39m
+            [33mdata-testid[39m=[3
+2m"transport-metronome"[39m
+            
+[33mtitle[39m=[32m"Metronome"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=
+[32m"true"[39m
+              
+[33mclass[39m=[32m"lucide 
+lucide-activity"[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"16"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              [33mstroke-linecap[39
+m=[32m"round"[39m
+              [33mstroke-linejoin[3
+9m=[32m"round"[39m
+              
+[33mstroke-width[39m=[32m"2"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"16"[39m
+              [33mxmlns[39m=[32m"h
+ttp://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                
+[33md[39m=[32m"M22 12h-2.48a2 2 0 
+0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 
+1-.48 0L9.24 2.18a.25.25 0 0 0-.48 
+0l-2.35 8.36A2 2 0 0 1 4.49 
+12H2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"trans
+port-display"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"dis
+play-item"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mPosition[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+            [36m>[39m
+              [0m1.1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"dis
+play-item"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mTime[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+            [36m>[39m
+              [0m00:00.00[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"display-item 
+bpm-counter"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mBPM[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value"[39m
+              [33mdata-testid[39m=
+[32m"bpm-value"[39m
+            [36m>[39m
+              [0m120.0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"display-item 
+cpu-meter"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-label"[39m
+            [36m>[39m
+              [0mCPU[0m
+            [36m</span>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"c
+pu-bar-container"[39m
+            [36m>[39m
+              [36m<div[39m
+                
+[33mclass[39m=[32m"cpu-bar-fill 
+"[39m
+                [33mdata-testid[39m
+=[32m"cpu-fill"[39m
+                
+[33mstyle[39m=[32m"width: 
+15.4%;"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"d
+isplay-value-small"[39m
+              [33mdata-testid[39m=
+[32m"cpu-value"[39m
+            [36m>[39m
+              [0m15.4[0m
+              [0m%[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"timelin
+e-wrapper"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-toolbar"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mSNAP:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-snap-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"0"[39m
+              [36m>[39m
+                [0mOff[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"1"[39m
+              [36m>[39m
+                [0m1/4[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"2"[39m
+              [36m>[39m
+                [0m1/8[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"4"[39m
+              [36m>[39m
+                [0m1/16[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"8"[39m
+              [36m>[39m
+                [0m1/32[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"16"[39m
+              [36m>[39m
+                [0m1/64[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"32"[39m
+              [36m>[39m
+                [0m1/128[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mTOOL:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-tool-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"read"[39m
+              [36m>[39m
+                [0mPointer/Read[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"draw"[39m
+              [36m>[39m
+                [0mDraw (Pencil)[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"erase"[39m
+              [36m>[39m
+                [0mErase[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-split-btn"[39m
+              
+[33mtitle[39m=[32m"Split at 
+Playhead (S)"[39m
+            [36m>[39m
+              [0mÔ£é´©Å Split[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-undo-btn"[39m
+              
+[33mtitle[39m=[32m"Undo 
+(Ctrl+Z)"[39m
+            [36m>[39m
+              [0mÔåÂ Undo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-redo-btn"[39m
+              
+[33mtitle[39m=[32m"Redo 
+(Ctrl+Shift+Z)"[39m
+            [36m>[39m
+              [0mÔåÀ Redo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-in-btn"[39m
+            [36m>[39m
+              [0mZoom In (+)[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-out-btn"[39m
+            [36m>[39m
+              [0mZoom Out (-)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-spacer"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-deselect-all-btn"[39m
+            [36m>[39m
+              [0mDeselect All[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-container glass"[39m
+          [33mdata-testid[39m=[32m
+"timeline-container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tim
+eline-ruler"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"p
+layhead-line"[39m
+              
+[33mstyle[39m=[32m"transform: 
+translateX(150px); will-change: 
+transform;"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tra
+cks-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"t
+rack-container-outer"[39m
+              [33mdata-testid[39m=
+[32m"track-0"[39m
+            [36m>[39m
+              [36m<div[39m
+                
+[33mclass[39m=[32m"track-row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-controls"[39m
+                  
+[33mstyle[39m=[32m"border-left: 
+4px solid rgb(255, 0, 0);"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=
+[32m"track-label"[39m
+                    [33mdata-testid
+[39m=[32m"track-name-0"[39m
+                  [36m>[39m
+                    [0mMain 
+Synth[0m
+                  [36m</span>[39m
+                  [36m<div[39m
+                    [33mclass[39m=
+[32m"track-buttons"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+mute "[39m
+                      [33mdata-testi
+d[39m=[32m"track-mute-0"[39m
+                      
+[33mtitle[39m=[32m"Mute 
+Track"[39m
+                    [36m>[39m
+                      [0mM[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+solo "[39m
+                      [33mdata-testi
+d[39m=[32m"track-solo-0"[39m
+                      
+[33mtitle[39m=[32m"Solo 
+Track"[39m
+                    [36m>[39m
+                      [0mS[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+automation "[39m
+                      
+[33mtitle[39m=[32m"Show 
+Automation"[39m
+                    [36m>[39m
+                      [0mA[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+midi-add"[39m
+                      [33mdata-testi
+d[39m=[32m"track-add-midi-0"[39m
+                      
+[33mtitle[39m=[32m"Add MIDI 
+Clip"[39m
+                    [36m>[39m
+                      [0mM+[0m
+                    
+[36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-lane"[39m
+                  [33mdata-testid[3
+9m=[32m"track-lane-0"[39m
+                  [33mstyle[39m=[3
+2m"background-size: 12px 100%; 
+background-image: 
+linear-gradient(90deg, 
+var(--border-subtle) 1px, 
+transparent 1px);"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    
+[33mclass[39m=[32m"audio-clip 
+"[39m
+                    [33mdata-testid
+[39m=[32m"clip-clip-1"[39m
+                    
+[33mdraggable[39m=[32m"true"[39m
+                    
+[33mstyle[39m=[32m"left: 0px; 
+width: 24px; background: 
+linear-gradient(180deg, rgba(255, 0, 
+0, 0.667) 0%, rgb(255, 0, 0) 
+100%);"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m
+=[32m"clip-label"[39m
+                    [36m>[39m
+                      [0mLead[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-in"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-out"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-in"[39m
+                      
+[33mstyle[39m=[32m"width: 
+0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-out"[39m
+                      
+[33mstyle[39m=[32m"width: 0px; 
+right: 0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mstyle[39m=[32m"width: 100%; 
+height: 100%; position: absolute; 
+top: 0px; left: 0px; z-index: 
+1;"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mdata-tes
+tid[39m=[32m"waveform-gl"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-left"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-right"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-bottom-panel"[39m
+          
+[33mstyle[39m=[32m"height: 300px; 
+border-top: 1px solid rgb(51, 51, 
+51); background: rgb(17, 17, 17); 
+flex-shrink: 0;"[39m
+        [36m>[39m
+          [36m<div[39m
+            
+[33mstyle[39m=[32m"display: flex; 
+justify-content: center; 
+align-items: center; height: 100%; 
+color: rgb(68, 68, 68); 
+flex-direction: column; gap: 
+10px;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"48"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              
+[33mstroke-width[39m=[32m"1"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"48"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 
+19.5v-15A2.5 2.5 0 0 1 6.5 
+2H20v20H6.5a2.5 2.5 0 0 1 
+0-5H20"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mSelect an Audio 
+Clip to Edit[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2mÔØ»[22m waitForWrapper nod
+e_modules/@testing-library/dom/dist/w
+ait-for.js:[2m163:27[22m[39m
+[90m [2mÔØ»[22m node_modules/@test
+ing-library/dom/dist/query-helpers.js
+:[2m86:33[22m[39m
+[36m [2mÔØ»[22m src/tests/Integrat
+ion.test.tsx:[2m149:38[22m[39m
+    [90m147| [39m
+    [90m148| [39m        [90m// 
+1. Wait for initial 
+connection/load[39m
+    [90m149| [39m        const 
+playBtn = await screen.findByTestId('
+transport-play-btn'ÔÇª
+    [90m   | [39m                  
+                   [31m^[39m
+    [90m150| [39m        
+[35mconst[39m cpuValue [33m=[39m 
+[35mawait[39m screen[33m.[39m[34
+mfindByTestId[39m([32m'cpu-value'[
+39m)[33m;[39m
+    [90m151| [39m        [34mexpec
+t[39m(cpuValue[33m.[39mtextContent
+)[33m.[39m[34mtoContain[39m([32m
+'15.4'[39m)[33m;[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[1/1]ÔÄ»[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m   Start at [22m 11:51:34
+[2m   Duration [22m 2.07s[2m (transform 151ms, setup 94ms, import 252ms, tests 1.06s, environment 537ms)[22m
+

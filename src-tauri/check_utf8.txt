@@ -1,0 +1,39 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users
+\brigh\.gemini\antigravity\scratch\VIBE\sr
+c-tauri)
+At line:1 char:1
++ cargo check --tests 2>&1 | Out-File 
+-Encoding utf8 check_utf8.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (    Checking vi...VIBE\src-tauri)  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+error[E0599]: no method named 
+`set_audio_config` found for struct 
+`std::sync::MutexGuard<'_, AudioEngine>` 
+in the current scope
+    --> src\lib.rs:1056:10
+     |
+1051 | /     state
+1052 | |         .inner()
+1053 | |         .audio_engine
+1054 | |         .lock()
+1055 | |         .unwrap()
+1056 | |         .set_audio_config(config)
+     | |         -^^^^^^^^^^^^^^^^ method 
+not found in `std::sync::MutexGuard<'_, 
+AudioEngine>`
+     | |_________|
+     |
+
+For more information about this error, 
+try `rustc --explain E0599`.
+error: could not compile `vibe` (lib) due 
+to 1 previous error
+warning: build failed, waiting for other 
+jobs to finish...
+error: could not compile `vibe` (lib 
+test) due to 1 previous error

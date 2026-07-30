@@ -1,0 +1,22 @@
+.prop-row button:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.prop-row button:active {
+    transform: scale(0.95);
+}
+
+.prop-divider {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.prop-value {
+    font-size: 11px;
+    color: #aaa;
+    margin-left: 8px;
+}

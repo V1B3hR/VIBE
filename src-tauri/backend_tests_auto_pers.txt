@@ -1,0 +1,19 @@
+﻿cargo : error: unexpected argument 
+'engine::persistence' found
+At line:1 char:30
++ ... CK=8388608; cargo test 
+engine::automation engine::persistence 
+--lib - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (error: unexpect...sistence' found:Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+
+Usage: cargo.exe test [OPTIONS] [TESTNAME] 
+[-- [ARGS]...]
+
+For more information, try '--help'.

@@ -1,0 +1,44 @@
+cargo :     Checking vibe v0.1.0 (C:
+\Users\brigh\.gemini\antigravity\scr
+atch\VIBE\src-tauri)
+At line:1 char:1
++ cargo check > check_errors.txt 
+2>&1
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: (    Checking vi...VIB  
+  E\src-tauri):String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+error: expected expression, found 
+`.`
+    --> src\engine\audio.rs:2733:13
+     |
+2733 |             .map_err(|e| 
+e.to_string())
+     |             ^ expected 
+expression
+
+error: unexpected closing 
+delimiter: `}`
+   --> 
+src\engine\automation.rs:311:1
+    |
+263 |     fn 
+compute_slope_akima(&self, i: 
+usize) -> f64 {
+    |                               
+                     - this opening 
+brace...
+...
+310 |     }
+    |     - ...matches this closing 
+brace
+311 | }
+    | ^ unexpected closing delimiter
+
+error: could not compile `vibe` 
+(lib) due to 2 previous errors

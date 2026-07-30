@@ -1,0 +1,76 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\br
+igh\.gemini\antigravity\scratch\VIBE\src-taur
+i)
+At line:1 char:1
++ cargo clippy --lib 2>&1 | Out-File 
+-FilePath clippy_output2.txt -Enco ...
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified:  
+   (   Compiling vi...VIBE\src-tauri):Strin  
+  g) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandE 
+   rror
+ 
+warning: method `shutdown` is never used
+  --> src\engine\recovery.rs:59:12
+   |
+16 | impl AutoSaveManager {
+   | -------------------- method in this 
+implementation
+...
+59 |     pub fn shutdown(&self) {
+   |            ^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: usage of an `Arc` that is not 
+`Send` and `Sync`
+   --> src\engine\audio.rs:487:26
+    |
+487 |         let stream_arc = 
+Arc::new(Mutex::new(None::<cpal::Stream>));
+    |                          
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `Arc<Mutex<Option<Stream>>>` is 
+not `Send` and `Sync` as 
+`Mutex<Option<Stream>>` is neither `Send` 
+nor `Sync`
+    = help: if the `Arc` will not be used 
+across threads replace it with an `Rc`
+    = help: otherwise make 
+`Mutex<Option<Stream>>` `Send` and `Sync` or 
+consider a wrapper type such as `Mutex`
+    = help: for further information visit htt
+ps://rust-lang.github.io/rust-clippy/rust-1.9
+2.0/index.html#arc_with_non_send_sync
+    = note: 
+`#[warn(clippy::arc_with_non_send_sync)]` on 
+by default
+
+warning: usage of an `Arc` that is not 
+`Send` and `Sync`
+   --> src\engine\audio.rs:488:32
+    |
+488 |         let input_stream_arc = 
+Arc::new(Mutex::new(None::<cpal::Stream>));
+    |                                
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `Arc<Mutex<Option<Stream>>>` is 
+not `Send` and `Sync` as 
+`Mutex<Option<Stream>>` is neither `Send` 
+nor `Sync`
+    = help: if the `Arc` will not be used 
+across threads replace it with an `Rc`
+    = help: otherwise make 
+`Mutex<Option<Stream>>` `Send` and `Sync` or 
+consider a wrapper type such as `Mutex`
+    = help: for further information visit htt
+ps://rust-lang.github.io/rust-clippy/rust-1.9
+2.0/index.html#arc_with_non_send_sync
+
+warning: `vibe` (lib) generated 3 warnings
+    Finished `dev` profile [unoptimized + 
+debuginfo] target(s) in 5.36s

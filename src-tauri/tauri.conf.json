@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "VIBE",
+  "version": "0.1.0",
+  "identifier": "com.vibe.daw",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "VIBE",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "VIBE Audio",
+    "copyright": "Copyright © 2026 VIBE Audio",
+    "category": "Music",
+    "shortDescription": "Professional spectral DAW with AI",
+    "longDescription": "VIBE (Visual Interactive Biofeedback Engine) is a next-generation Digital Audio Workstation featuring a high-performance spectral engine and Kropelka AI production assistants.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "both"
+      },
+      "wix": {
+        "language": [
+          "en-US"
+        ]
+      }
+    }
+  }
+}

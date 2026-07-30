@@ -1,0 +1,391 @@
+.audio-settings-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(var(--modal-blur));
+}
+
+.audio-settings-modal {
+    background: var(--modal-bg);
+    border: var(--modal-border);
+    border-radius: var(--modal-radius);
+    width: 600px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: var(--modal-shadow);
+}
+
+.audio-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.audio-settings-header h2 {
+    margin: 0;
+    font-family: Orbitron, Inter, sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--accent-glow);
+    transform: rotate(90deg);
+}
+
+.audio-settings-content {
+    padding: 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.setting-group {
+    margin-bottom: 24px;
+}
+
+.setting-group label {
+    display: block;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.setting-select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.setting-select:hover {
+    border-color: var(--accent);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.setting-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.setting-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+}
+
+/* Base Slider Style */
+.setting-slider {
+    width: 100%;
+    height: 6px;
+
+    /* WebKit */
+    appearance: none;
+
+    /* Standard */
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    outline: none;
+    margin-top: 10px;
+}
+
+/* WebKit Slider Thumb (Chrome, Safari, Edge) */
+.setting-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: all 0.2s;
+}
+
+.setting-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Firefox Slider Thumb */
+.setting-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: all 0.2s;
+}
+
+.setting-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.latency-display {
+    background: linear-gradient(135deg, var(--accent-glow) 0%, rgba(0, 240, 255, 0.05) 100%);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.latency-value {
+    font-family: Orbitron, 'Courier New', monospace;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
+    margin-bottom: 8px;
+}
+
+.latency-label {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.audio-settings-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid rgb(255, 215, 0, 0.2);
+    background: rgb(0, 0, 0, 0.2);
+}
+
+.btn-cancel,
+.btn-apply {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.btn-cancel {
+    background: rgb(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background: rgb(255, 255, 255, 0.2);
+}
+
+.btn-apply {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary, #B026FF) 100%);
+    color: #000;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-apply:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.audio-settings-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.audio-settings-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.audio-settings-content::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+.audio-settings-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+.kropelka-mind-panel {
+    background: linear-gradient(135deg, rgb(100, 0, 255, 0.1) 0%, rgb(0, 255, 100, 0.1) 100%);
+    border: 1px solid rgb(100, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 24px;
+}
+
+.kropelka-mind-panel h3 {
+    margin: 0 0 16px 0;
+    font-family: Orbitron, Inter, sans-serif;
+    color: #0ff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.mind-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.progress-bar-bg {
+    flex-grow: 1;
+    margin-left: 16px;
+    height: 8px;
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease-out;
+}
+
+.mind-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn-brainwash {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    color: #ffaaaa;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.btn-brainwash:hover {
+    background: rgba(255, 0, 0, 0.4);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* ─── Keyboard Shortcuts Panel ──────────────────────────────── */
+.shortcuts-panel {
+    margin-top: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+}
+
+.shortcuts-title {
+    margin: 0 0 16px;
+    font-family: Orbitron, Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+    letter-spacing: 1px;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.shortcut-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.shortcut-group-label {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.shortcut-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    min-height: 22px;
+}
+
+.shortcut-row span {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    text-align: right;
+    flex: 1;
+}
+
+kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 2px 0 var(--border), 0 0 6px var(--accent-glow);
+    white-space: nowrap;
+    flex-shrink: 0;
+}

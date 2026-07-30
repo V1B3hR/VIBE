@@ -1,0 +1,159 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri)
+At line:1 char:30
++ ... CK=8388608; cargo test --lib -- --nocapture --test-threads=1 2>&1 | O ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified:     (   Compiling vi...VIBE\src-tauri):Str    ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand    Error
+ 
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.34s
+     Running unittests src\lib.rs (target\debug\deps\vibe_lib-535b23413f1cd2f5.exe)
+
+running 74 tests
+test engine::audio_tests::tests::test_input_alias_resolution ... ok
+test engine::audio_tests::tests::test_mixing_logic_math ... ok
+test engine::audio_tests::tests::test_move_effect_logic ... ok
+test engine::automation::tests::test_akima_continuity ... ok
+test engine::automation::tests::test_akima_no_overshoot ... ok
+test engine::automation::tests::test_automation_layers_combination ... ok
+test engine::automation::tests::test_interpolation_types ... ok
+test engine::automation::tests::test_lfo_layer_simd ... ok
+test engine::effects::tests::highpass_basic ... ok
+test engine::engine_tests::tests::test_analyzer_data_retrieval ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_automation_recording_flow ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Recording ON
+VIBE: AudioEngine::stop() called
+ok
+test engine::engine_tests::tests::test_bpm_changes ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_cpu_load_reporting ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_engine_initialization_defaults ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_engine_transport_commands ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: AudioEngine::stop() called
+ok
+test engine::engine_tests::tests::test_history_traversal_smoke ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_input_alias_creation ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_library_interaction ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_metronome_toggle ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_midi_binding_synapse ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_midi_note_crud_smoke ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_playhead_seek ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AudioEngine::set_playhead(96000) called
+ok
+test engine::engine_tests::tests::test_track_management ... VIBE: HyperStreamer initialized.
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AutoSave System Started (Interval: 30s)
+ok
+test engine::engine_tests::tests::test_track_mute_solo_mutual ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::engine_tests::tests::test_track_parameter_batch_set ... VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+ok
+test engine::graph::tests::lowpass_basic ... ok
+test engine::graph::tests::test_audio_buffer_clear ... ok
+test engine::graph::tests::test_denormal_protection ... ok
+test engine::graph::tests::test_parameter_atomic ... ok
+test engine::graph::tests::test_track_creation ... ok
+test engine::graph_tests::tests::test_audio_buffer_clear ... ok
+test engine::graph_tests::tests::test_audio_buffer_creation ... ok
+test engine::graph_tests::tests::test_bus_clone ... ok
+test engine::graph_tests::tests::test_denormal_protection ... ok
+test engine::graph_tests::tests::test_gain_effect_amplification ... ok
+test engine::graph_tests::tests::test_gain_effect_unity ... ok
+test engine::graph_tests::tests::test_lowpass_filter_dc_offset ... ok
+test engine::graph_tests::tests::test_parameter_atomic_operations ... ok
+test engine::graph_tests::tests::test_track_creation ... ok
+test engine::io_manager::tests::test_channel_metering ... ok
+test engine::io_manager::tests::test_create_mono_alias ... ok
+test engine::io_manager::tests::test_create_stereo_alias ... ok
+test engine::io_manager::tests::test_delete_alias ... ok
+test engine::io_manager::tests::test_stereo_validation_consecutive ... ok
+test engine::io_manager::tests::test_update_alias ... ok
+test engine::library_service::tests::test_bpm_extraction ... ok
+test engine::library_service::tests::test_categorization ... ok
+test engine::library_service::tests::test_fuzzy_search ... ok
+test engine::metering::tests::test_db_conversion ... ok
+test engine::metering::tests::test_meter_update ... ok
+test engine::midi_mapping::tests::test_absolute_soft_takeover ... ok
+
+thread 'engine::midi_mapping::tests::test_fourteen_bit_cc' (15296) panicked at src\engine\midi_mapping.rs:414:29:
+index out of bounds: the len is 0 but the index is 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test engine::midi_mapping::tests::test_fourteen_bit_cc ... FAILED
+test engine::midi_mapping::tests::test_midi_learning ... ok
+test engine::midi_mapping::tests::test_nrpn_resolution ... ok
+test engine::midi_mapping::tests::test_relative_mapping ... ok
+test engine::pdc::tests::test_pdc_calculation ... ok
+test engine::pdc::tests::test_pdc_compensation_logic ... ok
+test engine::pdc::tests::test_pdc_stress_test ... PDC Recalculation for 100 tracks took 41.6┬Ás
+ok
+test engine::persistence::tests::test_binary_roundtrip ... VIBE: Saved project safely to "test_project.vibe" (373 bytes)
+VIBE: Loaded project from "test_project.vibe"
+ok
+test engine::persistence::tests::test_invalid_magic_bytes ... ok
+test engine::persistence::tests::test_midi_clip_roundtrip ... VIBE: Saved project safely to "test_midi.vibe" (523 bytes)
+VIBE: Loaded project from "test_midi.vibe"
+ok
+test engine::persistence::tests::test_project_serialization_complex ... VIBE: Saved project safely to "complex_test.vibe" (528 bytes)
+VIBE: Loaded project from "complex_test.vibe"
+ok
+test engine::plugin_manager::tests::test_blacklist ... ok
+test engine::plugin_manager::tests::test_plugin_manager_creation ... ok
+test engine::plugin_manager::tests::test_plugin_type_detection ... ok
+test engine::resampler::tests::test_rubato_upsample ... ok
+test engine::sandbox_v2::tests::test_sandbox_creation ... VIBE: Creating sandbox V2 for: TestPlugin
+VIBE: Launching plugin host from: "C:\\Users\\brigh\\.gemini\\antigravity\\scratch\\VIBE\\src-tauri\\target\\debug\\deps\\vibe-plugin-host.exe"
+ok
+test engine::simd_avx512::tests::test_multiply_scalar ... ok
+test engine::simd_avx512::tests::test_sum_buffers ... ok
+test engine::summing::tests::test_simd_edge_cases ... ok
+test engine::summing::tests::test_simd_multiple_tracks ... ok
+test engine::summing::tests::test_simd_summing_correctness ... ok
+test engine::summing::tests::test_simd_zero_input ... ok
+test engine::wasm::tests::test_wasm_plugin_creation ... ok
+
+failures:
+
+failures:
+    engine::midi_mapping::tests::test_fourteen_bit_cc
+
+test result: FAILED. 73 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.96s
+
+error: test failed, to rerun pass `--lib`

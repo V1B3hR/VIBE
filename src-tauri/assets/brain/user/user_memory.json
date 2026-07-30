@@ -1,0 +1,77 @@
+{
+  "scale_usage": {},
+  "genre_usage": {},
+  "accepted_suggestions": 41,
+  "rejected_suggestions": 10,
+  "rejection_history": [
+    {
+      "timestamp": 1784789089136,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.10",
+      "persona_tone": "Chill"
+    },
+    {
+      "timestamp": 1784789089137,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.20",
+      "persona_tone": "Professional"
+    },
+    {
+      "timestamp": 1784789089139,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.30",
+      "persona_tone": "Professional"
+    },
+    {
+      "timestamp": 1784789089139,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.40",
+      "persona_tone": "Professional"
+    },
+    {
+      "timestamp": 1784789089141,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.50",
+      "persona_tone": "Professional"
+    },
+    {
+      "timestamp": 1784789089143,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.60",
+      "persona_tone": "Professional"
+    },
+    {
+      "timestamp": 1784789089144,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.70",
+      "persona_tone": "Assertive"
+    },
+    {
+      "timestamp": 1784789089144,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.80",
+      "persona_tone": "Supportive"
+    },
+    {
+      "timestamp": 1784789089145,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 0.90",
+      "persona_tone": "Supportive"
+    },
+    {
+      "timestamp": 1784789089145,
+      "action_type": "test",
+      "context": "CreativeSpark - Frustration: 1.00",
+      "persona_tone": "Supportive"
+    }
+  ],
+  "category_stats": {
+    "General": [
+      41,
+      10
+    ]
+  },
+  "recent_frustration_level": 0.0,
+  "tone_override": null,
+  "language": "en"
+}

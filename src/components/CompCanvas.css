@@ -1,0 +1,216 @@
+.vibe-compressor-glue {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background: linear-gradient(135deg, #18191d 0%, #0e0e12 100%);
+    border-radius: 16px;
+    border: 1px solid rgb(255, 255, 255, 0.05);
+    color: #eee;
+    font-family: Inter, sans-serif;
+    box-shadow: 0 20px 50px rgb(0, 0, 0, 0.5);
+    width: 650px;
+}
+
+.comp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+}
+
+.comp-header h3 {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.delta-toggle button {
+    background: transparent;
+    border: 1px solid #444;
+    color: #666;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+.delta-toggle button.active {
+    background: #fa0;
+    color: #000;
+    border-color: #fa0;
+    box-shadow: 0 0 10px rgb(255, 170, 0, 0.4);
+    font-weight: bold;
+}
+
+.comp-viz-row {
+    display: flex;
+    gap: 10px;
+    height: 150px;
+    background: #08080a;
+    border-radius: 8px;
+    border: 1px solid #222;
+    padding: 5px;
+    position: relative;
+}
+
+.transfer-canvas,
+.history-canvas,
+.gr-canvas {
+    background: #000;
+    border-radius: 4px;
+
+    /* border: 1px solid #1a1a1a; */
+}
+
+.transfer-section {
+    flex: 0 0 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-section {
+    flex: 1;
+
+    /* Take remaining space */
+    position: relative;
+    overflow: hidden;
+}
+
+.meter-section {
+    flex: 0 0 30px;
+}
+
+.comp-controls-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.knob-group {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgb(255, 255, 255, 0.02);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255, 0.03);
+}
+
+.knob-group h4 {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 10px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.knob-wrap {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.knob-wrap label {
+    font-size: 10px;
+    color: #888;
+}
+
+.knob-wrap span {
+    font-size: 11px;
+    color: #0fc;
+    font-family: 'SF Mono', monospace;
+    align-self: flex-end;
+}
+
+.knob-wrap input[type="range"] {
+    width: 100%;
+    appearance: none;
+    background: #222;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.knob-wrap input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #888;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.knob-wrap input[type="range"]:hover::-webkit-slider-thumb {
+    background: #0fc;
+}
+
+/* Specific Tweak for Tone & Sidechain Group (Golden/Warm) */
+.knob-group:nth-child(3) .knob-wrap span,
+.knob-group:nth-child(4) .knob-wrap span {
+    color: #fa0;
+}
+
+.knob-group:nth-child(3) input[type="range"]:hover::-webkit-slider-thumb,
+.knob-group:nth-child(4) input[type="range"]:hover::-webkit-slider-thumb {
+    background: #fa0;
+}
+
+.sidechain-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.selector-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidechain-select {
+    background: #111;
+    border: 1px solid #333;
+    color: #eee;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.sidechain-select:hover {
+    border-color: #fa0;
+}
+
+.sc-toggle {
+    background: #222;
+    border: 1px solid #444;
+    color: #888;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sc-toggle.active {
+    background: #fa0;
+    color: #000;
+    border-color: #fa0;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
+}

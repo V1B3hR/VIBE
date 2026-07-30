@@ -1,0 +1,34 @@
+cargo :     Checking vibe v0.1.0 (C:
+\Users\brigh\.gemini\antigravity\scr
+atch\VIBE\src-tauri)
+At line:1 char:1
++ cargo check > check_errors3.txt 
+2>&1
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: (    Checking vi...VIB  
+  E\src-tauri):String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+error: unexpected closing 
+delimiter: `}`
+   --> 
+src\engine\render_engine.rs:255:1
+    |
+236 |     fn init_encoder(&self) -> 
+Option<Box<dyn AudioEncoder>> {
+    |                               
+                              - 
+this opening brace...
+...
+254 |     }
+    |     - ...matches this closing 
+brace
+255 | }
+    | ^ unexpected closing delimiter
+
+error: could not compile `vibe` 
+(lib) due to 1 previous error

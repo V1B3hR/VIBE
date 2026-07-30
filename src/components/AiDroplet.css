@@ -1,0 +1,255 @@
+.ai-droplet-canvas-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    width: 300px;
+    height: 300px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ai-droplet-canvas-container:hover {
+    pointer-events: auto;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.ai-droplet-ui-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ai-insight-bubble {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    background: rgba(20, 20, 25, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+    font-size: 0.85rem;
+    animation: bubbleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ai-insight-bubble.warn {
+    border-color: #ffaa00;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
+}
+
+.ai-insight-bubble.critical {
+    border-color: #ff0033;
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.4);
+}
+
+.insight-header {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    opacity: 0.6;
+}
+
+@keyframes bubbleIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Kropelka Chat and Interactive widgets styles */
+.chat-toggle-btn {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 15, 25, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #00f0ff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    z-index: 1100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 240, 255, 0.15);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    pointer-events: auto;
+}
+
+.chat-toggle-btn:hover {
+    background: rgba(0, 240, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3), 0 0 15px rgba(0, 240, 255, 0.3);
+    border-color: #00f0ff;
+}
+
+.chat-overlay-form {
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(7, 10, 15, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.2);
+    z-index: 1200;
+    width: 260px;
+    pointer-events: auto;
+    animation: chatFormIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes chatFormIn {
+    from { opacity: 0; transform: translate(-50%, 15px) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.chat-overlay-form input {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 10px;
+    border-radius: 4px;
+    flex: 1;
+    outline: none;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s ease;
+}
+
+.chat-overlay-form input:focus {
+    border-color: #00f0ff;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.25);
+}
+
+.chat-overlay-form button {
+    background: #00f0ff;
+    color: #05050a;
+    border: none;
+    padding: 0 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.chat-overlay-form button:hover {
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.fix-btn {
+    background: linear-gradient(90deg, #00f0ff 0%, rgba(255,255,255,0.1) 100%);
+    background-color: #00b4d8;
+    background-blend-mode: overlay;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fix-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.25);
+    box-shadow: 0 6px 15px rgba(0, 240, 255, 0.25);
+}
+
+.fix-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.kropelka-stats-holo {
+    position: absolute;
+    right: 310px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    background: linear-gradient(135deg, rgba(8, 12, 20, 0.9) 0%, rgba(15, 25, 40, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    border-right: 3px solid #00e676;
+    padding: 10px 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 230, 118, 0.15);
+    border-radius: 8px;
+    animation: holoReveal 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1050;
+    pointer-events: auto;
+}
+
+@keyframes holoReveal {
+    0% { transform: translateY(-50%) scale(0.8) skewX(10deg); opacity: 0; }
+    100% { transform: translateY(-50%) scale(1) skewX(0deg); opacity: 1; }
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00e676;
+    text-shadow: 0 0 5px rgba(0, 230, 118, 0.3);
+}
+
+.bar {
+    width: 70px;
+    height: 5px;
+    background: rgba(0, 230, 118, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 230, 118, 0.25);
+}
+
+.bar>div {
+    height: 100%;
+    background: #00e676;
+    box-shadow: 0 0 6px #00e676;
+    transition: width 0.3s ease;
+}
+
+

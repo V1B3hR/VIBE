@@ -1,0 +1,139 @@
+.eq-container {
+    width: 100%;
+    height: 300px;
+
+    /* Deep Space Black with subtle vignette */
+    background: radial-gradient(circle at center, #1a1a1e 0%, #050505 100%);
+    position: relative;
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: crosshair;
+    user-select: none;
+    box-shadow: inset 0 0 20px rgb(0, 0, 0, 0.8);
+}
+
+.eq-canvas-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.eq-canvas-layer.grid {
+    z-index: 1;
+    opacity: 0.8;
+
+    /* Slightly more visible for subtle lines */
+    mix-blend-mode: screen;
+}
+
+.eq-canvas-layer.spectrum {
+    z-index: 2;
+    opacity: 1.0;
+
+    /* Fully visible for fire effect */
+    mix-blend-mode: screen;
+
+    /* Additive blending for glow */
+}
+
+.eq-canvas-layer.curve {
+    z-index: 3;
+
+    /* No blend mode for curve, it pops on top */
+}
+
+.eq-header-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.eq-header-controls>* {
+    pointer-events: auto;
+}
+
+.eq-selected-band-panel {
+    display: flex;
+    gap: 8px;
+    background: rgb(10, 10, 12, 0.8);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.5);
+}
+
+.eq-selected-band-panel select,
+.eq-selected-band-panel button {
+    background: transparent;
+    color: #ccc;
+    border: none;
+    font-size: 11px;
+    font-family: Inter, sans-serif;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.eq-selected-band-panel select:hover,
+.eq-selected-band-panel button:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgb(255, 255, 255, 0.5);
+}
+
+.eq-selected-band-panel select {
+    border-right: 1px solid #333;
+    padding-right: 10px;
+}
+
+.eq-selected-band-panel button {
+    color: #f55;
+}
+
+.eq-selected-band-panel button:hover {
+    color: #f88;
+    text-shadow: 0 0 8px rgb(255, 85, 85, 0.6);
+}
+
+.eq-preset-select {
+    background: rgb(10, 10, 12, 0.8);
+    color: #00ffed;
+    border: 1px solid rgb(0, 255, 237, 0.2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    transition: all 0.2s;
+}
+
+.eq-preset-select:hover {
+    background: rgb(20, 20, 25, 0.9);
+    border-color: #00ffed;
+    box-shadow: 0 0 10px rgb(0, 255, 237, 0.2);
+}
+
+.eq-tooltip {
+    position: absolute;
+    background: rgb(10, 10, 15, 0.9);
+    color: #00ffed;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: Inter, sans-serif;
+    pointer-events: none;
+    z-index: 100;
+    border: 1px solid rgb(0, 255, 237, 0.3);
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}

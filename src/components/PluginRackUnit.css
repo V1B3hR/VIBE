@@ -1,0 +1,374 @@
+.plugin-rack-unit {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    position: relative;
+    overflow: visible;
+    transition: all 0.2s ease;
+}
+
+.plugin-rack-unit.bypassed {
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+.plugin-rack-unit.bypassed .rack-params {
+    pointer-events: none;
+}
+
+.rack-header {
+    background: #111;
+    border-bottom: 1px solid #333;
+    padding: 4px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    gap: 4px;
+}
+
+.rack-title-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.rack-actions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.power-toggle {
+    cursor: pointer;
+    filter: hue-rotate(180deg);
+}
+
+.rack-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+}
+
+.btn-rack-edit {
+    font-size: 9px;
+    padding: 1px 4px;
+    background: #333;
+    border: 1px solid #555;
+    color: #00e5ff;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.12s;
+}
+
+.btn-rack-edit:hover {
+    border-color: #00e5ff;
+    background: #222;
+}
+
+.btn-rack-presets {
+    font-size: 11px;
+    padding: 0 3px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    line-height: 1;
+    transition: opacity 0.12s;
+}
+
+.btn-rack-presets:hover {
+    opacity: 1;
+}
+
+.btn-rack-remove {
+    font-size: 13px;
+    padding: 0 3px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    color: rgba(255, 80, 80, 0.8);
+    line-height: 1;
+    transition: opacity 0.12s, color 0.12s;
+}
+
+.plugin-rack-unit:hover .btn-rack-remove {
+    opacity: 0.4;
+}
+
+.btn-rack-remove:hover {
+    opacity: 1 !important;
+    color: #ff4444;
+}
+
+/* ─── Right-click Context Menu ──────────────────────────────────────────── */
+.rack-ctx-menu {
+    position: fixed;
+    z-index: 99999;
+    width: 190px;
+    background: linear-gradient(160deg, #0e0e14 0%, #080810 100%);
+    border: 1px solid rgba(0, 229, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    overflow: hidden;
+    animation: ctxFadeIn 0.1s ease;
+}
+
+@keyframes ctxFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.rack-ctx-header {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(0, 229, 255, 0.55);
+    padding: 8px 12px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rack-ctx-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.78rem;
+    text-align: left;
+    transition: background 0.1s, color 0.1s;
+}
+
+.rack-ctx-item:hover {
+    background: rgba(0, 229, 255, 0.08);
+    color: #e0f7ff;
+}
+
+.rack-ctx-danger {
+    color: rgba(255, 100, 100, 0.75);
+}
+
+.rack-ctx-danger:hover {
+    background: rgba(255, 60, 60, 0.1);
+    color: #ff8888;
+}
+
+.rack-ctx-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 3px 0;
+}
+
+/* Dropdown container — positions the preset panel */
+.rack-preset-dropdown {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    z-index: 9999;
+    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.8));
+}
+
+.rack-params {
+    padding: 8px 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    background: #1e1e1e;
+}
+
+.no-params {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    padding: 10px;
+}
+
+.wasm-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 8px;
+    color: #ff00ff;
+    opacity: 0.3;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* ─── CPU Meter & Program Selection ───────────────────────────────────────── */
+.cpu-meter-container {
+    width: 20px;
+    height: 3px;
+    background: #222;
+    border-radius: 1px;
+    overflow: hidden;
+    margin: 0 4px;
+    border: 1px solid #333;
+}
+
+.cpu-meter-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s ease, background-color 0.3s ease;
+}
+
+.program-select-trigger {
+    position: relative;
+    padding: 1px 6px;
+    font-size: 9px;
+    color: #aaa;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 2px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.12s;
+}
+
+.program-select-trigger:hover {
+    color: #fff;
+    border-color: #555;
+    background: #2a2a2a;
+}
+
+.program-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 140px;
+    max-height: 200px;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.program-item {
+    padding: 4px 8px;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.program-item:hover {
+    background: #333;
+    color: #fff;
+}
+
+
+.plugin-rack-unit.bypassed {
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+.plugin-rack-unit.bypassed .rack-params {
+    pointer-events: none;
+}
+
+.rack-header {
+    background: #111;
+    border-bottom: 1px solid #333;
+    padding: 4px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+}
+
+.rack-title-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.power-toggle {
+    cursor: pointer;
+    filter: hue-rotate(180deg);
+    /* Make it distinct */
+}
+
+.rack-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+}
+
+.btn-rack-edit {
+    font-size: 9px;
+    padding: 1px 4px;
+    background: #333;
+    border: 1px solid #555;
+    color: #00e5ff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-rack-edit:hover {
+    border-color: #00e5ff;
+    background: #222;
+}
+
+.rack-params {
+    padding: 8px 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    /* Center knobs */
+    background: #1e1e1e;
+}
+
+.no-params {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    padding: 10px;
+}
+
+.wasm-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 8px;
+    color: #ff00ff;
+    opacity: 0.3;
+    font-weight: bold;
+    pointer-events: none;
+}

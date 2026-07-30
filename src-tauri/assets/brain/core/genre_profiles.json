@@ -1,0 +1,81 @@
+[
+    {
+        "name": "Lo-Fi Hip Hop",
+        "bpm_range": [
+            70,
+            95
+        ],
+        "key_tendencies": [
+            "Minor",
+            "Dorian"
+        ],
+        "instrumentation": [
+            "Electric Piano",
+            "Vinyl Crackle",
+            "Sampled Drums"
+        ],
+        "spectral_targets": {
+            "low_end": "Warm and slightly muddy",
+            "mids": "Prominent, dusty",
+            "highs": "Rolled off above 10kHz"
+        },
+        "mixing_tips": [
+            "Add saturation to everything.",
+            "Use sidechain on the kick/bass.",
+            "Keep the snare loose and slightly late."
+        ]
+    },
+    {
+        "name": "Techno",
+        "bpm_range": [
+            120,
+            140
+        ],
+        "key_tendencies": [
+            "Minor",
+            "Phrygian"
+        ],
+        "instrumentation": [
+            "909 Kick",
+            "Synthesizer Stabs",
+            "Industrial Percussion"
+        ],
+        "spectral_targets": {
+            "low_end": "Tight, punchy sub (40-60Hz)",
+            "mids": "Aggressive, mechanical",
+            "highs": "Crisp hi-hats, no harshness"
+        },
+        "mixing_tips": [
+            "Check phase correlation on the kick.",
+            "Use heavy compression on the drum bus.",
+            "Automate reverb tails for transitions."
+        ]
+    },
+    {
+        "name": "Cinematic",
+        "bpm_range": [
+            60,
+            120
+        ],
+        "key_tendencies": [
+            "Minor",
+            "Lydian",
+            "Epic"
+        ],
+        "instrumentation": [
+            "Orchestra",
+            "Hybrid Synths",
+            "Percussion"
+        ],
+        "spectral_targets": {
+            "low_end": "Deep, rumbling sub (20-40Hz)",
+            "mids": "Rich, dynamic",
+            "highs": "Airy, detailed"
+        },
+        "mixing_tips": [
+            "Use automation for dynamics.",
+            "Layer sounds for depth.",
+            "Check for frequency masking in the low-mids."
+        ]
+    }
+]

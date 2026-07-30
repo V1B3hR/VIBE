@@ -1,0 +1,15 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users\br
+igh\.gemini\antigravity\scratch\VIBE\src-taur
+i)
+At line:1 char:1
++ cargo clippy --lib 2>&1 | Out-File 
+-FilePath clippy_final.txt -Encodi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified:  
+   (    Checking vi...VIBE\src-tauri):Strin  
+  g) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandE 
+   rror
+ 
+    Finished `dev` profile [unoptimized + 
+debuginfo] target(s) in 2.61s

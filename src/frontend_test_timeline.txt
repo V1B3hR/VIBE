@@ -1,0 +1,825 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/components/Timeline.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+node.exe : [90mstderr[2m | 
+src/components/Timeline.test.tsx[2m 
+> [22m[2mTimeline Component[2m > 
+[22m[2mtoggles track mute
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: ([90mstderr[2m...gles   
+  track mute:String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+[22m[39mAn update to Timeline 
+inside a test was not wrapped in 
+act(...).
+
+When testing, code that causes React 
+state updates should be wrapped into 
+act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the 
+browser. Learn more at https://react.
+dev/link/wrap-tests-with-act
+An update to Timeline inside a test 
+was not wrapped in act(...).
+
+When testing, code that causes React 
+state updates should be wrapped into 
+act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the 
+browser. Learn more at https://react.
+dev/link/wrap-tests-with-act
+
+[90mstderr[2m | 
+src/components/Timeline.test.tsx[2m 
+> [22m[2mTimeline Component[2m > 
+[22m[2mtoggles track solo
+[22m[39mAn update to Timeline 
+inside a test was not wrapped in 
+act(...).
+
+When testing, code that causes React 
+state updates should be wrapped into 
+act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the 
+browser. Learn more at https://react.
+dev/link/wrap-tests-with-act
+An update to Timeline inside a test 
+was not wrapped in act(...).
+
+When testing, code that causes React 
+state updates should be wrapped into 
+act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the 
+browser. Learn more at https://react.
+dev/link/wrap-tests-with-act
+
+ [31mÔØ»[39m src/components/Timeline.test.tsx [2m([22m[2m10 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1174[2mms[22m[39m
+     [32mÔ£ô[39m renders and fetches tracks[32m 62[2mms[22m[39m
+     [32mÔ£ô[39m toggles track mute[32m 17[2mms[22m[39m
+     [32mÔ£ô[39m toggles track solo[32m 22[2mms[22m[39m
+     [32mÔ£ô[39m handles snap selection[32m 8[2mms[22m[39m
+     [32mÔ£ô[39m handles tool selection[32m 8[2mms[22m[39m
+[31m     [31m├ù[31m calls split on button click[39m[33m 1012[2mms[22m[39m
+     [32mÔ£ô[39m adds a MIDI clip to a track[32m 14[2mms[22m[39m
+     [32mÔ£ô[39m handles spacebar for play/pause[32m 15[2mms[22m[39m
+     [32mÔ£ô[39m handles zoom buttons[32m 7[2mms[22m[39m
+     [32mÔ£ô[39m sets up event listeners[32m 9[2mms[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[
+41m Failed Tests 1 [49m[22m[31mÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Timeline.test.tsx[2m 
+> [22mTimeline Component[2m > 
+[22mcalls split on button click
+[31m[1mAssertionError[22m[39m: 
+expected "vi.fn()" to be called with 
+arguments: [ 'slice_clip', 
+Any<Object> ][90m
+
+Received: 
+
+[1m  1st vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_tracks",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  2nd vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  3rd vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_bpm",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  4th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  5th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  6th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  7th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  8th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  9th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  10th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  11th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  12th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  13th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  14th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  15th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  16th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  17th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  18th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+
+[1m  19th vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "slice_clip",[90m
+[32m-   Any<Object>,[90m
+[31m+   "get_playhead",[90m
+[31m+   undefined,[90m
+[2m  ][22m
+[39m[90m
+
+Number of calls: [1m19[22m
+[39m
+
+Ignored nodes: comments, script, 
+style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"timelin
+e-wrapper"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-toolbar"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mSNAP:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-snap-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"0"[39m
+              [36m>[39m
+                [0mOff[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"1"[39m
+              [36m>[39m
+                [0m1/4[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"2"[39m
+              [36m>[39m
+                [0m1/8[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"4"[39m
+              [36m>[39m
+                [0m1/16[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"8"[39m
+              [36m>[39m
+                [0m1/32[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"16"[39m
+              [36m>[39m
+                [0m1/64[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"32"[39m
+              [36m>[39m
+                [0m1/128[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              
+[33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0mTOOL:[0m
+            [36m</span>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"s
+nap-select"[39m
+              [33mdata-testid[39m=
+[32m"timeline-tool-select"[39m
+            [36m>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"read"[39m
+              [36m>[39m
+                [0mPointer/Read[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"draw"[39m
+              [36m>[39m
+                [0mDraw (Pencil)[0m
+              [36m</option>[39m
+              [36m<option[39m
+                
+[33mvalue[39m=[32m"erase"[39m
+              [36m>[39m
+                [0mErase[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-split-btn"[39m
+              
+[33mtitle[39m=[32m"Split at 
+Playhead (S)"[39m
+            [36m>[39m
+              [0mÔ£é´©Å Split[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-undo-btn"[39m
+              
+[33mtitle[39m=[32m"Undo 
+(Ctrl+Z)"[39m
+            [36m>[39m
+              [0mÔåÂ Undo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-redo-btn"[39m
+              
+[33mtitle[39m=[32m"Redo 
+(Ctrl+Shift+Z)"[39m
+            [36m>[39m
+              [0mÔåÀ Redo[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-in-btn"[39m
+            [36m>[39m
+              [0mZoom In (+)[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-zoom-out-btn"[39m
+            [36m>[39m
+              [0mZoom Out (-)[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-spacer"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"too
+lbar-group"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"t
+oolbar-btn"[39m
+              [33mdata-testid[39m=
+[32m"timeline-deselect-all-btn"[39m
+            [36m>[39m
+              [0mDeselect All[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-container glass"[39m
+          [33mdata-testid[39m=[32m
+"timeline-container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tim
+eline-ruler"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"p
+layhead-line"[39m
+              
+[33mstyle[39m=[32m"transform: 
+translateX(150px); will-change: 
+transform;"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tra
+cks-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"t
+rack-container-outer"[39m
+              [33mdata-testid[39m=
+[32m"track-0"[39m
+            [36m>[39m
+              [36m<div[39m
+                
+[33mclass[39m=[32m"track-row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-controls"[39m
+                  
+[33mstyle[39m=[32m"border-left: 
+4px solid rgb(255, 0, 0);"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=
+[32m"track-label"[39m
+                    [33mdata-testid
+[39m=[32m"track-name-0"[39m
+                  [36m>[39m
+                    [0mAudio Track 
+1[0m
+                  [36m</span>[39m
+                  [36m<div[39m
+                    [33mclass[39m=
+[32m"track-buttons"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+mute "[39m
+                      [33mdata-testi
+d[39m=[32m"track-mute-0"[39m
+                      
+[33mtitle[39m=[32m"Mute 
+Track"[39m
+                    [36m>[39m
+                      [0mM[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+solo "[39m
+                      [33mdata-testi
+d[39m=[32m"track-solo-0"[39m
+                      
+[33mtitle[39m=[32m"Solo 
+Track"[39m
+                    [36m>[39m
+                      [0mS[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+automation "[39m
+                      
+[33mtitle[39m=[32m"Show 
+Automation"[39m
+                    [36m>[39m
+                      [0mA[0m
+                    
+[36m</button>[39m
+                    [36m<button[39m
+                      
+[33mclass[39m=[32m"btn-control 
+midi-add"[39m
+                      [33mdata-testi
+d[39m=[32m"track-add-midi-0"[39m
+                      
+[33mtitle[39m=[32m"Add MIDI 
+Clip"[39m
+                    [36m>[39m
+                      [0mM+[0m
+                    
+[36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[3
+2m"track-lane"[39m
+                  [33mdata-testid[3
+9m=[32m"track-lane-0"[39m
+                  [33mstyle[39m=[3
+2m"background-size: 12px 100%; 
+background-image: 
+linear-gradient(90deg, 
+var(--border-subtle) 1px, 
+transparent 1px);"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    
+[33mclass[39m=[32m"audio-clip 
+"[39m
+                    [33mdata-testid
+[39m=[32m"clip-clip-1"[39m
+                    
+[33mdraggable[39m=[32m"true"[39m
+                    
+[33mstyle[39m=[32m"left: 0px; 
+width: 24px; background: 
+linear-gradient(180deg, rgba(255, 0, 
+0, 0.667) 0%, rgb(255, 0, 0) 
+100%);"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m
+=[32m"clip-label"[39m
+                    [36m>[39m
+                      [0mSample 
+1[0m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-in"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-handle 
+fade-handle-out"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-in"[39m
+                      
+[33mstyle[39m=[32m"width: 
+0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"fade-overlay 
+fade-overlay-out"[39m
+                      
+[33mstyle[39m=[32m"width: 0px; 
+right: 0px;"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mstyle[39m=[32m"width: 100%; 
+height: 100%; position: absolute; 
+top: 0px; left: 0px; z-index: 
+1;"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mdata-tes
+tid[39m=[32m"mock-waveform-gl"[39m
+                      [36m/>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-left"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      
+[33mclass[39m=[32m"trim-handle 
+trim-handle-right"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"timel
+ine-bottom-panel"[39m
+          
+[33mstyle[39m=[32m"height: 300px; 
+border-top: 1px solid rgb(51, 51, 
+51); background: rgb(17, 17, 17); 
+flex-shrink: 0;"[39m
+        [36m>[39m
+          [36m<div[39m
+            
+[33mstyle[39m=[32m"display: flex; 
+justify-content: center; 
+align-items: center; height: 100%; 
+color: rgb(68, 68, 68); 
+flex-direction: column; gap: 
+10px;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              
+[33mfill[39m=[32m"none"[39m
+              
+[33mheight[39m=[32m"48"[39m
+              [33mstroke[39m=[32m"
+currentColor"[39m
+              
+[33mstroke-width[39m=[32m"1"[39m
+              
+[33mviewBox[39m=[32m"0 0 24 
+24"[39m
+              
+[33mwidth[39m=[32m"48"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 
+19.5v-15A2.5 2.5 0 0 1 6.5 
+2H20v20H6.5a2.5 2.5 0 0 1 
+0-5H20"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<span>[39m
+              [0mSelect an Audio 
+Clip to Edit[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[36m [2mÔØ»[22m src/components/Tim
+eline.test.tsx:[2m119:48[22m[39m
+    [90m117| [39m
+    [90m118| [39m        [90m// 
+Split usually involves slice_clip 
+for each applicable clip[39m
+    [90m119| [39m        await 
+waitFor(() => expect(mockInvoke).toHa
+veBeenCalledWith('sÔÇª
+    [90m   | [39m                  
+                             
+[31m^[39m
+    [90m120| [39m    })[33m;[39m
+    [90m121| [39m
+[90m [2mÔØ»[22m runWithExpensiveEr
+rorDiagnosticsDisabled node_modules/@
+testing-library/dom/dist/config.js:[
+2m47:12[22m[39m
+[90m [2mÔØ»[22m checkCallback node
+_modules/@testing-library/dom/dist/wa
+it-for.js:[2m124:77[22m[39m
+[90m [2mÔØ»[22m 
+Timeout.checkRealTimersCallback node_
+modules/@testing-library/dom/dist/wai
+t-for.js:[2m118:16[22m[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[1/1]ÔÄ»[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m
+ Unhandled Errors [49m[22m[31mÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1m
+Vitest caught 1 unhandled error 
+during the test run.
+This might cause false positive 
+tests. Resolve unhandled errors to 
+make sure your tests are not 
+affected.[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Unhandled Rejection 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1mTypeError[22m: window.__TAU
+RI_INTERNALS__.transformCallback is 
+not a function[39m
+[90m [2mÔØ»[22m transformCallback 
+node_modules/@tauri-apps/api/core.js:
+[2m72:39[22m[39m
+[90m [2mÔØ»[22m listen node_module
+s/@tauri-apps/api/event.js:[2m77:18
+[22m[39m
+[36m [2mÔØ»[22m setupListener src/
+components/Timeline.tsx:[2m137:32[2
+2m[39m
+    [90m135| [39m
+    [90m136| [39m            
+[90m// Project Updates[39m
+    [90m137| [39m            
+unlistenFn = await 
+listen('project_updated', (event: 
+any) ÔÇª
+    [90m   | [39m                  
+             [31m^[39m
+    [90m138| [39m                
+[35mconst[39m payload [33m=[39m 
+event[33m.[39mpayload[33m;[39m
+    [90m139| [39m                [
+34msetTracks[39m(payload[33m.[39mt
+racks)[33m;[39m
+[90m [2mÔØ»[22m 
+processTicksAndRejections node:intern
+al/process/task_queues:[2m103:5[22m
+[39m
+
+[31mThis error originated in "[1msr
+c/components/Timeline.test.tsx[22m" 
+test file. It doesn't mean the error 
+was thrown inside the file itself, 
+but while it was running.[39m
+[31mThe latest test that might've 
+caused the error is "[1mtoggles 
+track mute[22m". It might mean one 
+of the following:
+- The error was thrown, while Vitest 
+was running this test.
+- If the error occurred after the 
+test had been completed, this was 
+the last documented test before it 
+was thrown.[39m
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m9 passed[39m[22m[90m (10)[39m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 11:45:13
+[2m   Duration [22m 2.59s[2m (transform 143ms, setup 151ms, import 241ms, tests 1.17s, environment 871ms)[22m
+

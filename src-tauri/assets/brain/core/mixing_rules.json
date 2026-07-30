@@ -1,0 +1,43 @@
+[
+    {
+        "category": "EQ",
+        "problem": "Muddy Low Mids (200-500Hz)",
+        "symptoms": [
+            "Sounds boxy",
+            "Unclear vocals",
+            "Clashing instruments"
+        ],
+        "solution": "Apply a gentle cut (2-3dB) around 300-400Hz on instruments like pads or guitars.",
+        "context": "Context::Techno, Context::Cinematic"
+    },
+    {
+        "category": "Compression",
+        "problem": "Pumping/Breathing Artifacts",
+        "symptoms": [
+            "Volume dips unnaturally",
+            "Distracting movement"
+        ],
+        "solution": "Reduce the release time or lower the ratio. Check the sidechain input.",
+        "context": "Context::EDM, Context::HipHop"
+    },
+    {
+        "category": "Phase",
+        "problem": "Phase Cancellation",
+        "symptoms": [
+            "Instrument disappears in mono",
+            "Hollow sound"
+        ],
+        "solution": "Check phase correlation meters. Flip the phase on one channel or use a phase alignment plugin.",
+        "context": "Context::Recording, Context::Samples"
+    },
+    {
+        "category": "Gain Staging",
+        "problem": "Clipping on Master Bus",
+        "symptoms": [
+            "Digital distortion",
+            "Red meters > 0dB"
+        ],
+        "solution": "Lower all faders by -6dB or use a gain utility plugin. Do NOT just lower the master fader.",
+        "context": "Context::Mixing, Context::Mastering"
+    }
+]

@@ -1,0 +1,48 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/components/Transport.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+[90mstdout[2m | src/components/Transport.test.tsx[2m > [22m[2mTransport Component[2m > [22m[2msends stop commands
+[22m[39mÔÅ©´©Å Paused
+
+node.exe : [90mstderr[2m | 
+src/components/Transport.test.tsx[2m > 
+[22m[2mTransport Component[2m > 
+[22m[2msends stop commands
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    ([90mstderr[2m...s stop commands:Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+[22m[39mAn update to Transport inside a 
+test was not wrapped in act(...).
+
+When testing, code that causes React state 
+updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the browser. 
+Learn more at 
+https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/Transport.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 217[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+[2m   Start at [22m 21:37:03
+[2m   Duration [22m 1.06s[2m (transform 49ms, setup 83ms, import 135ms, tests 217ms, environment 513ms)[22m
+

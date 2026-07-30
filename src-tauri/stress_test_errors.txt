@@ -1,0 +1,295 @@
+﻿cargo : warning: unused imports: 
+`AudioBuffer`, `MidiClip`, 
+`MidiNote`, and `ProcessingContext`
+At line:1 char:1
++ cargo test --lib 
+engine::stress_tests 2>&1 | Out-File 
+-FilePath stres ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (warning: unused...cessi  
+  ngContext`:String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+ --> 
+src\engine\integration_tests.rs:1:28
+  |
+1 | ...::{AudioBuffer, MidiClip, 
+MidiNote, ProcessingContext, T...
+  |       ^^^^^^^^^^^  ^^^^^^^^  
+^^^^^^^^  ^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused import: 
+`KropelkaInsight`
+ --> 
+src\engine\integration_tests.rs:3:52
+  |
+3 | ...rain, KropelkaInsight, Krop...
+  |          ^^^^^^^^^^^^^^^
+
+warning: unused imports: `Chord` and 
+`Key`
+ --> 
+src\engine\integration_tests.rs:4:29
+  |
+4 | ...heory::{Chord, Key};
+  |            ^^^^^  ^^^
+
+warning: unused import: 
+`std::sync::Arc`
+ --> 
+src\engine\integration_tests.rs:5:5
+  |
+5 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: 
+`tokio::sync::Mutex`
+ --> 
+src\engine\integration_tests.rs:6:5
+  |
+6 | use tokio::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `uuid::Uuid`
+ --> 
+src\engine\integration_tests.rs:7:5
+  |
+7 | use uuid::Uuid;
+  |     ^^^^^^^^^^
+
+warning: variable does not need to 
+be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...s, mut internal_busses, 
+m...
+     |       ----^^^^^^^^^^^^^^^
+     |       |
+     |       help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: variable does not need to 
+be mutable
+   --> src\engine\graph.rs:818:13
+    |
+818 | ... let mut params = vec![&s...
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: unused variable: `bpm`
+    --> 
+src\engine\kropelka_brain.rs:1185:9
+     |
+1185 |         bpm: f64,
+     |         ^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_bpm`
+     |
+     = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: 
+`sample_rate`
+    --> 
+src\engine\kropelka_brain.rs:1186:9
+     |
+1186 |         sample_rate: f64,
+     |         ^^^^^^^^^^^ help: if 
+this is intentional, prefix it with 
+an underscore: `_sample_rate`
+
+warning: variable does not need to 
+be mutable
+  --> 
+src\engine\integration_tests.rs:16:13
+   |
+16 | ...   let mut tracks = vec![T...
+   |           ----^^^^^^
+   |           |
+   |           help: remove this 
+`mut`
+
+warning: unused variable: 
+`script_path`
+  --> src\lib.rs:18:17
+   |
+18 | ... let script_path = app
+   |         ^^^^^^^^^^^ help: if 
+this is intentional, prefix it with 
+an underscore: `_script_path`
+
+warning: method `reset_lufs` is 
+never used
+   --> 
+src\engine\metering\mod.rs:131:12
+    |
+ 23 | impl GpuMeter {
+    | ------------- method in this 
+implementation
+...
+131 |     pub fn reset_lufs(&self) {
+    |            ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: struct `KWeightingFilter` 
+is never constructed
+   --> 
+src\engine\metering\mod.rs:139:8
+    |
+139 | struct KWeightingFilter {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: associated items `new` and 
+`process` are never used
+   --> 
+src\engine\metering\mod.rs:153:8
+    |
+152 | impl KWeightingFilter {
+    | --------------------- 
+associated items in this 
+implementation
+153 |     fn new() -> Self {
+    |        ^^^
+...
+167 |     fn process(&mut self, in...
+    |        ^^^^^^^
+
+warning: function `to_db_power` is 
+never used
+   --> 
+src\engine\metering\mod.rs:223:4
+    |
+223 | fn to_db_power(power: f64) -...
+    |    ^^^^^^^^^^^
+
+warning: field `sample_rate` is 
+never read
+ --> 
+src\engine\metering\lufs_meter.rs:7:5
+  |
+5 | pub struct LufsMeter {
+  |            --------- field in 
+this struct
+6 |     meter: Mutex<EbuR128>,
+7 |     sample_rate: u32,
+  |     ^^^^^^^^^^^
+
+warning: method `reset` is never used
+  --> src\engine\metering\lufs_meter.
+rs:58:12
+   |
+10 | impl LufsMeter {
+   | -------------- method in this 
+implementation
+...
+58 |     pub fn reset(&self) {
+   |            ^^^^^
+
+warning: associated function 
+`get_role_color` is never used
+  --> src\engine\gosposia.rs:69:12
+   |
+20 | impl Gosposia {
+   | ------------- associated 
+function in this implementation
+...
+69 |     pub fn get_role_color(rol...
+   |            ^^^^^^^^^^^^^^
+
+warning: method `kill` is never used
+   --> 
+src\engine\neural_forest.rs:101:12
+    |
+ 24 | impl NeuralForestBridge {
+    | ----------------------- method 
+in this implementation
+...
+101 |     pub fn kill(&mut self) {
+    |            ^^^^
+
+warning: `vibe` (lib test) generated 
+20 warnings (run `cargo fix --lib -p 
+vibe --tests` to apply 12 
+suggestions)
+    Finished `test` profile 
+[unoptimized + debuginfo] target(s) 
+in 0.42s
+     Running unittests src\lib.rs (ta
+rget\debug\deps\vibe_lib-2abfd6f11d8d
+afda.exe)
+
+running 3 tests
+test engine::stress_tests::voice_of_god_tests::test_voice_of_god_64_voices ... FAILED
+test engine::stress_tests::voice_of_god_tests::test_no_allocations_in_audio_thread ... FAILED
+test engine::stress_tests::voice_of_god_tests::test_sustained_load_no_degradation ... FAILED
+
+failures:
+
+---- engine::stress_tests::voice_of_god_tests::test_voice_of_god_64_voices stdout ----
+
+­ƒÄÁ Voice of God Test: 16 synths ├ù 4 notes = 64 voices
+­ƒôè Performance Results:
+   Buffer size: 128 samples (2.67ms)
+   Average processing time: 9.391ms
+   Maximum processing time: 19.086ms
+   CPU usage: 352.1%
+   Headroom: -252.1%
+
+thread 'engine::stress_tests::voice_of_god_tests::test_voice_of_god_64_voices' (24068) panicked at src\engine\stress_tests.rs:129:9:
+ÔØî FAILED: Processing time 19.086ms exceeds limit of 1.800ms
+This indicates inefficient DSP or memory allocations in the audio thread!
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- engine::stress_tests::voice_of_god_tests::test_no_allocations_in_audio_thread stdout ----
+­ƒôè Allocation Detection:
+   Mean processing time: 8730.99┬Ás
+   Std deviation: 6631.17┬Ás
+   Coefficient of variation: 75.95%
+
+thread 'engine::stress_tests::voice_of_god_tests::test_no_allocations_in_audio_thread' (4020) panicked at src\engine\stress_tests.rs:225:9:
+ÔØî FAILED: High variance (75.95%) indicates memory allocations or GC pauses!
+
+---- engine::stress_tests::voice_of_god_tests::test_sustained_load_no_degradation stdout ----
+
+ÔÅ▒´©Å  Sustained Load Test: 32 tracks for 10 seconds
+
+   Progress: 0.0%
+   Progress: 53.3%
+   Progress: 100.0%
+­ƒôè Sustained Load Results:
+   Total duration: 36.46s
+   Buffers processed: 1875
+   First 100 buffers avg: 10.454ms
+   Last 100 buffers avg: 8.168ms
+   Performance degradation: -21.86%
+
+thread 'engine::stress_tests::voice_of_god_tests::test_sustained_load_no_degradation' (4592) panicked at src\engine\stress_tests.rs:324:9:
+ÔØî FAILED: Performance degraded by -21.86% over time!
+This indicates memory leaks or resource accumulation.
+
+
+failures:
+    engine::stress_tests::voice_of_god_tests::test_no_allocations_in_audio_thread
+    engine::stress_tests::voice_of_god_tests::test_sustained_load_no_degradation
+    engine::stress_tests::voice_of_god_tests::test_voice_of_god_64_voices
+
+test result: FAILED. 0 passed; 3 failed; 0 ignored; 0 measured; 136 filtered out; finished in 36.50s
+
+error: test failed, to rerun pass 
+`--lib`

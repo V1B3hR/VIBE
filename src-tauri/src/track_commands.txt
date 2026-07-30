@@ -1,0 +1,24 @@
+
+// Track Creation Commands
+
+#[tauri::command]
+fn create_audio_track(
+    state: tauri::State<'_, AppState>,
+    name: String,
+) -> Result<String, String> {
+    let mut engine = state.inner().audio_engine.lock().unwrap();
+    // TODO: Implement actual track creation in AudioEngine
+    // For now return placeholder ID
+    Ok(uuid::Uuid::new_v4().to_string())
+}
+
+#[tauri::command]
+fn create_track_group(
+    state: tauri::State<'_, AppState>,
+    name: String,
+) -> Result<String, String> {
+    let mut engine = state.inner().audio_engine.lock().unwrap();
+    // TODO: Implement group creation in AudioEngine
+    // For now return placeholder ID
+    Ok(uuid::Uuid::new_v4().to_string())
+}

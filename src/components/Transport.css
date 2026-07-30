@@ -1,0 +1,218 @@
+.transport-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    flex: 1;
+}
+
+.transport-lcd-panel {
+    background: linear-gradient(180deg, #1b2131 0%, #11151f 100%);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.1);
+    min-width: 180px;
+    cursor: ns-resize;
+}
+
+.lcd-time {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px var(--accent-glow);
+    line-height: 1.2;
+}
+
+.lcd-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lcd-bpm {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+}
+
+.lcd-bpm-input {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    outline: none;
+    border-bottom: 1px solid var(--accent);
+    width: 60px;
+}
+
+.lcd-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.lcd-meter-mini {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+}
+
+.mini-label {
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.mini-bar-bg {
+    width: 30px;
+    height: 3px;
+    background: #000;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.mini-bar-fill {
+    height: 100%;
+    background: #00f0ff;
+    transition: width 0.1s;
+}
+
+.mini-bar-fill.danger {
+    background: #ef4444;
+}
+
+.mini-value {
+    min-width: 25px;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.transport-button-group {
+    display: flex;
+    align-items: center;
+    background: #11151f;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    padding: 4px;
+    gap: 4px;
+}
+
+.btn-t-action {
+    width: 44px;
+    height: 44px;
+    background: #1a202c;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-t-action:hover {
+    background: #232c3d;
+    color: var(--text-primary);
+}
+
+.btn-t-action.secondary {
+    width: 36px;
+    height: 36px;
+    color: #4a5568;
+}
+
+.btn-t-action.secondary:hover {
+    color: var(--text-secondary);
+}
+
+.btn-t-action.active-play {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.btn-t-action.active-rec {
+    background: rgba(255, 0, 85, 0.1);
+    color: #ff0055;
+    border-color: #ff0055;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+.pause-icon {
+    display: flex;
+    gap: 4px;
+}
+.pause-icon::before, .pause-icon::after {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 1px;
+}
+
+.divider-v {
+    width: 1px;
+    height: 24px;
+    background: var(--border-subtle);
+    margin: 0 4px;
+}
+
+.transport-meter-panel {
+    background: #11151f;
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meter-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.meter-display {
+    background: #090b10;
+    padding: 2px 4px;
+    border-radius: 2px;
+    border: 1px solid #000;
+}
+
+.meter-leds {
+    display: flex;
+    gap: 2px;
+}
+
+.led {
+    width: 4px;
+    height: 8px;
+    background: #1a202c;
+    border-radius: 1px;
+}
+
+.led.active { background: #00f0ff; box-shadow: 0 0 5px #00f0ff; }
+.led.warning { background: #d4af37; box-shadow: 0 0 5px #d4af37; }
+.led.danger { background: #ff0055; box-shadow: 0 0 5px #ff0055; }

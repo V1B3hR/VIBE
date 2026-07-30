@@ -1,0 +1,88 @@
+.timeline-context-menu {
+    min-width: 220px;
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    padding: 6px 0;
+    font-family: 'Inter', sans-serif;
+    color: #eee;
+}
+
+.glyph-menu .menu-header {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #666;
+    padding: 8px 16px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.glyph-menu .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.15s ease;
+}
+
+.glyph-menu .menu-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #4a9eff;
+}
+
+.glyph-menu .menu-item .icon {
+    width: 24px;
+    font-size: 16px;
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+.glyph-menu .menu-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 4px 0;
+}
+
+.glyph-menu .menu-item.delete:hover {
+    background: rgba(255, 59, 59, 0.15);
+    color: #ff3b3b;
+}
+
+.glass {
+    backdrop-filter: blur(16px);
+}
+
+/* ── Submenus ── */
+.has-submenu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.has-submenu::after {
+    content: "▶";
+    font-size: 8px;
+    opacity: 0.5;
+    margin-left: auto;
+}
+
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: -5px;
+    width: 200px;
+    background: rgba(25, 25, 25, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+    display: none;
+    padding: 6px 0;
+    z-index: 1001;
+    backdrop-filter: blur(20px);
+}
+
+.has-submenu:hover > .submenu {
+    display: block;
+}

@@ -1,0 +1,80 @@
+.plugin-context-menu {
+    position: fixed;
+    z-index: 9999;
+    min-width: 180px;
+    background: rgba(20, 20, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 6px 0;
+    backdrop-filter: blur(20px);
+    animation: menuAppear 0.15s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes menuAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.menu-header {
+    padding: 8px 14px 4px;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plugin-name-hint {
+    color: #6496ff;
+}
+
+.menu-item {
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: default;
+    transition: all 0.1s;
+}
+
+.menu-item:hover:not(.disabled) {
+    background: rgba(100, 150, 255, 0.15);
+    color: #fff;
+}
+
+.menu-item .icon {
+    font-size: 14px;
+    width: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item.disabled {
+    opacity: 0.3;
+}
+
+.menu-item.delete:hover {
+    background: rgba(255, 100, 100, 0.2);
+    color: #ff6464;
+}
+
+.menu-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 4px 0;
+}

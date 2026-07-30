@@ -1,0 +1,116 @@
+.magneto-master-panel {
+    background: linear-gradient(180deg, #0f0f0f 0%, #050505 100%);
+    border: 1px solid #1a3a3a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 40px rgb(0, 255, 204, 0.1);
+}
+
+.magneto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #1a3a3a;
+    padding-bottom: 10px;
+}
+
+.magneto-header h2 {
+    color: #0fc;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.magneto-status {
+    font-size: 10px;
+    color: #0fc;
+    background: rgb(0, 255, 204, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #0fc;
+}
+
+.magneto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.magneto-fx-unit {
+    background: rgb(255, 255, 255, 0.02);
+    border: 1px solid #222;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.magneto-fx-unit h3 {
+    font-size: 11px;
+    color: #888;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.magneto-params {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.magneto-param-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.magneto-param-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.magneto-param-value {
+    color: #0fc;
+    font-family: monospace;
+}
+
+.magneto-slider {
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+    outline: none;
+}
+
+.magneto-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #0fc;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(0, 255, 204, 0.5);
+}
+
+.btn-magneto-toggle {
+    background: #111;
+    border: 1px solid #333;
+    color: #666;
+    font-size: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-magneto-toggle.active {
+    background: #0fc;
+    color: #000;
+    border-color: #0fc;
+    box-shadow: 0 0 10px rgb(0, 255, 204, 0.3);
+}

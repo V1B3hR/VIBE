@@ -1,0 +1,84 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Us
+ers\brigh\.gemini\antigravity\scratch\V
+IBE\src-tauri)
+At line:1 char:1
++ cargo check 2>&1 | Out-File 
+check_log_2.txt -Encoding utf8
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpeci 
+   fied: (    Checking vi...VIBE\src-  
+  tauri):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCo 
+   mmandError
+ 
+error[E0382]: use of moved value: 
+`io_manager`
+    --> src\engine\audio.rs:3391:13
+     |
+ 295 |         let io_manager = Arc::ne
+w(Mutex::new(super::io_manager::IoManag
+er::new(64)));
+     |             ---------- move 
+occurs because `io_manager` has type 
+`Arc<std::sync::Mutex<IoManager>>`, 
+which does not implement the `Copy` 
+trait
+...
+ 567 |         thread::spawn(move || {
+     |                       ------- 
+value moved into closure here
+...
+1449 |             while let Ok(cmd) = 
+rx.recv() {
+     |             
+----------------------------- inside 
+of this loop
+...
+1519 |                         let _ = 
+io_manager
+     |                                 
+---------- variable moved due to use 
+in closure
+...
+3391 |             io_manager,
+     |             ^^^^^^^^^^ value 
+used here after move
+     |
+help: consider moving the expression 
+out of the loop so it is only moved 
+once
+     |
+1449 ~             let mut value = 
+io_manager
+1450 +                             
+.lock();
+1451 ~             while let Ok(cmd) = 
+rx.recv() {
+1452 |                 match cmd {
+ ...
+1520 |                     
+AudioCommand::CreateInputAlias(name, 
+stereo, chans, color) => {
+1521 ~                         let _ = 
+value
+     |
+help: consider cloning the value 
+before moving it into the closure
+     |
+ 567 ~         let value = 
+io_manager.clone();
+ 568 ~         thread::spawn(move || {
+ 569 |             let host = 
+cpal::default_host();
+ ...
+1519 |                     
+AudioCommand::CreateInputAlias(name, 
+stereo, chans, color) => {
+1520 ~                         let _ = 
+value
+     |
+
+For more information about this error, 
+try `rustc --explain E0382`.
+error: could not compile `vibe` (lib) 
+due to 1 previous error

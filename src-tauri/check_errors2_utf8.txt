@@ -1,0 +1,506 @@
+cargo :     Checking vibe v0.1.0 (C:
+\Users\brigh\.gemini\antigravity\scr
+atch\VIBE\src-tauri)
+At line:1 char:1
++ cargo check > check_errors2.txt 
+2>&1
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: (    Checking vi...VIB  
+  E\src-tauri):String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+error[E0106]: missing lifetime 
+specifier
+   --> 
+src\engine\render_engine.rs:236:25
+    |
+236 |     writer: 
+flac_bound::FlacEncoder,
+    |                         
+^^^^^^^^^^^ expected named lifetime 
+parameter
+    |
+help: consider introducing a named 
+lifetime parameter
+    |
+235 ~ struct FlacEncoder<'a> {
+236 ~     writer: 
+flac_bound::FlacEncoder<'a>,
+    |
+
+error[E0433]: failed to resolve: 
+could not find `FlacEncoderBuilder` 
+in `flac_bound`
+   --> 
+src\engine\render_engine.rs:242:38
+    |
+242 |         let mut writer = flac_
+bound::FlacEncoderBuilder::new()
+    |                               
+       ^^^^^^^^^^^^^^^^^^
+    |                               
+       |
+    |                               
+       could not find 
+`FlacEncoderBuilder` in `flac_bound`
+    |                               
+       help: an enum with a similar 
+name exists: `FlacEncoderState`
+
+error[E0433]: failed to resolve: 
+use of unresolved module or 
+unlinked crate `aiff`
+   --> 
+src\engine\render_engine.rs:287:22
+    |
+287 |         let writer = 
+aiff::AiffWriter::new(
+    |                      ^^^^ use 
+of unresolved module or unlinked 
+crate `aiff`
+    |
+    = help: if you wanted to use a 
+crate named `aiff`, use `cargo add 
+aiff` to add it to your `Cargo.toml`
+
+warning: unnecessary parentheses 
+around match arm expression
+   --> 
+src\engine\automation.rs:150:47
+    |
+150 |                         
+LfoShape::Triangle => 
+(phase.sin().asin() * 2.0 / 
+std::f64::consts::PI),
+    |                               
+                ^                   
+                            ^
+    |
+    = note: 
+`#[warn(unused_parens)]` (part of 
+`#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+150 -                         
+LfoShape::Triangle => 
+(phase.sin().asin() * 2.0 / 
+std::f64::consts::PI),
+150 +                         
+LfoShape::Triangle => 
+phase.sin().asin() * 2.0 / 
+std::f64::consts::PI ,
+    |
+
+warning: unnecessary parentheses 
+around block return value
+   --> 
+src\engine\automation.rs:244:37
+    |
+244 | ...                   
+(phase.sin().asin() * 2.0 / 
+std::f64::consts::PI)
+    |                       ^       
+                                    
+    ^
+    |
+help: remove these parentheses
+    |
+244 -                               
+      (phase.sin().asin() * 2.0 / 
+std::f64::consts::PI)
+244 +                               
+      phase.sin().asin() * 2.0 / 
+std::f64::consts::PI 
+    |
+
+warning: unused import: 
+`std::sync::Arc`
+ --> src\engine\waveform.rs:3:5
+  |
+3 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused import: 
+`symphonia::core::audio::Signal`
+  --> src\engine\waveform.rs:55:13
+   |
+55 |         use 
+symphonia::core::audio::Signal;
+   |             
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0599]: no method named 
+`set_bitrate` found for struct 
+`Lame` in the current scope
+   --> 
+src\engine\render_engine.rs:189:14
+    |
+189 |         
+lame.set_bitrate(bitrate)
+    |              ^^^^^^^^^^^
+    |
+help: there is a method 
+`set_kilobitrate` with a similar 
+name
+    |
+189 |         
+lame.set_kilobitrate(bitrate)
+    |                  ++++
+
+error[E0061]: this method takes 2 
+arguments but 1 argument was 
+supplied
+   --> 
+src\engine\render_engine.rs:269:14
+    |
+269 |             
+.process_interleaved(&interleaved)
+    |              
+^^^^^^^^^^^^^^^^^^^-------------- 
+argument #2 of type `u32` is missing
+    |
+note: method defined here
+   --> C:\Users\brigh\.cargo\registr
+y\src\index.crates.io-1949cf8c6b5b55
+7f\flac-bound-0.4.0\src\encoder\enco
+der.rs:245:12
+    |
+245 |     pub fn 
+process_interleaved(&mut self, 
+buffer: &[i32], 
+samples_per_channel: u32) -> 
+Result<(), ()> {
+    |            ^^^^^^^^^^^^^^^^^^^
+help: provide the argument
+    |
+269 |             
+.process_interleaved(&interleaved, 
+/* u32 */)
+    |                               
+               +++++++++++
+
+error[E0308]: mismatched types
+   --> 
+src\engine\render_engine.rs:273:9
+    |
+272 |       fn finalize(mut self: 
+Box<Self>) -> Result<(), String> {
+    |                               
+            ------------------ 
+expected `std::result::Result<(), 
+std::string::String>` because of 
+return type
+273 | /         self.writer
+274 | |             .finish()
+275 | |             .map_err(|e| 
+format!("FLAC Finalize Error: 
+{:?}", e))
+    | |_____________________________
+____________________________________
+^ expected `Result<(), String>`, 
+found `Result<FlacEncoderConfig, 
+String>`
+    |
+    = note: expected enum 
+`std::result::Result<(), _>`
+               found enum `std::resu
+lt::Result<FlacEncoderConfig, _>`
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:297:19
+    |
+297 |         .map_err(|e| 
+e.to_string())?;
+    |                   ^  - type 
+must be known at this point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+297 |         .map_err(|e: /* Type 
+*/| e.to_string())?;
+    |                    
+++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:315:59
+    |
+315 |                     self.write
+r.write_sample(sl).map_err(|e| 
+e.to_string())?;
+    |                               
+                            ^  - 
+type must be known at this point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+315 |                     self.write
+r.write_sample(sl).map_err(|e: /* 
+Type */| e.to_string())?;
+    |                               
+                             
+++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:316:59
+    |
+316 |                     self.write
+r.write_sample(sr).map_err(|e| 
+e.to_string())?;
+    |                               
+                            ^  - 
+type must be known at this point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+316 |                     self.write
+r.write_sample(sr).map_err(|e: /* 
+Type */| e.to_string())?;
+    |                               
+                             
+++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:323:35
+    |
+323 |                         
+.map_err(|e| e.to_string())?;
+    |                               
+    ^  - type must be known at this 
+point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+323 |                         
+.map_err(|e: /* Type */| 
+e.to_string())?;
+    |                               
+     ++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:326:35
+    |
+326 |                         
+.map_err(|e| e.to_string())?;
+    |                               
+    ^  - type must be known at this 
+point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+326 |                         
+.map_err(|e: /* Type */| 
+e.to_string())?;
+    |                               
+     ++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:331:59
+    |
+331 |                     self.write
+r.write_sample(sl).map_err(|e| 
+e.to_string())?;
+    |                               
+                            ^  - 
+type must be known at this point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+331 |                     self.write
+r.write_sample(sl).map_err(|e: /* 
+Type */| e.to_string())?;
+    |                               
+                             
+++++++++++++
+
+error[E0282]: type annotations 
+needed
+   --> 
+src\engine\render_engine.rs:332:59
+    |
+332 |                     self.write
+r.write_sample(sr).map_err(|e| 
+e.to_string())?;
+    |                               
+                            ^  - 
+type must be known at this point
+    |
+help: consider giving this closure 
+parameter an explicit type
+    |
+332 |                     self.write
+r.write_sample(sr).map_err(|e: /* 
+Type */| e.to_string())?;
+    |                               
+                             
+++++++++++++
+
+error[E0277]: the trait bound 
+`RenderConfig: CommandArg<'_, tauri_
+runtime_wry::Wry<EventLoopMessage>>`
+ is not satisfied
+    --> src\lib.rs:1394:1
+     |
+ 987 |           .invoke_handler(tau
+ri::generate_handler![
+     |  _________________________-
+ 988 | |             play_audio,    
+ // Changed from play to play_audio 
+to match original function name
+ 989 | |             pause_audio,   
+ // Changed from pause to 
+pause_audio to match original 
+function name
+ 990 | |             
+stop_transport, // Changed from 
+stop to stop_transport to match 
+original function name
+...    |
+1094 | |             
+get_waveform_chunk
+1095 | |         ])
+     | |_________- in this macro 
+invocation
+...
+1394 |   #[tauri::command]
+     |   ^^^^^^^^^^^^^^^^^ 
+unsatisfied trait bound
+     |
+help: the trait `Deserialize<'_>` 
+is not implemented for 
+`RenderConfig`
+    --> 
+src\engine\render_engine.rs:43:1
+     |
+  43 | pub struct RenderConfig {
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+     = help: the following other 
+types implement trait 
+`Deserialize<'de>`:
+               `&'a [u8]` 
+implements `Deserialize<'de>`
+               `&'a 
+serde_json::value::RawValue` 
+implements `Deserialize<'de>`
+               `&'a 
+std::path::Path` implements 
+`Deserialize<'de>`
+               `&'a str` implements 
+`Deserialize<'de>`
+               `&'p 
+jsonptr::pointer::Pointer` 
+implements `Deserialize<'de>`
+               `()` implements 
+`Deserialize<'de>`
+               `(T,)` implements 
+`Deserialize<'de>`
+               `(T0, T1)` 
+implements `Deserialize<'de>`
+             and 432 others
+     = note: required for 
+`RenderConfig` to implement 
+`CommandArg<'_, tauri_runtime_wry::W
+ry<EventLoopMessage>>`
+     = note: the full name for the 
+type has been written to 'C:\Users\b
+righ\.gemini\antigravity\scratch\VIB
+E\src-tauri\target\debug\deps\vibe_l
+ib-b8191a21ca4b66dd.long-type-610894
+8641991874665.txt'
+     = note: consider using 
+`--verbose` to print the full type 
+name to the console
+     = note: this error originates 
+in the macro 
+`__cmd__export_project` which comes 
+from the expansion of the macro 
+`tauri::generate_handler` (in 
+Nightly builds, run with -Z 
+macro-backtrace for more info)
+
+warning: unused variable: `i`
+   --> 
+src\engine\automation.rs:259:26
+    |
+259 |                     for (i, 
+d) in dest.iter_mut().enumerate() {
+    |                          ^ 
+help: if this is intentional, 
+prefix it with an underscore: `_i`
+    |
+    = note: 
+`#[warn(unused_variables)]` (part 
+of `#[warn(unused)]`) on by default
+
+warning: unused variable: `d`
+   --> 
+src\engine\automation.rs:259:29
+    |
+259 |                     for (i, 
+d) in dest.iter_mut().enumerate() {
+    |                             ^ 
+help: if this is intentional, 
+prefix it with an underscore: `_d`
+
+warning: unused variable: 
+`sample_rate`
+  --> src\engine\waveform.rs:40:38
+   |
+40 |     pub fn generate(samples: 
+&[f32], sample_rate: u32) -> Self {
+   |                                
+      ^^^^^^^^^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_sample_rate`
+
+error[E0433]: failed to resolve: 
+use of unresolved module or 
+unlinked crate `aiff`
+   --> 
+src\engine\render_engine.rs:280:13
+    |
+280 |     writer: 
+aiff::AiffWriter<std::fs::File>,
+    |             ^^^^ use of 
+unresolved module or unlinked crate 
+`aiff`
+    |
+    = help: if you wanted to use a 
+crate named `aiff`, use `cargo add 
+aiff` to add it to your `Cargo.toml`
+
+Some errors have detailed 
+explanations: E0061, E0106, E0277, 
+E0282, E0308, E0433, E0599.
+For more information about an 
+error, try `rustc --explain E0061`.
+warning: `vibe` (lib) generated 7 
+warnings
+error: could not compile `vibe` 
+(lib) due to 15 previous errors; 7 
+warnings emitted

@@ -1,0 +1,130 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:1
++ cargo check 2>&1 | out-file -encoding 
+utf8 cargo_errors.txt
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (    Checking vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+warning: unused import: `drum_detector::*`
+ --> src\engine\spectral\mod.rs:9:9
+  |
+9 | pub use drum_detector::*;
+  |         ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part 
+of `#[warn(unused)]`) on by default
+
+warning: unused import: `onset_detector::*`
+  --> src\engine\spectral\mod.rs:10:9
+   |
+10 | pub use onset_detector::*;
+   |         ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `processor::*`
+  --> src\engine\spectral\mod.rs:11:9
+   |
+11 | pub use processor::*;
+   |         ^^^^^^^^^^^^
+
+error[E0382]: use of moved value: 
+`spectral_audio_tx`
+    --> src\engine\audio.rs:3417:13
+     |
+ 226 |         let (spectral_audio_tx, 
+spectral_audio_rx) = 
+crossbeam_channel::bounded::<Vec<f32>>(100);
+     |              ----------------- move 
+occurs because `spectral_audio_tx` has type 
+`crossbeam_channel::Sender<Vec<f32>>`, 
+which does not implement the `Copy` trait
+...
+ 621 |         thread::spawn(move || {
+     |                       ------- value 
+moved into closure here
+...
+ 663 |                 
+spectral_audio_tx.clone()
+     |                 ----------------- 
+variable moved due to use in closure
+...
+3417 |             spectral_audio_tx,
+     |             ^^^^^^^^^^^^^^^^^ value 
+used here after move
+     |
+help: consider cloning the value before 
+moving it into the closure
+     |
+ 621 ~         let value = 
+spectral_audio_tx.clone();
+ 622 ~         thread::spawn(move || {
+ 623 |             let host = 
+cpal::default_host();
+ ...
+ 663 |                 hp_t.clone(), 
+hs_t.clone(),
+ 664 ~                 value.clone()
+     |
+
+error[E0382]: use of moved value: 
+`spectral_audio_tx`
+    --> src\engine\audio.rs:3508:13
+     |
+3453 |         spectral_audio_tx: 
+crossbeam_channel::Sender<Vec<f32>>,
+     |         ----------------- move 
+occurs because `spectral_audio_tx` has type 
+`crossbeam_channel::Sender<Vec<f32>>`, 
+which does not implement the `Copy` trait
+...
+3470 |                 move |data: &[f32], 
+_: &cpal::InputCallbackInfo| {
+     |                 ---------------------
+--------------------------- value moved 
+into closure here
+...
+3482 |                     let _ = 
+spectral_audio_tx.try_send(data.to_vec());
+     |                             
+----------------- variable moved due to use 
+in closure
+...
+3508 |             move |data: &mut [f32], 
+_: &cpal::OutputCallbackInfo| {
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^ value used 
+here after move
+...
+4044 |                 let _ = 
+spectral_audio_tx.try_send(mono_master);
+     |                         
+----------------- use occurs due to use in 
+closure
+     |
+help: consider cloning the value before 
+moving it into the closure
+     |
+3462 ~         let value = 
+spectral_audio_tx.clone();
+3463 ~         let input_stream = if let 
+Some(in_dev) = input_device {
+3464 |             let _io_mgr = 
+io_manager.clone();
+ ...
+3482 |                     // Anti-Gravity: 
+Send input to Spectral Engine (for Beatbox 
+-> MIDI)
+3483 ~                     let _ = 
+value.try_send(data.to_vec());
+     |
+
+For more information about this error, try 
+`rustc --explain E0382`.
+warning: `vibe` (lib) generated 3 warnings
+error: could not compile `vibe` (lib) due 
+to 2 previous errors; 3 warnings emitted

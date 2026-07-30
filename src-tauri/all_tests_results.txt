@@ -1,0 +1,295 @@
+﻿cargo : warning: variable does not 
+need to be mutable
+At line:1 char:1
++ cargo test --lib 2>&1 | Out-File 
+-Encoding utf8 all_tests_results.txt
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (warning: variab...d to   
+  be mutable:String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut 
+internal_tracks, mut 
+internal_busses, mut 
+preview_voice_opt, mut fx_opt, mut 
+limiter_opt, mut 
+local_master_buffer) = {
+     |                               
+  ----^^^^^^^^^^^^^^^
+     |                               
+  |
+     |                               
+  help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: variable does not need to 
+be mutable
+   --> src\engine\graph.rs:816:13
+    |
+816 |         let mut params = 
+vec![&self.volume, &self.pan, 
+&self.width, &self.input_drive];
+    |             ----^^^^^^
+    |             |
+    |             help: remove this 
+`mut`
+
+warning: unused variable: `bpm`
+    --> 
+src\engine\kropelka_brain.rs:1185:9
+     |
+1185 |         bpm: f64,
+     |         ^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_bpm`
+     |
+     = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: 
+`sample_rate`
+    --> 
+src\engine\kropelka_brain.rs:1186:9
+     |
+1186 |         sample_rate: f64,
+     |         ^^^^^^^^^^^ help: if 
+this is intentional, prefix it with 
+an underscore: `_sample_rate`
+
+warning: unused variable: 
+`script_path`
+  --> src\lib.rs:18:17
+   |
+18 |             let script_path = 
+app
+   |                 ^^^^^^^^^^^ 
+help: if this is intentional, prefix 
+it with an underscore: `_script_path`
+
+warning: method `reset_lufs` is 
+never used
+   --> 
+src\engine\metering\mod.rs:131:12
+    |
+ 23 | impl GpuMeter {
+    | ------------- method in this 
+implementation
+...
+131 |     pub fn reset_lufs(&self) {
+    |            ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: struct `KWeightingFilter` 
+is never constructed
+   --> 
+src\engine\metering\mod.rs:139:8
+    |
+139 | struct KWeightingFilter {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: associated items `new` and 
+`process` are never used
+   --> 
+src\engine\metering\mod.rs:153:8
+    |
+152 | impl KWeightingFilter {
+    | --------------------- 
+associated items in this 
+implementation
+153 |     fn new() -> Self {
+    |        ^^^
+...
+167 |     fn process(&mut self, 
+input: f64) -> f64 {
+    |        ^^^^^^^
+
+warning: function `to_db_power` is 
+never used
+   --> 
+src\engine\metering\mod.rs:223:4
+    |
+223 | fn to_db_power(power: f64) -> 
+f64 {
+    |    ^^^^^^^^^^^
+
+warning: field `sample_rate` is 
+never read
+ --> 
+src\engine\metering\lufs_meter.rs:7:5
+  |
+5 | pub struct LufsMeter {
+  |            --------- field in 
+this struct
+6 |     meter: Mutex<EbuR128>,
+7 |     sample_rate: u32,
+  |     ^^^^^^^^^^^
+
+warning: method `reset` is never used
+  --> src\engine\metering\lufs_meter.
+rs:58:12
+   |
+10 | impl LufsMeter {
+   | -------------- method in this 
+implementation
+...
+58 |     pub fn reset(&self) {
+   |            ^^^^^
+
+warning: associated function 
+`get_role_color` is never used
+  --> src\engine\gosposia.rs:69:12
+   |
+20 | impl Gosposia {
+   | ------------- associated 
+function in this implementation
+...
+69 |     pub fn get_role_color(role: 
+&TrackRole) -> &'static str {
+   |            ^^^^^^^^^^^^^^
+
+warning: method `kill` is never used
+   --> 
+src\engine\neural_forest.rs:101:12
+    |
+ 24 | impl NeuralForestBridge {
+    | ----------------------- method 
+in this implementation
+...
+101 |     pub fn kill(&mut self) {
+    |            ^^^^
+
+warning: `vibe` (lib test) generated 
+13 warnings (run `cargo fix --lib -p 
+vibe --tests` to apply 5 suggestions)
+    Finished `test` profile 
+[unoptimized + debuginfo] target(s) 
+in 0.47s
+     Running unittests src\lib.rs (ta
+rget\debug\deps\vibe_lib-5219d83bf1f4
+7ffd.exe)
+
+running 109 tests
+test engine::automation::tests::test_akima_continuity ... ok
+test engine::automation::tests::test_akima_no_overshoot ... ok
+test engine::automation::tests::test_interpolation_types ... ok
+test engine::automation::tests::test_automation_layers_combination ... ok
+test engine::automation::tests::test_lfo_layer_simd ... ok
+test engine::comping_engine::tests::test_quick_swipe_split ... ok
+test engine::graph_tests::tests::test_audio_buffer_clear ... ok
+test engine::graph_tests::tests::test_audio_buffer_creation ... ok
+test engine::effects::tests::highpass_basic ... ok
+test engine::clip_launcher::tests::test_quantized_launch ... ok
+test engine::graph::tests::lowpass_basic ... ok
+test engine::comping_engine::tests::test_quick_swipe_overlap ... ok
+test engine::graph_tests::tests::test_denormal_protection ... ok
+test engine::graph_tests::tests::test_gain_effect_unity ... ok
+test engine::graph::tests::test_parameter_atomic ... ok
+test engine::graph::tests::test_denormal_protection ... ok
+test engine::graph_tests::tests::test_lowpass_filter_dc_offset ... ok
+test engine::graph_tests::tests::test_bus_clone ... ok
+test engine::graph_tests::tests::test_parameter_atomic_operations ... ok
+test engine::graph_tests::tests::test_gain_effect_amplification ... ok
+test engine::io_manager::tests::test_channel_metering ... ok
+test engine::io_manager::tests::test_create_mono_alias ... ok
+test engine::io_manager::tests::test_create_stereo_alias ... ok
+test engine::io_manager::tests::test_delete_alias ... ok
+test engine::io_manager::tests::test_update_alias ... ok
+test engine::io_manager::tests::test_stereo_validation_consecutive ... ok
+test engine::kropelka::tests::test_clipping_trigger ... ok
+test engine::kropelka::tests::test_frustration_zen_mode ... ok
+test engine::kropelka::tests::test_kind_feedback_beginner ... ok
+test engine::graph::tests::test_track_creation ... ok
+test engine::kropelka::tests::test_kropelka_initialization ... ok
+test engine::kropelka::tests::test_rabbit_hole_detection ... ok
+test engine::library_service::tests::test_bpm_extraction ... ok
+test engine::library_service::tests::test_categorization ... ok
+test engine::library_service::tests::test_fuzzy_search ... ok
+test engine::lockfree_params::tests::test_atomic_parameter_add ... ok
+test engine::graph::tests::test_audio_buffer_clear ... ok
+test engine::lockfree_params::tests::test_atomic_parameter_basic ... ok
+test engine::lockfree_params::tests::test_atomic_parameter_clamping ... ok
+test engine::lockfree_params::tests::test_parameter_bank ... ok
+test engine::metering::tests::test_db_conversion ... ok
+test engine::macro_engine::tests::test_macro_scaling ... ok
+test engine::lockfree_params::tests::test_smoothed_parameter ... ok
+test engine::midi2_support::tests::test_midi2_parsing ... ok
+test engine::midi_mapping::tests::test_absolute_soft_takeover ... ok
+test engine::graph_tests::tests::test_track_creation ... ok
+test engine::midi_mapping::tests::test_fourteen_bit_cc ... ok
+test engine::midi_mapping::tests::test_midi_learning ... ok
+test engine::midi_mapping::tests::test_nrpn_resolution ... ok
+test engine::midi_mapping::tests::test_relative_mapping ... ok
+test engine::mpe_handler::tests::test_mpe_note_tracking ... ok
+test engine::parallel::tests::test_parallel_config_default ... ok
+test engine::parallel::tests::test_parallel_stats ... ok
+test engine::parallel::tests::test_thread_priority ... ok
+test engine::pdc::tests::test_pdc_compensation_logic ... ok
+test engine::plugin_manager::tests::test_auto_categorization ... ok
+test engine::plugin_manager::tests::test_blacklist_functionality ... ok
+test engine::plugin_manager::tests::test_custom_folders ... ok
+test engine::plugin_manager::tests::test_favorites_management ... ok
+test engine::plugin_manager::tests::test_plugin_manager_creation ... ok
+test engine::plugin_manager::tests::test_plugin_type_detection ... ok
+test engine::pdc::tests::test_pdc_calculation ... ok
+test engine::plugin_manager::tests::test_search_paths ... ok
+test engine::persistence::tests::test_invalid_magic_bytes ... ok
+test engine::plugin_manager::tests::test_tag_system ... ok
+test engine::pitch_detection::tests::test_pitch_detection_autocorr ... ok
+test engine::psycho::tests::test_psycho_instantiation ... ok
+test engine::psycho::tests::test_crosstalk_leakage ... ok
+test engine::metering::tests::test_meter_update ... ok
+test engine::psycho::tests::test_limiting_ceiling ... ok
+test engine::simd::tests::test_apply_gain_simd ... ok
+test engine::simd::tests::test_mix_buffer_simd ... ok
+test engine::psycho::tests::test_psycho_processing_no_crash ... ok
+test engine::simd::tests::test_saturation_kernel ... ok
+test engine::simd_avx512::tests::test_sum_buffers ... ok
+test engine::simd_avx512::tests::test_multiply_scalar ... ok
+test engine::simd_optimized::tests::test_fast_tanh_accuracy ... ok
+test engine::simd_optimized::tests::test_mix_buffer_optimized ... ok
+test engine::simd_optimized::tests::test_non_multiple_of_4 ... ok
+test engine::simd_optimized::tests::test_saturation_optimized ... ok
+test engine::spectral::drum_detector::tests::test_drum_detection_debounce ... ok
+test engine::spectral::drum_detector::tests::test_drum_detection_kick ... ok
+test engine::spectral::onset_detector::tests::test_onset_detection ... ok
+test engine::spectral::polyphonic::tests::test_quantum_polyphony ... ok
+test engine::resampler::tests::test_rubato_upsample ... ok
+test engine::spectral::transcription::tests::test_transcribe_empty ... ok
+test engine::spectral::transcription::tests::test_transcribe_single_note ... ok
+test engine::spectral::processor::tests::test_mel_processor_creation ... ok
+test engine::spectral::processor::tests::test_process_silence ... ok
+test engine::sandbox_v2::tests::test_sandbox_creation ... ok
+test engine::persistence::tests::test_binary_roundtrip ... ok
+test engine::persistence::tests::test_midi_clip_roundtrip ... ok
+test engine::waveform::tests::test_waveform_cache_persistence ... ok
+test engine::persistence::tests::test_project_serialization_complex ... ok
+test engine::summing::tests::test_simd_edge_cases ... ok
+test engine::spectral::processor::tests::test_process_sine_wave ... ok
+test engine::summing::tests::test_simd_multiple_tracks ... ok
+test engine::summing::tests::test_simd_summing_correctness ... ok
+test engine::audio_to_midi::tests::test_convert_polyphonic_simple ... ok
+test engine::summing::tests::test_simd_zero_input ... ok
+test engine::velocity_tests::tests::test_smart_clip_creation ... ok
+test engine::velocity_tests::tests::test_streaming_voice_head_to_tail ... ok
+test engine::summing::tests::test_sidechain_routing ... ok
+test engine::wasm::tests::test_wasm_plugin_creation ... ok
+test engine::wasm::tests::test_wasm_processing_passthrough ... ok
+test engine::wasm::tests::test_wasm_parameters ... ok
+test engine::pitch_detection::tests::test_pitch_detection_yin ... ok
+test engine::pdc::tests::test_pdc_stress_test ... ok
+test engine::spectral::worker::tests::test_spectral_worker_integration ... ok
+
+test result: ok. 109 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+

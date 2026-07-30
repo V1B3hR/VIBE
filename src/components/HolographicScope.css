@@ -1,0 +1,46 @@
+.holographic-scope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a1a24 0%, #000 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgb(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scope-canvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+.scope-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Inter, monospace;
+    font-size: 10px;
+    color: #00ffed;
+    text-shadow: 0 0 5px rgb(0, 255, 237, 0.5);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.scope-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgb(0, 255, 237, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(0, 255, 237, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}

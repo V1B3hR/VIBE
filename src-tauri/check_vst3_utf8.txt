@@ -1,0 +1,168 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users
+\brigh\.gemini\antigravity\scratch\VIBE\sr
+c-tauri)
+At line:1 char:1
++ cargo check --tests 2>&1 | Out-File 
+-Encoding utf8 check_vst3_utf8.tx ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (    Checking vi...VIBE\src-tauri)  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+error[E0201]: duplicate definitions with 
+name `get_state`:
+   --> src\engine\vst3_bridge.rs:541:5
+    |
+471 | /     fn get_state(&self) -> 
+Vec<u8> {
+472 | |         Vec::new() // TODO: VST3 
+state blob
+473 | |     }
+    | |_____- previous definition here
+...
+541 | /     fn get_state(&self) -> 
+Vec<u8> {
+542 | |         let mut stream = 
+MemoryStream::new();
+543 | |         unsafe {
+544 | |             let component_vtable 
+= *(self.component as *mut *mut 
+IComponentVtbl);
+...   |
+553 | |         Vec::new()
+554 | |     }
+    | |_____^ duplicate definition
+    |
+   ::: src\engine\graph.rs:166:5
+    |
+166 | /     fn get_state(&self) -> 
+Vec<u8> {
+167 | |         Vec::new()
+168 | |     }
+    | |_____- item in trait
+
+error[E0201]: duplicate definitions with 
+name `set_state`:
+   --> src\engine\vst3_bridge.rs:556:5
+    |
+475 | /     fn set_state(&mut self, 
+_state: &[u8]) {
+476 | |         // TODO: VST3 state blob
+477 | |     }
+    | |_____- previous definition here
+...
+556 | /     fn set_state(&mut self, data: 
+&[u8]) {
+557 | |         let mut stream = 
+MemoryStream::from_data(data.to_vec());
+558 | |         unsafe {
+559 | |             let component_vtable 
+= *(self.component as *mut *mut 
+IComponentVtbl);
+...   |
+565 | |     }
+    | |_____^ duplicate definition
+    |
+   ::: src\engine\graph.rs:171:5
+    |
+171 |       fn set_state(&mut self, 
+_state: &[u8]) {}
+    |       
+----------------------------------------- 
+item in trait
+
+error[E0412]: cannot find type 
+`IEditControllerVtbl` in this scope
+   --> src\engine\vst3_bridge.rs:502:79
+    |
+502 |                 let 
+controller_vtable = 
+*(self.editor_controller as *mut *mut 
+IEditControllerVtbl);
+    |                                     
+                                          
+^^^^^^^^^^^^^^^^^^^ not found in this 
+scope
+
+error[E0412]: cannot find type 
+`IPlugViewVtbl` in this scope
+   --> src\engine\vst3_bridge.rs:514:69
+    |
+514 |                     let view_vtable 
+= *(self.plug_view as *mut *mut 
+IPlugViewVtbl);
+    |                                     
+                                
+^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type 
+`IPlugViewVtbl` in this scope
+   --> src\engine\vst3_bridge.rs:532:65
+    |
+532 |                 let view_vtable = 
+*(self.plug_view as *mut *mut 
+IPlugViewVtbl);
+    |                                     
+                            ^^^^^^^^^^^^^ 
+not found in this scope
+
+error[E0609]: no field `plugin_manager` 
+on type `&mut AudioEngine`
+    --> src\engine\audio.rs:4846:45
+     |
+4846 |                if let Ok(mut 
+plugin) = self.plugin_manager.lock().unwra
+p().load_plugin(&p_snap.plugin_path) {
+     |                                    
+         ^^^^^^^^^^^^^^ unknown field
+     |
+     = note: available fields are: 
+`command_tx`, `tracks`, `busses`, 
+`library`, `plugins` ... and 33 others
+
+error[E0282]: type annotations needed
+    --> src\engine\audio.rs:4849:25
+     |
+4849 |                         
+plugin.set_state(&p_snap.state_blob);
+     |                         ^^^^^^ 
+cannot infer type
+
+error[E0596]: cannot borrow 
+`track.processors` as mutable, as it is 
+behind a `&` reference
+    --> src\engine\audio.rs:4733:30
+     |
+4705 |                   .map(|track| 
+TrackSnapshot {
+     |                         ----- 
+consider changing this binding's type to 
+be: `&mut engine::graph::Track`
+...
+4733 |                       plugins: 
+track
+     |  ______________________________^
+4734 | |                         
+.processors
+     | 
+|___________________________________^ 
+`track` is a `&` reference, so the data 
+it refers to cannot be borrowed as mutable
+     |
+help: you may want to use `iter_mut` here
+     |
+4704 |                 .iter_mut()
+     |                      ++++
+
+Some errors have detailed explanations: 
+E0201, E0282, E0412, E0596, E0609.
+For more information about an error, try 
+`rustc --explain E0201`.
+error: could not compile `vibe` (lib) due 
+to 8 previous errors
+warning: build failed, waiting for other 
+jobs to finish...
+error: could not compile `vibe` (lib 
+test) due to 8 previous errors

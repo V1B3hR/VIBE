@@ -1,0 +1,70 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/tests/Integration.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+ [31mÔØ»[39m src/tests/Integration.test.tsx [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 133[2mms[22m[39m
+[31m     [31m├ù[31m syncs playback state between Transport and Timeline[39m[32m 108[2mms[22m[39m
+     [32mÔ£ô[39m handles track muting across components[32m 24[2mms[22m[39m
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (:String) [], RemoteExce  
+  ption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[
+41m Failed Tests 1 [49m[22m[31mÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/tests/Integration.test.tsx[2m > 
+[22mPlayback Integration[2m > 
+[22msyncs playback state between 
+Transport and Timeline
+[31m[1mError[22m: [2mexpect([22m
+[31melement[31m[2m).toHaveClass([
+22m[32m[32m"active-play"[32m[31m
+[2m)[22m
+
+Expected the element to have class:
+[32m  active-play[31m
+Received:
+[31m  btn-transport[31m[39m
+[36m [2mÔØ»[22m src/tests/Integrat
+ion.test.tsx:[2m164:25[22m[39m
+    [90m162| [39m        [34mexpec
+t[39m(simulator[33m.[39mstate[33m
+.[39misPlaying)[33m.[39m[34mtoBe
+[39m([35mtrue[39m)[33m;[39m
+    [90m163| [39m        [90m// 
+Transport uses 'active-play' for 
+isPlaying state[39m
+    [90m164| [39m        [34mexpec
+t[39m(playBtn)[33m.[39m[34mtoHave
+Class[39m([32m'active-play'[39m)[
+33m;[39m
+    [90m   | [39m                  
+      [31m^[39m
+    [90m165| [39m
+    [90m166| [39m        [90m// 
+4. Verify stop/pause[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[1/1]ÔÄ»[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m   Start at [22m 11:52:33
+[2m   Duration [22m 1.13s[2m (transform 139ms, setup 90ms, import 243ms, tests 133ms, environment 549ms)[22m
+

@@ -1,0 +1,105 @@
+.plugin-chains {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 10px;
+}
+
+.chains-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chains-header h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.refresh-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.refresh-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.chains-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chain-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chain-item:hover {
+    background: rgba(100, 150, 255, 0.1);
+    border-color: rgba(100, 150, 255, 0.3);
+}
+
+.chain-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.chain-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.chain-meta {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.delete-chain-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 100, 100, 0.3);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.delete-chain-btn:hover {
+    color: rgba(255, 100, 100, 0.8);
+}
+
+.chains-empty,
+.chains-status {
+    padding: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chains-empty p {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
+.chains-empty small {
+    font-size: 10px;
+}

@@ -1,0 +1,206 @@
+.plugin-diagnostics-view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.diag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.diag-header h3 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.diag-plugin-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 15px;
+}
+
+.diag-icon {
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.diag-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.diag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.diag-vendor {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.diag-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.diag-stat {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.diag-stat .label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+.diag-stat .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.diag-presets-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.diag-presets-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.diag-preset-list {
+    max-height: 120px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.diag-preset-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.diag-preset-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.diag-preset-item .preset-name {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.diag-preset-item .preset-cat {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 10px;
+}
+
+.diag-no-presets {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+}
+
+.diag-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.diag-btn {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.diag-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.diag-btn.migrate {
+    background: rgba(100, 150, 255, 0.2);
+    border-color: rgba(100, 150, 255, 0.4);
+    color: #6496ff;
+}
+
+.diag-btn.migrate:hover {
+    background: rgba(100, 150, 255, 0.3);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.diag-parameter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.diag-param-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.preview-bar {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.preview-bar div {
+    height: 100%;
+    background: #6496ff;
+    border-radius: 2px;
+}

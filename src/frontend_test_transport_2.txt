@@ -1,0 +1,299 @@
+﻿
+> vibe@0.1.0 test
+> vitest src/components/Transport.test.tsx --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/brigh/.gemini/antigravity/scratch/VIBE[39m
+
+node.exe : [90mstderr[2m | 
+src/components/Transport.test.tsx[2m > 
+[22m[2mTransport Component[2m > 
+[22m[2mtoggles play/pause when Play 
+button clicked
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    ([90mstderr[2m... button clicked:Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+[22m[39mAn error occurred in the 
+<Transport> component.
+
+Consider adding an error boundary to your 
+tree to customize error handling behavior.
+Visit 
+https://react.dev/link/error-boundaries to 
+learn more about error boundaries.
+
+
+[90mstdout[2m | src/components/Transport.test.tsx[2m > [22m[2mTransport Component[2m > [22m[2msends stop and reset commands
+[22m[39mÔÅ©´©Å Paused
+ÔÅ©´©Å Paused
+
+[90mstderr[2m | 
+src/components/Transport.test.tsx[2m > 
+[22m[2mTransport Component[2m > 
+[22m[2msends stop and reset commands
+[22m[39mAn update to Transport inside a 
+test was not wrapped in act(...).
+
+When testing, code that causes React state 
+updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the browser. 
+Learn more at 
+https://react.dev/link/wrap-tests-with-act
+An update to Transport inside a test was 
+not wrapped in act(...).
+
+When testing, code that causes React state 
+updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the 
+behavior the user would see in the browser. 
+Learn more at 
+https://react.dev/link/wrap-tests-with-act
+
+ [31mÔØ»[39m src/components/Transport.test.tsx [2m([22m[2m5 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 1150[2mms[22m[39m
+     [32mÔ£ô[39m renders and fetches initial state[32m 81[2mms[22m[39m
+[31m     [31m├ù[31m toggles play/pause when Play button clicked[39m[33m 1022[2mms[22m[39m
+[31m     [31m├ù[31m sends stop and reset commands[39m[32m 17[2mms[22m[39m
+     [32mÔ£ô[39m updates BPM on double click and input[32m 18[2mms[22m[39m
+[31m     [31m├ù[31m displays CPU load correctly[39m[32m 11[2mms[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Failed Tests 3 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22mtoggles 
+play/pause when Play button clicked
+[31m[1mError[22m: [2mexpect([22m[31mel
+ement[31m[2m).toHaveClass([22m[32m[32m"
+active-play"[32m[31m[2m)[22m
+
+Expected the element to have class:
+[32m  active-play[31m
+Received:
+[31m  btn-transport[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div />[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m53:45[22m[39m
+    [90m 51| [39m
+    [90m 52| [39m        [90m// Wait for 
+next poll[39m
+    [90m 53| [39m        await waitFor(() 
+=> expect(playBtn).toHaveClass('active-play'
+)ÔÇª
+    [90m   | [39m                         
+                   [31m^[39m
+    [90m 54| [39m    })[33m;[39m
+    [90m 55| [39m
+[90m [2mÔØ»[22m 
+runWithExpensiveErrorDiagnosticsDisabled nod
+e_modules/@testing-library/dom/dist/config.j
+s:[2m47:12[22m[39m
+[90m [2mÔØ»[22m checkCallback node_module
+s/@testing-library/dom/dist/wait-for.js:[2m
+124:77[22m[39m
+[90m [2mÔØ»[22m 
+Timeout.checkRealTimersCallback node_modules
+/@testing-library/dom/dist/wait-for.js:[2m1
+18:16[22m[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/3]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > [22msends 
+stop and reset commands
+[31m[1mAssertionError[22m: expected 
+"vi.fn()" to be called with arguments: [ 
+'stop_transport', undefined ][90m
+
+Received: 
+
+[1m  1st vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "stop_transport",[90m
+[31m+   "pause_audio",[90m
+[2m    undefined,[22m
+[2m  ][22m
+
+[1m  2nd vi.fn() call:
+
+[22m[2m  [[22m
+[32m-   "stop_transport",[90m
+[31m+   "pause_audio",[90m
+[2m    undefined,[22m
+[2m  ][22m
+[31m[90m
+
+Number of calls: [1m2[22m
+[31m[39m
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m67:28[22m[39m
+    [90m 65| [39m        [90m// Double 
+click simulation (within 300ms)[39m
+    [90m 66| [39m        fireEvent[33m.[
+39m[34mclick[39m(stopBtn)[33m;[39m
+    [90m 67| [39m        expect(mockInvoke
+).toHaveBeenCalledWith('stop_transport', 
+undeÔÇª
+    [90m   | [39m                         
+  [31m^[39m
+    [90m 68| [39m        expect(mockInvoke
+).toHaveBeenCalledWith('set_playhead', { 
+sampÔÇª
+    [90m 69| [39m    })[33m;[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/3]ÔÄ
+»[22m[39m
+
+[41m[1m FAIL [22m[49m 
+src/components/Transport.test.tsx[2m > 
+[22mTransport Component[2m > 
+[22mdisplays CPU load correctly
+[31m[1mAssertionError[22m: expected 
+'0.0%' to be '85.5%' // Object.is 
+equality[39m
+
+Expected: [32m"[7m85.5[27m%"[39m
+Received: [31m"[7m0.0[27m%"[39m
+
+[36m [2mÔØ»[22m src/components/Transport.
+test.tsx:[2m93:38[22m[39m
+    [90m 91| [39m
+    [90m 92| [39m        [35mconst[39m 
+cpuValue [33m=[39m [35mawait[39m screen
+[33m.[39m[34mfindByTestId[39m([32m'cpu-v
+alue'[39m)[33m;[39m
+    [90m 93| [39m        [34mexpect[39m(
+cpuValue[33m.[39mtextContent)[33m.[39m[
+34mtoBe[39m([32m'85.5%'[39m)[33m;[39m
+    [90m   | [39m                         
+            [31m^[39m
+    [90m 94| [39m
+    [90m 95| [39m        [35mconst[39m 
+cpuFill [33m=[39m screen[33m.[39m[34mge
+tByTestId[39m([32m'cpu-fill'[39m)[33m;[
+39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[3/3]ÔÄ
+»[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Unhandled Errors 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1m
+Vitest caught 1 unhandled error during the 
+test run.
+This might cause false positive tests. 
+Resolve unhandled errors to make sure your 
+tests are not affected.[22m[39m
+
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m Uncaught 
+Exception 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+[31m[1mTypeError[22m: Cannot read 
+properties of null (reading 'toFixed')[39m
+[36m [2mÔØ»[22m Transport src/components/
+Transport.tsx:[2m182:130[22m[39m
+    [90m180| [39m                        
+[33m/[39m[33m>[39m
+    [90m181| [39m                    ) 
+[33m:[39m (
+    [90m182| [39m                        
+<span className="display-value" 
+data-testid="bÔÇª
+    [90m   | [39m                         
+                                            
+                                            
+                [31m^[39m
+    [90m183| [39m                    
+)[33m}[39m
+    [90m184| [39m                [33m<[3
+9m[33m/[39m[33mdiv[39m[33m>[39m
+[90m [2mÔØ»[22m 
+Object.react_stack_bottom_frame node_modules
+/react-dom/cjs/react-dom-client.development.
+js:[2m25904:20[22m[39m
+[90m [2mÔØ»[22m renderWithHooks node_modu
+les/react-dom/cjs/react-dom-client.developme
+nt.js:[2m7662:22[22m[39m
+[90m [2mÔØ»[22m updateFunctionComponent n
+ode_modules/react-dom/cjs/react-dom-client.d
+evelopment.js:[2m10166:19[22m[39m
+[90m [2mÔØ»[22m beginWork node_modules/re
+act-dom/cjs/react-dom-client.development.js:
+[2m11778:18[22m[39m
+[90m [2mÔØ»[22m runWithFiberInDEV node_mo
+dules/react-dom/cjs/react-dom-client.develop
+ment.js:[2m874:13[22m[39m
+[90m [2mÔØ»[22m performUnitOfWork node_mo
+dules/react-dom/cjs/react-dom-client.develop
+ment.js:[2m17641:22[22m[39m
+[90m [2mÔØ»[22m workLoopSync node_modules
+/react-dom/cjs/react-dom-client.development.
+js:[2m17469:41[22m[39m
+[90m [2mÔØ»[22m renderRootSync node_modul
+es/react-dom/cjs/react-dom-client.developmen
+t.js:[2m17450:11[22m[39m
+[90m [2mÔØ»[22m performWorkOnRoot node_mo
+dules/react-dom/cjs/react-dom-client.develop
+ment.js:[2m16583:35[22m[39m
+
+[31mThis error originated in "[1msrc/compo
+nents/Transport.test.tsx[22m" test file. 
+It doesn't mean the error was thrown inside 
+the file itself, but while it was 
+running.[39m
+[31mThe latest test that might've caused 
+the error is "[1mtoggles play/pause when 
+Play button clicked[22m". It might mean 
+one of the following:
+- The error was thrown, while Vitest was 
+running this test.
+- If the error occurred after the test had 
+been completed, this was the last 
+documented test before it was thrown.[39m
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ
+»ÔÄ»ÔÄ»[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (5)[39m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 21:30:54
+[2m   Duration [22m 1.99s[2m (transform 53ms, setup 82ms, import 140ms, tests 1.15s, environment 508ms)[22m
+

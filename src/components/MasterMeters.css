@@ -1,0 +1,127 @@
+.master-meters {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px;
+    /* User request: Reduce width by half */
+    width: 50%;
+    align-self: center;
+
+    /* Removed margin, handled by parent gap */
+
+    box-shadow: 0 4px 20px rgb(0, 0, 0, 0.5);
+}
+
+.meters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.meters-title {
+    font-family: Orbitron, Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.meters-badge {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    background: rgb(0, 255, 255, 0.1);
+    border: 1px solid rgb(0, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #0ff;
+}
+
+.meters-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    /* Reduced from 16px */
+}
+
+.meter-channel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meter-label {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-align: center;
+}
+
+.meter-bar-container {
+    position: relative;
+    width: 100%;
+    height: 16px;
+
+    /* Reduced from 24px */
+    background: rgb(0, 0, 0, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 6px rgb(0, 0, 0, 0.8);
+}
+
+.meter-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transition: width 0.05s ease-out;
+    border-radius: 4px;
+}
+
+.meter-rms {
+    z-index: 1;
+}
+
+.meter-peak {
+    z-index: 2;
+}
+
+.meter-scale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.scale-mark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 9px;
+    color: rgb(255, 255, 255, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.meter-value {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+.peak-value {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.rms-value {
+    color: #888;
+}

@@ -1,0 +1,24 @@
+﻿        engine.process_parallel(
+
+            &mut [track],
+
+            &mut master_chans,
+
+            44100.0,
+
+            120.0,
+
+            0,
+
+            &Arc::new(FadeLuts::new()),
+
+            &[],
+
+            &super::super::streamer::GlobalBufferPool::new(1),
+
+            &super::super::streamer::WindowsAsyncStreamer::new(1),
+
+            false,
+
+        );
+

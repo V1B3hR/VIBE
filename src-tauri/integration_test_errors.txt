@@ -1,0 +1,283 @@
+﻿cargo : warning: unused imports: 
+`AudioBuffer`, `MidiClip`, 
+`MidiNote`, and `ProcessingContext`
+At line:1 char:1
++ cargo test --lib 
+engine::integration_tests 2>&1 | 
+Out-File -FilePath  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (warning: unused...cessi  
+  ngContext`:String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+ --> 
+src\engine\integration_tests.rs:1:28
+  |
+1 | use 
+crate::engine::graph::{AudioBuffer, 
+MidiClip, MidiNote, 
+ProcessingContext, Track, TrackType};
+  |                            
+^^^^^^^^^^^  ^^^^^^^^  ^^^^^^^^  
+^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused import: 
+`KropelkaInsight`
+ --> 
+src\engine\integration_tests.rs:3:52
+  |
+3 | use crate::engine::kropelka_brain
+::{KropelkaBrain, KropelkaInsight, 
+KropelkaState};
+  |                                  
+                  ^^^^^^^^^^^^^^^
+
+warning: unused imports: `Chord` and 
+`Key`
+ --> 
+src\engine\integration_tests.rs:4:29
+  |
+4 | use 
+crate::engine::theory::{Chord, Key};
+  |                             
+^^^^^  ^^^
+
+warning: unused import: 
+`std::sync::Arc`
+ --> 
+src\engine\integration_tests.rs:5:5
+  |
+5 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: 
+`tokio::sync::Mutex`
+ --> 
+src\engine\integration_tests.rs:6:5
+  |
+6 | use tokio::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `uuid::Uuid`
+ --> 
+src\engine\integration_tests.rs:7:5
+  |
+7 | use uuid::Uuid;
+  |     ^^^^^^^^^^
+
+warning: variable does not need to 
+be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut 
+internal_tracks, mut 
+internal_busses, mut 
+preview_voice_opt, mut fx_opt, mut 
+limiter_opt, mut 
+local_master_buffer) = {
+     |                               
+  ----^^^^^^^^^^^^^^^
+     |                               
+  |
+     |                               
+  help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: variable does not need to 
+be mutable
+   --> src\engine\graph.rs:816:13
+    |
+816 |         let mut params = 
+vec![&self.volume, &self.pan, 
+&self.width, &self.input_drive];
+    |             ----^^^^^^
+    |             |
+    |             help: remove this 
+`mut`
+
+warning: unused variable: `bpm`
+    --> 
+src\engine\kropelka_brain.rs:1185:9
+     |
+1185 |         bpm: f64,
+     |         ^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_bpm`
+     |
+     = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: 
+`sample_rate`
+    --> 
+src\engine\kropelka_brain.rs:1186:9
+     |
+1186 |         sample_rate: f64,
+     |         ^^^^^^^^^^^ help: if 
+this is intentional, prefix it with 
+an underscore: `_sample_rate`
+
+warning: variable does not need to 
+be mutable
+  --> 
+src\engine\integration_tests.rs:16:13
+   |
+16 |         let mut tracks = 
+vec![Track::new("Heavy 
+Track".to_string())];
+   |             ----^^^^^^
+   |             |
+   |             help: remove this 
+`mut`
+
+warning: unused variable: 
+`script_path`
+  --> src\lib.rs:18:17
+   |
+18 |             let script_path = 
+app
+   |                 ^^^^^^^^^^^ 
+help: if this is intentional, prefix 
+it with an underscore: `_script_path`
+
+warning: method `reset_lufs` is 
+never used
+   --> 
+src\engine\metering\mod.rs:131:12
+    |
+ 23 | impl GpuMeter {
+    | ------------- method in this 
+implementation
+...
+131 |     pub fn reset_lufs(&self) {
+    |            ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: struct `KWeightingFilter` 
+is never constructed
+   --> 
+src\engine\metering\mod.rs:139:8
+    |
+139 | struct KWeightingFilter {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: associated items `new` and 
+`process` are never used
+   --> 
+src\engine\metering\mod.rs:153:8
+    |
+152 | impl KWeightingFilter {
+    | --------------------- 
+associated items in this 
+implementation
+153 |     fn new() -> Self {
+    |        ^^^
+...
+167 |     fn process(&mut self, 
+input: f64) -> f64 {
+    |        ^^^^^^^
+
+warning: function `to_db_power` is 
+never used
+   --> 
+src\engine\metering\mod.rs:223:4
+    |
+223 | fn to_db_power(power: f64) -> 
+f64 {
+    |    ^^^^^^^^^^^
+
+warning: field `sample_rate` is 
+never read
+ --> 
+src\engine\metering\lufs_meter.rs:7:5
+  |
+5 | pub struct LufsMeter {
+  |            --------- field in 
+this struct
+6 |     meter: Mutex<EbuR128>,
+7 |     sample_rate: u32,
+  |     ^^^^^^^^^^^
+
+warning: method `reset` is never used
+  --> src\engine\metering\lufs_meter.
+rs:58:12
+   |
+10 | impl LufsMeter {
+   | -------------- method in this 
+implementation
+...
+58 |     pub fn reset(&self) {
+   |            ^^^^^
+
+warning: associated function 
+`get_role_color` is never used
+  --> src\engine\gosposia.rs:69:12
+   |
+20 | impl Gosposia {
+   | ------------- associated 
+function in this implementation
+...
+69 |     pub fn get_role_color(role: 
+&TrackRole) -> &'static str {
+   |            ^^^^^^^^^^^^^^
+
+warning: method `kill` is never used
+   --> 
+src\engine\neural_forest.rs:101:12
+    |
+ 24 | impl NeuralForestBridge {
+    | ----------------------- method 
+in this implementation
+...
+101 |     pub fn kill(&mut self) {
+    |            ^^^^
+
+warning: `vibe` (lib test) generated 
+20 warnings (run `cargo fix --lib -p 
+vibe --tests` to apply 12 
+suggestions)
+    Finished `test` profile 
+[unoptimized + debuginfo] target(s) 
+in 0.44s
+     Running unittests src\lib.rs (ta
+rget\debug\deps\vibe_lib-2abfd6f11d8d
+afda.exe)
+
+running 3 tests
+test engine::integration_tests::tests::test_param_parameter_bounds ... FAILED
+test engine::integration_tests::tests::test_ai_technical_guardian_integration ... ok
+test engine::integration_tests::tests::test_ai_creative_copilot_integration ... ok
+
+failures:
+
+---- engine::integration_tests::tests::test_param_parameter_bounds stdout ----
+
+thread 'engine::integration_tests::tests::test_param_parameter_bounds' (7360) panicked at src\engine\integration_tests.rs:99:9:
+assertion `left == right` failed
+  left: 2.5
+ right: 2.0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    engine::integration_tests::tests::test_param_parameter_bounds
+
+test result: FAILED. 2 passed; 1 failed; 0 ignored; 0 measured; 136 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass 
+`--lib`

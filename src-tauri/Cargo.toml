@@ -1,0 +1,85 @@
+[package]
+name = "vibe"
+version = "0.1.0"
+description = "VIBE Digital Audio Workstation"
+authors = ["Antigravity"]
+edition = "2021"
+default-run = "vibe"
+
+[[bin]]
+name = "vibe"
+path = "src/main.rs"
+
+[[bin]]
+name = "vibe-plugin-host"
+path = "src/bin/vibe-plugin-host.rs"
+
+[lib]
+name = "vibe_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.5.5", features = [] }
+
+[dependencies]
+tauri = { version = "2.10.2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+cpal = "0.15"
+rodio = "0.17"
+log = "0.4"
+env_logger = "0.10"
+ringbuf = "0.3"
+dasp = { version = "0.11", features = ["all"] }
+uuid = { version = "1.6", features = ["v4", "v5", "serde"] }
+symphonia = { version = "0.5", features = ["all"] }
+midir = "0.9"
+wide = "0.7"
+wasmer = "4.2"
+rtrb = "0.3"
+arc-swap = "1.6"
+memmap2 = "0.9"
+crossbeam-channel = "0.5"
+tokio = { version = "1", features = ["fs", "process", "rt-multi-thread", "io-util", "macros"] }
+libloading = "0.8"
+widestring = "1.0"
+windows-sys = { version = "0.52", features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Com", "Win32_System_Threading"] }
+rayon = "1.8"
+thread-priority = "1.2"
+soxr = { version = "0.6", optional = true }
+rustfft = "6.2"
+winapi = { version = "0.3", features = ["fileapi", "winbase", "handleapi", "winnt", "namedpipeapi", "winerror", "errhandlingapi", "ioapiset", "synchapi"] }
+bincode = "1.3"
+crc32fast = "1.4"
+notify = "6.1"
+walkdir = "2.4"
+fuzzy-matcher = "0.3"
+rand = "0.8"
+num-complex = "0.4"
+petgraph = "0.6"
+rubato = "0.14"
+hound = "3.5.1"
+ebur128 = "0.1.10"
+lame = { version = "0.1.3", optional = true }
+flac-bound = { version = "0.4", optional = true }
+half = { version = "2.3", features = ["serde"] }
+lazy_static = "1.5.0"
+
+[features]
+default = []
+asio = ["cpal/asio"]
+mp3 = ["lame"]
+flac = ["flac-bound"]
+
+[dev-dependencies]
+wat = "1.0"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "simd_bench"
+harness = false
+

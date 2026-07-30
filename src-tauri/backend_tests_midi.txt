@@ -1,0 +1,44 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:30
++ ... CK=8388608; cargo test 
+engine::midi_mapping::tests --lib -- 
+--nocaptu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (   Compiling vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+error[E0277]: the trait bound `[u8; 128]: 
+std::default::Default` is not satisfied
+   --> src\engine\midi_mapping.rs:111:5
+    |
+109 | #[derive(Default)]
+    |          ------- in this derive macro 
+expansion
+110 | pub struct HiResState {
+111 |     pub cc_vals: [u8; 128],
+    |     ^^^^^^^^^^^^^^^^^^^^^^ the trait 
+`std::default::Default` is not implemented 
+for `[u8; 128]`
+    |
+    = help: the following other types 
+implement trait `std::default::Default`:
+              &[T]
+              &mut [T]
+              [T; 0]
+              [T; 1]
+              [T; 2]
+              [T; 3]
+              [T; 4]
+              [T; 5]
+            and 27 others
+
+For more information about this error, try 
+`rustc --explain E0277`.
+error: could not compile `vibe` (lib test) 
+due to 1 previous error

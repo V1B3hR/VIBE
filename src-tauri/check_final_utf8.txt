@@ -1,0 +1,67 @@
+﻿cargo :     Checking vibe v0.1.0 (C:\Users
+\brigh\.gemini\antigravity\scratch\VIBE\sr
+c-tauri)
+At line:1 char:1
++ cargo check --tests 2>&1 | Out-File 
+-Encoding utf8 check_final_utf8.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (    Checking vi...VIBE\src-tauri)  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+error[E0412]: cannot find type 
+`PluginManager` in module `super::scanner`
+    --> src\engine\audio.rs:4813:52
+     |
+4813 |         plugin_manager: &Arc<Mutex<
+super::scanner::PluginManager>>,
+     |                                    
+                ^^^^^^^^^^^^^
+     |
+    ::: src\engine\scanner.rs:12:1
+     |
+  12 | pub struct PluginScanner {
+     | ------------------------ similarly 
+named struct `PluginScanner` defined here
+     |
+help: a struct with a similar name exists
+     |
+4813 -         plugin_manager: &Arc<Mutex<
+super::scanner::PluginManager>>,
+4813 +         plugin_manager: &Arc<Mutex<
+super::scanner::PluginScanner>>,
+     |
+help: consider importing this struct 
+through its public re-export
+     |
+   1 + use crate::PluginManager;
+     |
+help: if you import `PluginManager`, 
+refer to it directly
+     |
+4813 -         plugin_manager: &Arc<Mutex<
+super::scanner::PluginManager>>,
+4813 +         plugin_manager: 
+&Arc<Mutex<PluginManager>>,
+     |
+
+error[E0282]: type annotations needed
+    --> src\engine\audio.rs:4853:25
+     |
+4853 |                         
+plugin.set_state(&p_snap.state_blob);
+     |                         ^^^^^^ 
+cannot infer type
+
+Some errors have detailed explanations: 
+E0282, E0412.
+For more information about an error, try 
+`rustc --explain E0282`.
+error: could not compile `vibe` (lib) due 
+to 2 previous errors
+warning: build failed, waiting for other 
+jobs to finish...
+error: could not compile `vibe` (lib 
+test) due to 2 previous errors

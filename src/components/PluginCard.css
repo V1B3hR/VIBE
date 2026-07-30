@@ -1,0 +1,243 @@
+.plugin-card {
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: grab;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.plugin-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(100, 150, 255, 0.3);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(100, 150, 255, 0.05);
+}
+
+.plugin-card.active {
+    background: rgba(100, 150, 255, 0.08);
+    border-color: rgba(100, 150, 255, 0.5);
+    box-shadow: 0 0 20px rgba(100, 150, 255, 0.15);
+}
+
+.plugin-card.blacklisted {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 100, 100, 0.05);
+    border-color: rgba(255, 100, 100, 0.2);
+}
+
+.plugin-card-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.plugin-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+.plugin-info-cols {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.plugin-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plugin-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+.favorite-star {
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.favorite-star:hover {
+    transform: scale(1.2);
+}
+
+.favorite-star.empty {
+    opacity: 0.3;
+}
+
+.plugin-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plugin-vendor {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.plugin-type-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #000;
+}
+
+.plugin-type-badge.vst3 {
+    background: #60a5fa;
+}
+
+.plugin-type-badge.vst2 {
+    background: #94a3b8;
+}
+
+.plugin-type-badge.clap {
+    background: #fbbf24;
+}
+
+.plugin-type-badge.native {
+    background: #f472b6;
+}
+
+.plugin-type-badge.wasm {
+    background: #a855f7;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+.plugin-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.plugin-tags-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.plugin-category-tag {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.plugin-user-tag {
+    font-size: 9px;
+    color: #6496ff;
+    background: rgba(100, 150, 255, 0.1);
+    padding: 1px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60px;
+}
+
+.last-used-time {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.25);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.plugin-card:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+.plugin-card.dragging {
+    opacity: 0.5;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.blacklist-badge {
+    font-size: 9px;
+    color: #ef4444;
+    font-weight: 800;
+    border: 1px solid #ef4444;
+    padding: 1px 4px;
+    border-radius: 3px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.performance-stats {
+    display: flex;
+    gap: 4px;
+}
+
+.perf-chip {
+    font-size: 9px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.perf-chip.cpu {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.perf-chip.latency {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+.status-badge {
+    font-size: 8px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    font-weight: 800;
+}
+
+.status-badge.hidden {
+    color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-badge.deprecated {
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}

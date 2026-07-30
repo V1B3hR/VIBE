@@ -1,0 +1,354 @@
+:root {
+    --dropel-creative: #00f2ff;
+    --dropel-flow: #7000ff;
+    --dropel-technical: #ff0055;
+    --dropel-vibe: #00ff88;
+    --glow-color: var(--dropel-creative);
+}
+
+.dropel-container {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    /* Changed to auto to allow clicks */
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* State Colors */
+.mode-creative {
+    --glow-color: var(--dropel-creative);
+}
+
+.mode-flow {
+    --glow-color: var(--dropel-flow);
+    opacity: 0.6;
+    filter: grayscale(0.5);
+}
+
+.mode-technical {
+    --glow-color: var(--dropel-technical);
+}
+
+.mode-vibe_check {
+    --glow-color: var(--dropel-vibe);
+}
+
+.mode-idle {
+    --glow-color: #888;
+    opacity: 0.8;
+}
+
+/* The Core Orb */
+.dropel-core {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--glow-color);
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease-out;
+}
+
+.dropel-container:hover .dropel-core {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--glow-color);
+}
+
+/* Face Features */
+.dropel-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px white;
+    top: 35%;
+    transition: all 0.2s ease;
+}
+
+.eye.left {
+    left: 30%;
+}
+
+.eye.right {
+    right: 30%;
+}
+
+.mouth {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    top: 65%;
+    transition: all 0.2s ease;
+}
+
+/* Facial Expressions */
+.mode-creative .eye {
+    height: 8px;
+}
+
+.mode-creative .mouth {
+    width: 14px;
+    border-radius: 0 0 10px 10px;
+    height: 4px;
+}
+
+.mode-technical .eye {
+    height: 3px;
+    width: 8px;
+    border-radius: 0;
+    transform: rotate(15deg);
+}
+
+.mode-technical .eye.right {
+    transform: rotate(-15deg);
+}
+
+.mode-technical .mouth {
+    width: 12px;
+    height: 2px;
+    background: #ff4444;
+}
+
+.mode-vibe_check .eye {
+    width: 10px;
+    height: 2px;
+}
+
+.mode-vibe_check .mouth {
+    width: 20px;
+    box-shadow: 0 0 5px var(--dropel-vibe);
+}
+
+/* Vibe Check Scanner Ring */
+.vibe-scanner-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border: 1px dashed var(--dropel-vibe);
+    border-radius: 50%;
+    animation: spinScan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spinScan {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Particles */
+.particles-creative {
+    position: absolute;
+    top: -20px;
+    animation: floatUp 2s ease-in-out infinite;
+    font-size: 12px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.alert-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0055;
+    color: white;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #ff0055;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+/* Insight Card */
+.insight-card {
+    position: absolute;
+    bottom: 80px;
+    /* Above the orb */
+    right: 0;
+    width: 220px;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--glow-color);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: cardSlideIn 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: auto;
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.cat-theory {
+    border-left-color: #0088ff;
+}
+
+.cat-mixing {
+    border-left-color: #ffaa00;
+}
+
+.cat-safety {
+    border-left-color: #ff0044;
+}
+
+.cat-vibe {
+    border-left-color: #00ff88;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-body {
+    font-size: 12px;
+    color: #eee;
+    line-height: 1.4;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fix-btn {
+    background: var(--glow-color);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 4px 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    box-shadow: 0 0 10px var(--glow-color);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fix-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Holographic Stats */
+.dropel-stats-holo {
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
+    width: 120px;
+    background: rgba(0, 20, 40, 0.6);
+    border: 1px solid var(--dropel-vibe);
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+    /* Clip path for sci-fi edge */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dropel-vibe);
+}
+
+.bar {
+    width: 60px;
+    height: 4px;
+    background: rgba(0, 255, 136, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar>div {
+    height: 100%;
+    background: var(--dropel-vibe);
+    box-shadow: 0 0 5px var(--dropel-vibe);
+    transition: width 0.3s ease;
+}

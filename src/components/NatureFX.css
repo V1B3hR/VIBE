@@ -1,0 +1,232 @@
+/* Nature-Inspired Skin for Pro FX Suite */
+
+.vibe-plugin-wrapper.nature-skin {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: linear-gradient(145deg, #090e0c 0%, #050706 100%);
+    color: #e0f0e8;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 200, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    width: 440px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle vine/organic pattern overlay */
+.vibe-plugin-wrapper.nature-skin::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%; bottom: -50%; left: -50%;
+    background: radial-gradient(circle at 10% 20%, rgba(50, 255, 150, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 200, 255, 0.03) 0%, transparent 20%);
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.plugin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.plugin-header h3 {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #a0d0b0;
+    font-weight: 300;
+}
+
+.nature-badge {
+    background: rgba(100, 255, 150, 0.1);
+    color: #64ff96;
+    border: 1px solid rgba(100, 255, 150, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(100, 255, 150, 0.1);
+}
+
+.visualizer-stage {
+    position: relative;
+    height: 180px;
+    background: #030403;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 200, 0.1);
+    box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.8);
+    margin-bottom: 24px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.organic-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.impulse-hud {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: #64ff96;
+    font-size: 10px;
+    font-family: 'SF Mono', monospace;
+    text-shadow: 0 0 5px #000;
+    pointer-events: none;
+}
+
+.impulse-hud strong {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.organic-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.control-tier {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 200, 0.03);
+}
+
+.control-tier.secondary {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.organic-knob-container {
+    position: relative;
+    width: 70px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.organic-knob-base {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #18201b 0%, #0a0d0b 100%);
+    border: 1px solid #2a3a30;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 2px rgba(255, 255, 255, 0.05);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.organic-knob-indicator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Rotating element */
+    transition: transform 0.05s ease-out;
+}
+
+.indicator-dot {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #64ff96;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #64ff96;
+}
+
+.invisible-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    cursor: ns-resize;
+    z-index: 10;
+    transform: rotate(-90deg); /* Make it scroll vertically essentially */
+}
+
+.organic-knob-label {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.organic-knob-label span {
+    font-size: 10px;
+    color: #8fa098;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.organic-knob-label .val {
+    color: #64ff96;
+    font-family: 'SF Mono', monospace;
+    font-weight: bold;
+}
+
+/* Fallback slider row */
+.simple-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.simple-slider-row label {
+    font-size: 10px;
+    color: #8fa098;
+    width: 80px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.simple-slider-row input[type=range] {
+    flex: 1;
+    appearance: none;
+    height: 4px;
+    background: #18201b;
+    border-radius: 2px;
+}
+
+.simple-slider-row input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #64ff96;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(100, 255, 150, 0.5);
+    cursor: ew-resize;
+}
+
+.simple-slider-row span {
+    font-size: 11px;
+    color: #64ff96;
+    width: 35px;
+    font-family: 'SF Mono', monospace;
+}

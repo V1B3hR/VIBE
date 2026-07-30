@@ -1,0 +1,240 @@
+    Checking vibe v0.1.0 (C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri)
+error[E0277]: the trait bound `half::f16: serde::Serialize` is not satisfied
+    --> src\engine\waveform.rs:7:30
+     |
+   7 | #[derive(Clone, Debug, Copy, Serialize, Deserialize)]
+     |                              ^^^^^^^^^ the trait `Serialize` is not implemented for `half::f16`
+...
+  10 |     pub min: f16,
+     |     --- required by a bound introduced by this call
+     |
+     = note: for local types consider adding `#[derive(serde::Serialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Serialize`:
+               &'a T
+               &'a mut T
+               ()
+               (T,)
+               (T0, T1)
+               (T0, T1, T2)
+               (T0, T1, T2, T3)
+               (T0, T1, T2, T3, T4)
+             and 487 others
+note: required by a bound in `audio_device::_::_serde::ser::SerializeStruct::serialize_field`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\ser\mod.rs:1917:21
+     |
+1915 |     fn serialize_field<T>(&mut self, key: &'static str, value: &T) -> Result<(), Self::Error>
+     |        --------------- required by a bound in this associated function
+1916 |     where
+1917 |         T: ?Sized + Serialize;
+     |                     ^^^^^^^^^ required by this bound in `SerializeStruct::serialize_field`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+     = note: this error originates in the derive macro `Serialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:10:14
+     |
+  10 |     pub min: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_element`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1771:12
+     |
+1769 |     fn next_element<T>(&mut self) -> Result<Option<T>, Self::Error>
+     |        ------------ required by a bound in this associated function
+1770 |     where
+1771 |         T: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `SeqAccess::next_element`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:11:14
+     |
+  11 |     pub max: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_element`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1771:12
+     |
+1769 |     fn next_element<T>(&mut self) -> Result<Option<T>, Self::Error>
+     |        ------------ required by a bound in this associated function
+1770 |     where
+1771 |         T: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `SeqAccess::next_element`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:12:14
+     |
+  12 |     pub rms: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_element`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1771:12
+     |
+1769 |     fn next_element<T>(&mut self) -> Result<Option<T>, Self::Error>
+     |        ------------ required by a bound in this associated function
+1770 |     where
+1771 |         T: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `SeqAccess::next_element`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:10:14
+     |
+  10 |     pub min: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_value`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1916:12
+     |
+1914 |     fn next_value<V>(&mut self) -> Result<V, Self::Error>
+     |        ---------- required by a bound in this associated function
+1915 |     where
+1916 |         V: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `MapAccess::next_value`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:11:14
+     |
+  11 |     pub max: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_value`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1916:12
+     |
+1914 |     fn next_value<V>(&mut self) -> Result<V, Self::Error>
+     |        ---------- required by a bound in this associated function
+1915 |     where
+1916 |         V: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `MapAccess::next_value`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+    --> src\engine\waveform.rs:12:14
+     |
+  12 |     pub rms: f16,
+     |              ^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+     |
+     = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+     = note: for types from other crates check whether the crate offers a `serde` feature flag
+     = help: the following other types implement trait `Deserialize<'de>`:
+               `&'a [u8]` implements `Deserialize<'de>`
+               `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+               `&'a std::path::Path` implements `Deserialize<'de>`
+               `&'a str` implements `Deserialize<'de>`
+               `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+               `()` implements `Deserialize<'de>`
+               `(T,)` implements `Deserialize<'de>`
+               `(T0, T1)` implements `Deserialize<'de>`
+             and 502 others
+note: required by a bound in `next_value`
+    --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_core-1.0.228\src\de\mod.rs:1916:12
+     |
+1914 |     fn next_value<V>(&mut self) -> Result<V, Self::Error>
+     |        ---------- required by a bound in this associated function
+1915 |     where
+1916 |         V: Deserialize<'de>,
+     |            ^^^^^^^^^^^^^^^^ required by this bound in `MapAccess::next_value`
+     = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+     = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the trait bound `half::f16: serde::Deserialize<'de>` is not satisfied
+  --> src\engine\waveform.rs:7:41
+   |
+ 7 | #[derive(Clone, Debug, Copy, Serialize, Deserialize)]
+   |                                         ^^^^^^^^^^^ the trait `Deserialize<'_>` is not implemented for `half::f16`
+   |
+   = note: for local types consider adding `#[derive(serde::Deserialize)]` to your `half::f16` type
+   = note: for types from other crates check whether the crate offers a `serde` feature flag
+   = help: the following other types implement trait `Deserialize<'de>`:
+             `&'a [u8]` implements `Deserialize<'de>`
+             `&'a serde_json::value::RawValue` implements `Deserialize<'de>`
+             `&'a std::path::Path` implements `Deserialize<'de>`
+             `&'a str` implements `Deserialize<'de>`
+             `&'p jsonptr::pointer::Pointer` implements `Deserialize<'de>`
+             `()` implements `Deserialize<'de>`
+             `(T,)` implements `Deserialize<'de>`
+             `(T0, T1)` implements `Deserialize<'de>`
+           and 502 others
+note: required by a bound in `audio_device::_::_serde::__private228::de::missing_field`
+  --> C:\Users\brigh\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:26:8
+   |
+24 | pub fn missing_field<'de, V, E>(field: &'static str) -> Result<V, E>
+   |        ------------- required by a bound in this function
+25 | where
+26 |     V: Deserialize<'de>,
+   |        ^^^^^^^^^^^^^^^^ required by this bound in `missing_field`
+   = note: the full name for the type has been written to 'C:\Users\brigh\.gemini\antigravity\scratch\VIBE\src-tauri\target\debug\deps\vibe_lib-13d7a14136fcc275.long-type-5726568316436680675.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+   = note: this error originates in the derive macro `Deserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `vibe` (lib) due to 8 previous errors

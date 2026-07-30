@@ -1,0 +1,276 @@
+/* Modal Overlay */
+.kp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 5, 20, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.kp-modal {
+    background: linear-gradient(135deg, #0f1520 0%, #0a0b12 100%);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    border-radius: 12px;
+    width: 600px;
+    max-width: 90vw;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    color: #e0f0ff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+.kp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.kp-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.kp-avatar {
+    font-size: 24px;
+    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+}
+
+.kp-title h3 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #00f0ff;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.kp-close {
+    background: transparent;
+    border: none;
+    color: #889;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.kp-close:hover {
+    color: #fff;
+}
+
+/* Body */
+.kp-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.kp-section h4 {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #aab;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Level Selector */
+.kp-level-selector {
+    display: flex;
+    gap: 15px;
+}
+
+.kp-level-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.kp-level-btn .icon {
+    font-size: 24px;
+    margin-top: 2px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.kp-level-btn h5 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #ddd;
+    font-weight: 600;
+}
+
+.kp-level-btn p {
+    margin: 0;
+    font-size: 11px;
+    color: #778;
+    line-height: 1.4;
+}
+
+/* Active Level States */
+.kp-level-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.kp-level-btn.active.low {
+    border-color: #00ffaa;
+    background: rgba(0, 255, 170, 0.05);
+}
+.kp-level-btn.active.medium {
+    border-color: #00f0ff;
+    background: rgba(0, 240, 255, 0.05);
+}
+.kp-level-btn.active.high {
+    border-color: #ff0055;
+    background: rgba(255, 0, 85, 0.05);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.1);
+}
+
+.kp-level-btn.active .icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+.kp-level-btn.active.low h5 { color: #00ffaa; }
+.kp-level-btn.active.medium h5 { color: #00f0ff; }
+.kp-level-btn.active.high h5 { color: #ff0055; }
+
+
+/* Toggles Grid */
+.kp-toggles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.kp-toggle-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(100, 150, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.kp-toggle-card input[type="checkbox"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    appearance: none;
+    width: 36px;
+    height: 18px;
+    background: #111;
+    border-radius: 9px;
+    border: 1px solid #334;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.kp-toggle-card input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    background: #556;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.kp-toggle-card.active {
+    background: rgba(0, 240, 255, 0.05);
+    border-color: rgba(0, 240, 255, 0.2);
+}
+
+.kp-toggle-card.active input[type="checkbox"] {
+    background: #00f0ff;
+    border-color: #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.kp-toggle-card.active input[type="checkbox"]::after {
+    left: 20px;
+    background: #000;
+}
+
+.kp-toggle-card .title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 4px;
+}
+
+.kp-toggle-card.active .title {
+    color: #00f0ff;
+}
+
+.kp-toggle-card .desc {
+    font-size: 10px;
+    color: #667;
+}
+
+.kp-toggle-card.active .desc {
+    color: #88a;
+}
+
+/* Footer */
+.kp-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.kp-status {
+    font-size: 12px;
+    color: #889;
+    font-style: italic;
+}
+
+.kp-save-btn {
+    background: linear-gradient(135deg, #00f0ff 0%, #0088ff 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    transition: all 0.2s;
+}
+
+.kp-save-btn:hover {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+    transform: translateY(-1px);
+}

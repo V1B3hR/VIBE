@@ -1,0 +1,1004 @@
+.timeline-container {
+    flex: 1;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgb(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.timeline-ruler {
+    height: 30px;
+    background: rgb(22, 22, 26, 0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    cursor: crosshair;
+    display: flex;
+}
+
+.ruler-tracks-header {
+    width: 150px;
+    height: 100%;
+    background: rgb(30, 30, 35);
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+}
+
+.ruler-marks-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.ruler-marks-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    will-change: transform;
+}
+
+.ruler-content {
+    position: relative;
+    height: 100%;
+}
+
+.ruler-mark {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    background: rgb(255, 255, 255, 0.2);
+}
+
+.bar-mark {
+    height: 15px;
+    background: rgb(255, 255, 255, 0.5);
+}
+
+.beat-mark {
+    height: 8px;
+    background: rgb(255, 255, 255, 0.15);
+}
+
+.mark-label {
+    position: absolute;
+    top: -15px;
+    left: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #888;
+}
+
+.loop-selection {
+    position: absolute;
+    top: 0;
+    height: 30px;
+    background: rgba(0, 120, 212, 0.18);
+    border-left: 2px solid #1e90ff;
+    border-right: 2px solid #1e90ff;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: inset 0 0 12px rgba(30, 144, 255, 0.15);
+}
+
+.loop-bracket {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.playhead-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: #ff4d4d;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8), 0 0 20px rgba(255, 77, 77, 0.3);
+    z-index: 20;
+    pointer-events: none;
+    transform: translateZ(0);
+}
+
+/* Playhead triangle indicator on top */
+.playhead-line::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #ff4d4d;
+    filter: drop-shadow(0 0 4px rgba(255, 77, 77, 0.9));
+}
+
+.tracks-grid {
+    flex: 1;
+    overflow: auto;
+}
+
+.track-row {
+    display: flex;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.05);
+    min-height: 48px;
+}
+
+.track-controls {
+    width: 150px;
+    background: rgb(22, 22, 26, 0.8);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+}
+
+.track-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.btn-import-small {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.6rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.track-lane {
+    position: relative;
+    flex: 1;
+    min-width: 5000px;
+    /* Stronger bar lines (0.25) and subtle beat lines (0.07) */
+    background: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(255, 255, 255, 0.04) 100px);
+}
+
+.audio-clip {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    background: linear-gradient(180deg, #4DD0E1 0%, #26A69A 100%);
+    border-top: 1px solid rgb(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgb(77, 208, 225, 0.3);
+    cursor: pointer;
+}
+
+.clip-label {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: rgb(0, 0, 0, 0.2);
+}
+
+.track-container-outer {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+/* Folder indent tree line — vertical connector on the left */
+.track-container-outer.track-indent > .track-row > .track-controls {
+    position: relative;
+}
+
+.track-container-outer.track-indent > .track-row > .track-controls::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.automation-group {
+    display: flex;
+    background: rgb(0, 0, 0, 0.2);
+}
+
+.automation-controls-spacer {
+    width: 150px;
+    background: rgb(15, 15, 18, 0.9);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    left: 0;
+    z-index: 5;
+}
+
+.automation-lanes-container {
+    flex: 1;
+    min-width: 5000px;
+}
+
+.track-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-control {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    font-size: 0.6rem;
+    background: rgb(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-control:hover {
+    background: rgb(255, 255, 255, 0.15);
+}
+
+.btn-control.active {
+    background: var(--accent) !important;
+    color: white !important;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+.automation-lane .knot {
+    transition: r 0.2s;
+}
+
+.automation-lane:hover .knot {
+    r: 4px;
+}
+
+/* ── Lasso selection box ───────────────────────────────────── */
+.lasso-box {
+    position: fixed;
+    background: rgba(0, 120, 212, 0.12);
+    border: 1px solid rgba(0, 150, 255, 0.6);
+    pointer-events: none;
+    z-index: 1000;
+    border-radius: 2px;
+    backdrop-filter: brightness(1.05);
+}
+
+/* Legacy alias (keep both so nothing breaks) */
+.selection-lasso {
+    position: absolute;
+    background: rgba(0, 120, 212, 0.2);
+    border: 1px solid rgba(0, 120, 212, 0.5);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.fade-handle {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: rgb(255, 255, 255, 0.3);
+    cursor: ew-resize;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.fade-handle:hover {
+    background: rgb(255, 255, 255, 0.6);
+}
+
+.audio-clip:hover .fade-handle {
+    opacity: 1;
+}
+
+.fade-handle-in {
+    left: 0;
+    border-right: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.fade-handle-out {
+    right: 0;
+    border-left: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.trim-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: rgb(255, 255, 255, 0.1);
+    cursor: col-resize;
+    z-index: 12;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.audio-clip:hover .trim-handle {
+    opacity: 1;
+}
+
+.trim-handle:hover {
+    background: var(--accent);
+}
+
+.trim-handle-left {
+    left: 0;
+}
+
+.trim-handle-right {
+    right: 0;
+}
+
+.midi-clip {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+}
+
+.midi-clip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.4);
+}
+
+.midi-preview {
+    position: absolute;
+    inset: 15px 0 0;
+    pointer-events: none;
+}
+
+.midi-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+}
+
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.timeline-toolbar {
+    height: 40px;
+    background: rgb(20, 20, 25, 0.95);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+    z-index: 30;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toolbar-group .label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.snap-select {
+    background: #1a1a1e;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.toolbar-btn {
+    background: rgb(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toolbar-btn:hover {
+    background: rgb(255, 255, 255, 0.1);
+    color: white;
+}
+
+.audio-clip.selected,
+.midi-clip.selected {
+    border: 2px solid white !important;
+    box-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+    z-index: 15;
+}
+
+.midi-clip:hover .trim-handle {
+    opacity: 1;
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+.selection-lasso {
+    position: absolute;
+    background: rgb(0, 120, 212, 0.2);
+    border: 1px solid rgb(0, 120, 212, 0.5);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 5px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 2px solid #0fc;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 4px 4px 0;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.marker-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+/* Track States */
+.track-disabled .track-row,
+.track-disabled .automation-group {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    pointer-events: none;
+    /* Prevent manipulation of clips/lanes */
+}
+
+/* Allow re-enabling via context menu on controls */
+.track-disabled .track-controls {
+    pointer-events: auto;
+    filter: none;
+    /* Keep controls visible/clickable */
+    opacity: 1;
+}
+
+.track-frozen .track-row {
+    background: rgba(100, 200, 255, 0.05);
+}
+
+.track-frozen .track-label:after {
+    content: " ❄️";
+    margin-left: 4px;
+    font-size: 0.9em;
+}
+
+.track-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.track-zoom-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-zoom-tiny {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-zoom-tiny:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.track-volume-slider-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 6px 0;
+    cursor: ew-resize;
+}
+
+.track-volume-bar-fill {
+    height: 100%;
+    transition: width 0.05s, background-color 0.2s;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}
+
+.volume-value-tooltip {
+    position: absolute;
+    right: 4px;
+    top: -12px;
+    font-size: 8px;
+    color: #888;
+    pointer-events: none;
+}
+
+/* Global Swing Styles */
+.swing-slider-global {
+    flex: 0 0 80px;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #2a2a2e;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.swing-slider-global::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--accent-glow);
+    border: none;
+}
+
+.swing-value-global {
+    font-size: 0.75rem;
+    color: var(--accent);
+    min-width: 35px;
+    margin-left: 4px;
+}
+
+/* ── Track resize handle ───────────────────────────────────── */
+.track-resize-handle {
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    cursor: ns-resize;
+    flex-shrink: 0;
+    margin-top: auto;
+    transition: background 0.15s;
+    border-radius: 2px;
+}
+
+.track-resize-handle:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Track row: let height be driven by JS ─────────────────── */
+.track-row {
+    display: flex;
+    /* height set via inline style; remove hardcoded 80px below */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 48px;
+    transition: height 0s;
+    /* instant, smooth on mouse-move */
+}
+
+/* ── Track reorder DnD ─────────────────────────────────────── */
+.track-controls[draggable="true"] {
+    cursor: grab;
+}
+
+.track-controls[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+.track-reorder-target {
+    outline: 2px solid rgba(100, 180, 255, 0.7);
+    outline-offset: -2px;
+}
+
+.track-reorder-target .track-controls {
+    background: rgba(100, 180, 255, 0.08);
+}
+
+/* ── Track VU Meter ─────────────────────────────────────────── */
+.track-vu-meter {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    padding: 3px 3px 3px 0;
+    align-items: flex-end;
+    flex-shrink: 0;
+    width: 14px;
+}
+
+.vu-bar-track {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 5px;
+    flex-shrink: 0;
+}
+
+.vu-bar-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.vu-rms-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: height 0.04s ease-out;
+    border-radius: 2px 2px 0 0;
+}
+
+.vu-peak-tick {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: bottom 0.04s ease-out;
+    border-radius: 1px;
+    z-index: 1;
+}
+
+/* ── Clip Gain Control ─────────────────────────────────────── */
+.clip-gain-handle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    cursor: ns-resize;
+    transition: background 0.15s;
+}
+
+.clip-gain-handle:hover {
+    background: rgba(255, 255, 255, 0.9);
+    height: 4px;
+}
+
+.clip-gain-label {
+    position: absolute;
+    right: 4px;
+    top: -14px;
+    font-size: 9px;
+    color: #fff;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+/* ── Folder Tracks Aggregated View ───────────────────────── */
+.folder-aggregated-waveform {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ghost-clip-wrapper {
+    position: absolute;
+    height: 100%;
+    pointer-events: auto;       /* allow hover / title tooltip */
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;          /* color set via JS borderColor */
+    opacity: 0.72;
+    mix-blend-mode: screen;
+    transform: translateZ(0);
+    transition: opacity 0.15s, box-shadow 0.15s;
+    cursor: default;
+}
+
+.ghost-clip-wrapper:hover {
+    opacity: 0.92;
+    box-shadow: 0 0 14px currentColor;
+    z-index: 5;
+}
+
+/* Diagonal stripes overlay for blueprint feel */
+.ghost-clip-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.04) 4px,
+        transparent 4px,
+        transparent 9px
+    );
+    z-index: 2;
+}
+
+/* Glowing scanline animation */
+.ghost-clip-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: ghostScan 8s infinite linear;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@keyframes ghostScan {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+/* Ghost clip label (track name + clip name) */
+.ghost-clip-label {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 5px 1px 4px;
+    border-left: 2px solid;     /* color set via JS borderLeftColor */
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.ghost-clip-label-track {
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ghost-clip-label-clip {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.55);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* MIDI preview inside ghost clips */
+.ghost-clip-wrapper .midi-preview {
+    z-index: 4;
+    top: 18px;  /* below label */
+}
+
+.ghost-clip-wrapper .midi-dot {
+    /* background color comes from JS (track color) */
+    box-shadow: 0 0 4px currentColor;
+    border-radius: 1px;
+    height: 2px;
+}
+
+/* Waveforms inside ghost clips */
+.ghost-clip-wrapper canvas {
+    filter: contrast(1.6) brightness(1.4);
+    opacity: 0.65;
+}
+
+.track-name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.track-icon {
+    font-size: 14px;
+    opacity: 0.8;
+    user-select: none;
+}
+
+.track-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: text;
+}
+
+/* ── Folder child-count badge ─────────────────────────── */
+.folder-child-count {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 14px;
+    padding: 0 4px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+    cursor: default;
+    user-select: none;
+}
+
+/* ── Ruler improvements ─────────────────────────────── */
+.ruler-mark {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+}
+
+.bar-mark {
+    height: 18px;
+    width: 1.5px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.beat-mark {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.sub-beat-mark {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Finer tick subdivisions (1/16 to 1/128) */
+.fine-mark {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.12);
+}
+.micro-mark {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.08);
+}
+.ultra-mark {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+}
+.nano-mark {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Time-based ms ticks */
+.ms-mark {
+    height: 100%;
+    border-left: 1px dotted rgba(0, 255, 204, 0.1);
+}
+.sec-boundary {
+    border-left: 1.5px solid rgba(0, 255, 204, 0.45) !important;
+}
+.ms-100 {
+    border-left: 1px dashed rgba(0, 255, 204, 0.22) !important;
+}
+.ms-fine {
+    border-left: 1px dotted rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Sample index ticks */
+.sample-mark {
+    height: 100%;
+}
+
+/* Labels */
+.mark-label {
+    position: absolute;
+    top: -15px;
+    left: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(200, 200, 200, 0.85);
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    user-select: none;
+}
+
+.beat-label {
+    font-size: 8px;
+    color: rgba(180, 180, 180, 0.6);
+    top: -12px;
+}
+
+.ms-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.sample-label {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+
+/* ── Track depth indentation (folder children) ─────────── */
+/* Applied via SortableTrackItem paddingLeft — add subtle left-edge accent */
+[style*="paddingLeft"] > .track-container-outer > .track-row > .track-controls {
+    border-left-width: 3px;
+}
+
+/* ── Track lane subtle bottom separator ──────────────── */
+.track-row:last-child {
+    border-bottom: none;
+}
+
+/* ── Grid bar-line enhancement via JS backgroundImage ─── */
+/* Bar lines in TrackLane are painted via inline backgroundImage — */
+/* this overrides the static .track-lane gradient for tighter look  */
+.track-lane[style] {
+    background-color: rgba(0, 0, 0, 0.15);
+}

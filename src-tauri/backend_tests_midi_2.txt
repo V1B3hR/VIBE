@@ -1,0 +1,50 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\Users\b
+righ\.gemini\antigravity\scratch\VIBE\src-ta
+uri)
+At line:1 char:30
++ ... CK=8388608; cargo test 
+engine::midi_mapping::tests --lib -- 
+--nocaptu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (   Compiling vi...VIBE\src-tauri):Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+    Finished `test` profile [unoptimized + 
+debuginfo] target(s) in 7.05s
+     Running unittests src\lib.rs (target\de
+bug\deps\vibe_lib-535b23413f1cd2f5.exe)
+
+running 5 tests
+test engine::midi_mapping::tests::test_midi_learning ... ok
+
+thread 'engine::midi_mapping::tests::test_nr
+pn_resolution' (8072) panicked at 
+src\engine\midi_mapping.rs:529:29:
+index out of bounds: the len is 0 but the 
+index is 0
+note: run with `RUST_BACKTRACE=1` 
+environment variable to display a backtrace
+
+thread 'engine::midi_mapping::tests::test_fo
+urteen_bit_cc' (21528) panicked at 
+src\engine\midi_mapping.rs:485:29:
+index out of bounds: the len is 0 but the 
+index is 0
+test engine::midi_mapping::tests::test_absolute_soft_takeover ... ok
+test engine::midi_mapping::tests::test_relative_mapping ... ok
+test engine::midi_mapping::tests::test_fourteen_bit_cc ... FAILED
+test engine::midi_mapping::tests::test_nrpn_resolution ... FAILED
+
+failures:
+
+failures:
+    engine::midi_mapping::tests::test_fourteen_bit_cc
+    engine::midi_mapping::tests::test_nrpn_resolution
+
+test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 69 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--lib`

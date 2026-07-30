@@ -1,0 +1,557 @@
+﻿cargo :    Compiling vibe v0.1.0 (C:\
+Users\brigh\.gemini\antigravity\scrat
+ch\VIBE-neurallas\VIBE\src-tauri)
+At line:1 char:1
++ cargo test integration_tests 2>&1 
+| Out-File -Encoding utf8 c:\Users\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe 
+   cified: (   Compiling vi...VIBE\  
+  src-tauri):String) [], RemoteExc   
+ eption
+    + FullyQualifiedErrorId : Native 
+   CommandError
+ 
+error[E0433]: failed to resolve: 
+could not find `test` in `tokio`
+  --> 
+src\engine\integration_tests.rs:13:14
+   |
+13 |     #[tokio::test]
+   |              ^^^^ could not 
+find `test` in `tokio`
+
+error[E0433]: failed to resolve: 
+could not find `test` in `tokio`
+  --> 
+src\engine\integration_tests.rs:47:14
+   |
+47 |     #[tokio::test]
+   |              ^^^^ could not 
+find `test` in `tokio`
+
+warning: unused imports: 
+`AudioBuffer`, `MidiClip`, 
+`MidiNote`, and `ProcessingContext`
+ --> 
+src\engine\integration_tests.rs:1:28
+  |
+1 | use 
+crate::engine::graph::{AudioBuffer, 
+MidiClip, MidiNote, 
+ProcessingContext, Track, TrackType};
+  |                            
+^^^^^^^^^^^  ^^^^^^^^  ^^^^^^^^  
+^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused import: 
+`KropelkaInsight`
+ --> 
+src\engine\integration_tests.rs:3:52
+  |
+3 | use crate::engine::kropelka_brain
+::{KropelkaBrain, KropelkaInsight, 
+KropelkaState};
+  |                                  
+                  ^^^^^^^^^^^^^^^
+
+warning: unused imports: `Chord` and 
+`Key`
+ --> 
+src\engine\integration_tests.rs:4:29
+  |
+4 | use 
+crate::engine::theory::{Chord, Key};
+  |                             
+^^^^^  ^^^
+
+warning: unused import: 
+`std::sync::Arc`
+ --> 
+src\engine\integration_tests.rs:5:5
+  |
+5 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: 
+`tokio::sync::Mutex`
+ --> 
+src\engine\integration_tests.rs:6:5
+  |
+6 | use tokio::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `uuid::Uuid`
+ --> 
+src\engine\integration_tests.rs:7:5
+  |
+7 | use uuid::Uuid;
+  |     ^^^^^^^^^^
+
+warning: variable does not need to 
+be mutable
+  --> 
+src\engine\integration_tests.rs:16:13
+   |
+16 |         let mut tracks = 
+vec![Track::new("Heavy 
+Track".to_string())];
+   |             ----^^^^^^
+   |             |
+   |             help: remove this 
+`mut`
+   |
+   = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+error[E0063]: missing field 
+`is_reversed` in initializer of 
+`AudioClip`
+  --> 
+src\engine\arrangement_tests.rs:14:20
+   |
+14 |         let clip = AudioClip {
+   |                    ^^^^^^^^^ 
+missing `is_reversed`
+
+error[E0063]: missing field 
+`is_reversed` in initializer of 
+`AudioClip`
+  --> 
+src\engine\arrangement_tests.rs:90:24
+   |
+90 |         let mut clip = 
+AudioClip {
+   |                        
+^^^^^^^^^ missing `is_reversed`
+
+error[E0063]: missing field 
+`is_reversed` in initializer of 
+`AudioClip`
+   --> src\engine\arrangement_tests.r
+s:145:26
+    |
+145 |         
+track.clips.push(AudioClip {
+    |                          
+^^^^^^^^^ missing `is_reversed`
+
+error[E0061]: this method takes 9 
+arguments but 10 arguments were 
+supplied
+   --> src\engine\arrangement_tests.r
+s:189:28
+    |
+189 |             
+summing_engine.process_parallel(
+    |                            
+^^^^^^^^^^^^^^^^
+...
+192 |                 &mut master_r,
+    |                 ------------- 
+unexpected argument #3 of type `&mut 
+Vec<{float}>`
+    |
+note: expected `&mut [&mut [f64]]`, 
+found `&mut Vec<{float}>`
+   --> src\engine\arrangement_tests.r
+s:191:17
+    |
+191 |                 &mut master_l,
+    |                 ^^^^^^^^^^^^^
+    = note: expected mutable 
+reference `&mut [&mut [f64]]`
+               found mutable 
+reference `&mut Vec<{float}>`
+note: method defined here
+   --> src\engine\summing.rs:27:12
+    |
+ 27 |     pub fn process_parallel(
+    |            ^^^^^^^^^^^^^^^^
+...
+ 30 |         master_channels: &mut 
+[&mut [f64]],
+    |         
+----------------------------------
+help: remove the extra argument
+    |
+191 -                 &mut master_l,
+191 +                 /* &mut [&mut 
+[f64]] */,
+    |
+
+error[E0061]: this method takes 9 
+arguments but 10 arguments were 
+supplied
+  --> 
+src\engine\stress_tests.rs:67:24
+   |
+67 |         
+summing_engine.process_parallel(
+   |                        
+^^^^^^^^^^^^^^^^
+...
+70 |             &mut master_r,
+   |             ------------- 
+unexpected argument #3 of type `&mut 
+Vec<{float}>`
+   |
+note: expected `&mut [&mut [f64]]`, 
+found `&mut Vec<{float}>`
+  --> 
+src\engine\stress_tests.rs:69:13
+   |
+69 |             &mut master_l,
+   |             ^^^^^^^^^^^^^
+   = note: expected mutable 
+reference `&mut [&mut [f64]]`
+              found mutable 
+reference `&mut Vec<{float}>`
+note: method defined here
+  --> src\engine\summing.rs:27:12
+   |
+27 |     pub fn process_parallel(
+   |            ^^^^^^^^^^^^^^^^
+...
+30 |         master_channels: &mut 
+[&mut [f64]],
+   |         
+----------------------------------
+help: remove the extra argument
+   |
+69 -             &mut master_l,
+69 +             /* &mut [&mut 
+[f64]] */,
+   |
+
+error[E0061]: this method takes 9 
+arguments but 10 arguments were 
+supplied
+  --> 
+src\engine\stress_tests.rs:91:28
+   |
+91 |             
+summing_engine.process_parallel(
+   |                            
+^^^^^^^^^^^^^^^^
+...
+94 |                 &mut master_r,
+   |                 ------------- 
+unexpected argument #3 of type `&mut 
+Vec<{float}>`
+   |
+note: expected `&mut [&mut [f64]]`, 
+found `&mut Vec<{float}>`
+  --> 
+src\engine\stress_tests.rs:93:17
+   |
+93 |                 &mut master_l,
+   |                 ^^^^^^^^^^^^^
+   = note: expected mutable 
+reference `&mut [&mut [f64]]`
+              found mutable 
+reference `&mut Vec<{float}>`
+note: method defined here
+  --> src\engine\summing.rs:27:12
+   |
+27 |     pub fn process_parallel(
+   |            ^^^^^^^^^^^^^^^^
+...
+30 |         master_channels: &mut 
+[&mut [f64]],
+   |         
+----------------------------------
+help: remove the extra argument
+   |
+93 -                 &mut master_l,
+93 +                 /* &mut [&mut 
+[f64]] */,
+   |
+
+error[E0061]: this method takes 9 
+arguments but 10 arguments were 
+supplied
+   --> 
+src\engine\stress_tests.rs:187:28
+    |
+187 |             
+summing_engine.process_parallel(
+    |                            
+^^^^^^^^^^^^^^^^
+...
+190 |                 &mut master_r,
+    |                 ------------- 
+unexpected argument #3 of type `&mut 
+Vec<{float}>`
+    |
+note: expected `&mut [&mut [f64]]`, 
+found `&mut Vec<{float}>`
+   --> 
+src\engine\stress_tests.rs:189:17
+    |
+189 |                 &mut master_l,
+    |                 ^^^^^^^^^^^^^
+    = note: expected mutable 
+reference `&mut [&mut [f64]]`
+               found mutable 
+reference `&mut Vec<{float}>`
+note: method defined here
+   --> src\engine\summing.rs:27:12
+    |
+ 27 |     pub fn process_parallel(
+    |            ^^^^^^^^^^^^^^^^
+...
+ 30 |         master_channels: &mut 
+[&mut [f64]],
+    |         
+----------------------------------
+help: remove the extra argument
+    |
+189 -                 &mut master_l,
+189 +                 /* &mut [&mut 
+[f64]] */,
+    |
+
+error[E0061]: this method takes 9 
+arguments but 10 arguments were 
+supplied
+   --> 
+src\engine\stress_tests.rs:280:28
+    |
+280 |             
+summing_engine.process_parallel(
+    |                            
+^^^^^^^^^^^^^^^^
+...
+283 |                 &mut master_r,
+    |                 ------------- 
+unexpected argument #3 of type `&mut 
+Vec<{float}>`
+    |
+note: expected `&mut [&mut [f64]]`, 
+found `&mut Vec<{float}>`
+   --> 
+src\engine\stress_tests.rs:282:17
+    |
+282 |                 &mut master_l,
+    |                 ^^^^^^^^^^^^^
+    = note: expected mutable 
+reference `&mut [&mut [f64]]`
+               found mutable 
+reference `&mut Vec<{float}>`
+note: method defined here
+   --> src\engine\summing.rs:27:12
+    |
+ 27 |     pub fn process_parallel(
+    |            ^^^^^^^^^^^^^^^^
+...
+ 30 |         master_channels: &mut 
+[&mut [f64]],
+    |         
+----------------------------------
+help: remove the extra argument
+    |
+282 -                 &mut master_l,
+282 +                 /* &mut [&mut 
+[f64]] */,
+    |
+
+warning: variable does not need to 
+be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut 
+internal_tracks, mut 
+internal_busses, mut 
+preview_voice_opt, mut fx_opt, mut 
+limiter_opt, mut 
+local_master_buffer) = {
+     |                               
+  ----^^^^^^^^^^^^^^^
+     |                               
+  |
+     |                               
+  help: remove this `mut`
+
+warning: variable does not need to 
+be mutable
+   --> src\engine\graph.rs:816:13
+    |
+816 |         let mut params = 
+vec![&self.volume, &self.pan, 
+&self.width, &self.input_drive];
+    |             ----^^^^^^
+    |             |
+    |             help: remove this 
+`mut`
+
+warning: unused variable: `bpm`
+    --> 
+src\engine\kropelka_brain.rs:1185:9
+     |
+1185 |         bpm: f64,
+     |         ^^^ help: if this is 
+intentional, prefix it with an 
+underscore: `_bpm`
+     |
+     = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: unused variable: 
+`sample_rate`
+    --> 
+src\engine\kropelka_brain.rs:1186:9
+     |
+1186 |         sample_rate: f64,
+     |         ^^^^^^^^^^^ help: if 
+this is intentional, prefix it with 
+an underscore: `_sample_rate`
+
+warning: unused variable: 
+`script_path`
+  --> src\lib.rs:18:17
+   |
+18 |             let script_path = 
+app
+   |                 ^^^^^^^^^^^ 
+help: if this is intentional, prefix 
+it with an underscore: `_script_path`
+
+Some errors have detailed 
+explanations: E0061, E0063, E0433.
+For more information about an error, 
+try `rustc --explain E0061`.
+warning: `vibe` (lib test) generated 
+12 warnings
+error: could not compile `vibe` (lib 
+test) due to 10 previous errors; 12 
+warnings emitted
+warning: build failed, waiting for 
+other jobs to finish...
+warning: variable does not need to 
+be mutable
+    --> src\engine\audio.rs:3587:43
+     |
+3587 | ...   let (mut 
+internal_tracks, mut 
+internal_busses, mut 
+preview_voice_opt, mut fx_opt, mut 
+limiter_opt, mut 
+local_master_buffer) = {
+     |                               
+  ----^^^^^^^^^^^^^^^
+     |                               
+  |
+     |                               
+  help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: method `reset_lufs` is 
+never used
+   --> 
+src\engine\metering\mod.rs:131:12
+    |
+ 23 | impl GpuMeter {
+    | ------------- method in this 
+implementation
+...
+131 |     pub fn reset_lufs(&self) {
+    |            ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: struct `KWeightingFilter` 
+is never constructed
+   --> 
+src\engine\metering\mod.rs:139:8
+    |
+139 | struct KWeightingFilter {
+    |        ^^^^^^^^^^^^^^^^
+
+warning: associated items `new` and 
+`process` are never used
+   --> 
+src\engine\metering\mod.rs:153:8
+    |
+152 | impl KWeightingFilter {
+    | --------------------- 
+associated items in this 
+implementation
+153 |     fn new() -> Self {
+    |        ^^^
+...
+167 |     fn process(&mut self, 
+input: f64) -> f64 {
+    |        ^^^^^^^
+
+warning: function `to_db_power` is 
+never used
+   --> 
+src\engine\metering\mod.rs:223:4
+    |
+223 | fn to_db_power(power: f64) -> 
+f64 {
+    |    ^^^^^^^^^^^
+
+warning: field `sample_rate` is 
+never read
+ --> 
+src\engine\metering\lufs_meter.rs:7:5
+  |
+5 | pub struct LufsMeter {
+  |            --------- field in 
+this struct
+6 |     meter: Mutex<EbuR128>,
+7 |     sample_rate: u32,
+  |     ^^^^^^^^^^^
+
+warning: method `reset` is never used
+  --> src\engine\metering\lufs_meter.
+rs:58:12
+   |
+10 | impl LufsMeter {
+   | -------------- method in this 
+implementation
+...
+58 |     pub fn reset(&self) {
+   |            ^^^^^
+
+warning: associated function 
+`get_role_color` is never used
+  --> src\engine\gosposia.rs:69:12
+   |
+20 | impl Gosposia {
+   | ------------- associated 
+function in this implementation
+...
+69 |     pub fn get_role_color(role: 
+&TrackRole) -> &'static str {
+   |            ^^^^^^^^^^^^^^
+
+warning: method `kill` is never used
+   --> 
+src\engine\neural_forest.rs:101:12
+    |
+ 24 | impl NeuralForestBridge {
+    | ----------------------- method 
+in this implementation
+...
+101 |     pub fn kill(&mut self) {
+    |            ^^^^
+
+warning: `vibe` (lib) generated 13 
+warnings (4 duplicates) (run `cargo 
+fix --lib -p vibe` to apply 1 
+suggestion)

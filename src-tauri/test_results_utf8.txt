@@ -1,0 +1,239 @@
+﻿cargo : warning: unused variable: 
+`fades_management`
+At line:1 char:30
++ ... CK=8388608; cargo test --lib 
+engine_tests::tests -- --nocapture 2>&1  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+    (warning: unused...des_management`:Str  
+  ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommand 
+   Error
+ 
+   --> src\engine\audio.rs:374:13
+    |
+374 | ...   let fades_management = Arc::c...
+    |           ^^^^^^^^^^^^^^^^ help: if 
+this is intentional, prefix it with an 
+underscore: `_fades_management`
+    |
+    = note: `#[warn(unused_variables)]` 
+(part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `summing_shared`
+   --> src\engine\audio.rs:375:13
+    |
+375 | ...   let summing_shared = Arc::clo...
+    |           ^^^^^^^^^^^^^^ help: if 
+this is intentional, prefix it with an 
+underscore: `_summing_shared`
+
+warning: unused variable: `spectrum_shared`
+   --> src\engine\audio.rs:376:13
+    |
+376 | ...   let spectrum_shared = Arc::cl...
+    |           ^^^^^^^^^^^^^^^ help: if 
+this is intentional, prefix it with an 
+underscore: `_spectrum_shared`
+
+warning: constant `NUM_BANDS` is never used
+ --> src\engine\spectrum.rs:6:7
+  |
+6 | const NUM_BANDS: usize = 1024; // Inc...
+  |       ^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: method `load_to_vec` is never used
+  --> src\engine\spectrum.rs:30:12
+   |
+13 | impl SpectrumData {
+   | ----------------- method in this 
+implementation
+...
+30 |     pub fn load_to_vec(&self) -> Vec...
+   |            ^^^^^^^^^^^
+
+warning: methods `process_stereo` and 
+`get_bands` are never used
+   --> src\engine\spectrum.rs:79:12
+    |
+ 49 | impl SpectrumAnalyzer {
+    | --------------------- methods in this 
+implementation
+...
+ 79 |     pub fn process_stereo(&mut self...
+    |            ^^^^^^^^^^^^^^
+...
+116 |     pub fn get_bands(&self) -> Vec<...
+    |            ^^^^^^^^^
+
+warning: comparison is useless due to type 
+limits
+   --> src\engine\engine_tests.rs:173:17
+    |
+173 | ...   assert!(data.len() >= 0 || da...
+    |               ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(unused_comparisons)]` 
+on by default
+
+warning: `vibe` (lib test) generated 7 
+warnings (run `cargo fix --lib -p vibe 
+--tests` to apply 3 suggestions)
+    Finished `test` profile [unoptimized + 
+debuginfo] target(s) in 0.51s
+     Running unittests src\lib.rs (target\de
+bug\deps\vibe_lib-535b23413f1cd2f5.exe)
+
+running 16 tests
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: AudioEngine::new starting...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: AudioEngine::new starting...
+VIBE: Visualizer thread spawned.
+VIBE: Visualizer thread spawned.
+VIBE: AudioEngine::new starting...
+VIBE: Visualizer thread spawned.
+VIBE: Visualizer thread spawned.
+VIBE: AudioEngine::new starting...
+VIBE: Visualizer thread spawned.
+VIBE: AudioEngine::new starting...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: Visualizer thread spawned.
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: AudioEngine::new starting...
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: Visualizer thread spawned.
+VIBE: Visualizer thread spawned.
+VIBE: Initializing Spectrum Analyzer...
+VIBE: Visualizer thread spawned.
+VIBE: HyperStreamer initialized.
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: HyperStreamer initialized.
+VIBE: AutoSave System Started (Interval: 30s)
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: Detected MIDI Controller: Traktor Kontrol Z1 MIDI
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+test engine::engine_tests::tests::test_history_traversal_smoke ... ok
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::stop() called
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::set_playhead(96000) called
+VIBE: AudioEngine::new complete.
+VIBE: AudioEngine::new complete.
+test engine::engine_tests::tests::test_engine_initialization_defaults ... ok
+test engine::engine_tests::tests::test_cpu_load_reporting ... ok
+test engine::engine_tests::tests::test_bpm_changes ... ok
+test engine::engine_tests::tests::test_library_interaction ... ok
+
+thread 'engine::engine_tests::tests::test_tr
+ack_management' (6980) panicked at 
+src\engine\engine_tests.rs:56:9:
+assertion failed: levels.len() >= 2
+note: run with `RUST_BACKTRACE=1` 
+environment variable to display a backtrace
+VIBE: Recording ON
+VIBE: AudioEngine::stop() called
+test engine::engine_tests::tests::test_metronome_toggle ... ok
+test engine::engine_tests::tests::test_track_mute_solo_mutual ... ok
+test engine::engine_tests::tests::test_input_alias_creation ... ok
+test engine::engine_tests::tests::test_track_parameter_batch_set ... ok
+test engine::engine_tests::tests::test_midi_binding_synapse ... ok
+test engine::engine_tests::tests::test_midi_note_crud_smoke ... ok
+test engine::engine_tests::tests::test_track_management ... FAILED
+test engine::engine_tests::tests::test_playhead_seek ... ok
+test engine::engine_tests::tests::test_engine_transport_commands ... ok
+test engine::engine_tests::tests::test_analyzer_data_retrieval ... ok
+test engine::engine_tests::tests::test_automation_recording_flow ... ok
+
+failures:
+
+failures:
+    engine::engine_tests::tests::test_track_management
+
+test result: FAILED. 15 passed; 1 failed; 0 ignored; 0 measured; 53 filtered out; finished in 3.15s
+
+error: test failed, to rerun pass `--lib`

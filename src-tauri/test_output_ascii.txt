@@ -1,0 +1,166 @@
+cargo : warning: variable does not 
+need to be mutable
+At line:1 char:1
++ cargo test > test_output_full.txt 
+2>&1
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpeci 
+   fied: (warning: variab...d to be m  
+  utable:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCo 
+   mmandError
+ 
+    --> src\engine\audio.rs:3573:14
+     |
+3573 | ...t (mut samples, chann...
+     |       ----^^^^^^^
+     |       |
+     |       help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` 
+(part of `#[warn(unused)]`) on by 
+default
+
+warning: unused variable: `is_midi`
+    --> src\engine\audio.rs:3565:20
+     |
+3565 | ...ath, is_midi) = {
+     |         ^^^^^^^ help: if this 
+is intentional, prefix it with an 
+underscore: `_is_midi`
+     |
+     = note: 
+`#[warn(unused_variables)]` (part of 
+`#[warn(unused)]`) on by default
+
+warning: variable does not need to be 
+mutable
+    --> src\engine\audio.rs:5074:33
+     |
+5074 | ...u8>, mut value: u32) {
+     |         ----^^^^^
+     |         |
+     |         help: remove this `mut`
+
+warning: variable does not need to be 
+mutable
+    --> src\engine\audio.rs:5095:9
+     |
+5095 |     let mut hint = symph...
+     |         ----^^^^
+     |         |
+     |         help: remove this `mut`
+
+warning: `vibe` (lib) generated 4 
+warnings (run `cargo fix --lib -p 
+vibe` to apply 4 suggestions)
+warning: `vibe` (lib test) generated 4 
+warnings (4 duplicates)
+    Finished `test` profile 
+[unoptimized + debuginfo] target(s) in 
+0.45s
+     Running unittests src\lib.rs (targ
+et\debug\deps\vibe_lib-860f61472beec523
+.exe)
+
+running 52 tests
+test engine::audio_preview::tests::test_preview_player_creation ... ok
+test engine::audio_preview::tests::test_waveform_generation ... ok
+test engine::automation::tests::test_akima_no_overshoot ... ok
+test engine::automation::tests::test_akima_continuity ... ok
+test engine::graph::tests::test_denormal_protection ... ok
+test engine::effects::tests::highpass_basic ... ok
+test engine::graph::tests::test_parameter_atomic ... ok
+test engine::graph::tests::lowpass_basic ... ok
+test engine::graph::tests::test_audio_buffer_clear ... ok
+test engine::graph_tests::tests::test_gain_effect_amplification ... ok
+test engine::automation::tests::test_lfo_layer_simd ... ok
+test engine::graph_tests::tests::test_denormal_protection ... ok
+test engine::graph_tests::tests::test_audio_buffer_clear ... ok
+test engine::graph_tests::tests::test_audio_buffer_creation ... ok
+test engine::io_manager::tests::test_create_mono_alias ... ok
+test engine::graph::tests::test_track_creation ... ok
+test engine::io_manager::tests::test_channel_metering ... ok
+test engine::graph_tests::tests::test_lowpass_filter_dc_offset ... ok
+test engine::graph_tests::tests::test_parameter_atomic_operations ... ok
+test engine::io_manager::tests::test_create_stereo_alias ... ok
+test engine::graph_tests::tests::test_gain_effect_unity ... ok
+test engine::graph_tests::tests::test_bus_clone ... ok
+test engine::io_manager::tests::test_delete_alias ... ok
+test engine::io_manager::tests::test_stereo_validation_consecutive ... ok
+test engine::graph_tests::tests::test_track_creation ... ok
+test engine::io_manager::tests::test_update_alias ... ok
+test engine::library_service::tests::test_bpm_extraction ... ok
+test engine::library_service::tests::test_categorization ... ok
+test engine::library_service::tests::test_fuzzy_search ... ok
+test engine::metering::tests::test_db_conversion ... ok
+test engine::metering::tests::test_meter_update ... ok
+test engine::midi_mapping::tests::test_midi_learning ... ok
+test engine::midi_mapping::tests::test_absolute_soft_takeover ... ok
+test engine::midi_mapping::tests::test_relative_mapping ... ok
+test engine::pdc::tests::test_pdc_compensation_logic ... ok
+test engine::plugin_manager::tests::test_blacklist ... ok
+test engine::plugin_manager::tests::test_plugin_manager_creation ... ok
+test engine::plugin_manager::tests::test_plugin_type_detection ... ok
+test engine::simd_avx512::tests::test_multiply_scalar ... ok
+test engine::pdc::tests::test_pdc_calculation ... ok
+test engine::wasm::tests::test_wasm_plugin_creation ... ignored
+test engine::simd_avx512::tests::test_sum_buffers ... ok
+test engine::persistence::tests::test_invalid_magic_bytes ... ok
+test engine::summing::tests::test_simd_edge_cases ... FAILED
+test engine::summing::tests::test_simd_summing_correctness ... FAILED
+test engine::resampler::tests::test_rubato_upsample ... FAILED
+test engine::summing::tests::test_simd_multiple_tracks ... ok
+test engine::sandbox_v2::tests::test_sandbox_creation ... ok
+test engine::summing::tests::test_simd_zero_input ... FAILED
+test engine::persistence::tests::test_midi_clip_roundtrip ... FAILED
+test engine::persistence::tests::test_binary_roundtrip ... ok
+test engine::pdc::tests::test_pdc_stress_test ... ok
+
+failures:
+
+---- engine::summing::tests::test_simd_edge_cases stdout ----
+
+thread 'engine::summing::tests::test_simd_edge_cases' (15712) panicked at src\engine\summing.rs:279:13:
+assertion failed: (master_l[i] - expected).abs() < 0.01
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- engine::summing::tests::test_simd_summing_correctness stdout ----
+
+thread 'engine::summing::tests::test_simd_summing_correctness' (12028) panicked at src\engine\summing.rs:159:13:
+Left channel mismatch at 0: expected 0.7818063576087741, got 0.7659208097973089
+
+---- engine::resampler::tests::test_rubato_upsample stdout ----
+
+thread 'engine::resampler::tests::test_rubato_upsample' (2436) panicked at src\engine\resampler.rs:136:9:
+assertion failed: (output.len() as i32 - expected_len as i32).abs() < 50
+
+---- engine::summing::tests::test_simd_zero_input stdout ----
+
+thread 'engine::summing::tests::test_simd_zero_input' (6060) panicked at src\engine\summing.rs:312:13:
+assertion `left == right` failed
+  left: -5e-5
+ right: 0.0
+
+---- engine::persistence::tests::test_midi_clip_roundtrip stdout ----
+VIBE: Saved project safely to "test_midi.vibe" (393 bytes)
+VIBE: Loaded project from "test_midi.vibe"
+
+thread 'engine::persistence::tests::test_midi_clip_roundtrip' (26548) panicked at src\engine\persistence.rs:496:9:
+assertion `left == right` failed
+  left: false
+ right: true
+
+
+failures:
+    engine::persistence::tests::test_midi_clip_roundtrip
+    engine::resampler::tests::test_rubato_upsample
+    engine::summing::tests::test_simd_edge_cases
+    engine::summing::tests::test_simd_summing_correctness
+    engine::summing::tests::test_simd_zero_input
+
+test result: FAILED. 46 passed; 5 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass 
+`--lib`

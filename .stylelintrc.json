@@ -1,0 +1,20 @@
+{
+    "extends": [
+        "stylelint-config-standard"
+    ],
+    "rules": {
+        "selector-class-pattern": null,
+        "custom-property-pattern": null,
+        "no-descending-specificity": null,
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": [
+                    "r"
+                ]
+            }
+        ]
+    }
+}
